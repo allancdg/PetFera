@@ -1,4 +1,7 @@
 #include "animal.hpp"
+#include <iostream>
+
+using namespace std;
 
 //Construtor padrão;
 Animal::Animal(){} // ## Vazio ##

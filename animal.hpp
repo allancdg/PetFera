@@ -6,9 +6,9 @@ using namespace std;
 
 class Animal{               //Criação da classe Animal (Geral à todas as familias de animais);
 protected:
-    int id;                 //Código identificador do animal no PetFera;
+    int id;                 // Código identificador do animal no PetFera;
     string nome;            // Nome como o animal é conhecido popularmente; "Jararaca";
-    string nome_cientifico; // Nome cientifico do animal; "Bothrops jararaca";
+    string nome_cientifico; // Nome científico do animal; "Bothrops jararaca";
     string nome_batismo;    // Nome de batismo do animal; "Joãozinho";
     string classe;          // Classe do animal; "Amphibia, Reptilia, Aves ou Mammalithis"
     char sexo;              // Macho, fêmea;
