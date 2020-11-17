@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class Reptil: public Animal{
+class Reptil: public Animal {
 protected:
     int total_mudas; //No caso de ser Serpentes ou Lagartos (condição medida pelo nome)
     string data_ultima_muda; //No caso de ser Serpentes ou Lagartos (condição medida pelo nome)

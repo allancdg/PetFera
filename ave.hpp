@@ -5,7 +5,8 @@
 
 using namespace std;
 
-class Ave: public Animal{
+class Ave : public Animal
+{
 protected:
     int tamanho_bico; //Tamanho do bico, em centimentros
     int tamanho_pernas; //Tamanho das pernas em centimetos
@@ -23,8 +24,8 @@ public:
     ~Ave();
 
     //Setters
-    void set_tamanhoBico(int tamanho_bico);
-    void set_tamanhoPernas(int tamanho_pernas);
-    void set_caracteristicaBico(string caracteristica_bico);
-    void set_corPenas(string cor_penas);
+    void set_tamanho_bico(int tamanho_bico);
+    void set_tamanho_pernas(int tamanho_pernas);
+    void set_caracteristica_bico(string caracteristica_bico);
+    void set_cor_penas(string cor_penas);
 };

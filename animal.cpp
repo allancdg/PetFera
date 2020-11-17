@@ -19,6 +19,27 @@ Animal::~Animal(){} // ## Vazio ##
 int
 Animal::get_id() const{ return this->id; }
 
+string
+Animal::get_nome() const{ return this->nome; }
+
+string
+Animal::get_nome_cientifico() const{ return this->nome_cientifico; }
+
+string
+Animal::get_nome_batismo() const{ return this->nome_batismo; }
+
+string
+Animal::get_classe() const{ return this->classe; }
+
+char
+Animal::get_sexo() const{ return this->sexo; }
+
+float
+Animal::get_tamanho() const{ return this->tamanho; }
+
+string
+Animal::get_dieta() const{ return this->dieta; }
+
 //Setters
 void
 Animal::set_id( int id ){ this->id = id; }

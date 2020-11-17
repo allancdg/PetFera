@@ -1,6 +1,10 @@
 #pragma once        //Função semelhante ao Define, c++11
 
 #include <iostream>
+//#include "reptil.hpp"
+//#include "ave.hpp"
+//#include "mamifero.hpp"
+//#include "anfibio.hpp"
 
 using namespace std;
 
@@ -26,6 +30,13 @@ public:
 
     //Getters
     int get_id() const;
+    string get_nome() const;
+    string get_nome_cientifico() const;
+    string get_nome_batismo() const;
+    string get_classe() const;
+    char get_sexo() const;
+    float get_tamanho() const;
+    string get_dieta() const;
 
     //Setters
     void set_id( int id );

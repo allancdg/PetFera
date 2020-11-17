@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class Anfibio: public Animal{
+class Anfibio: public Animal {
 protected:
     int total_mudas;
     string data_ultima_muda;
