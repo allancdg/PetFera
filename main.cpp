@@ -1,56 +1,72 @@
 #include "animal.hpp"
+#include "petfera.hpp"
 #include <iostream>
-#include <string>
 
 using namespace std;
 
+void pausar() {
+#if defined _WIN32
+    system("pause");
+#elif defined (__LINUX__) || defined(__gnu_linux__) || defined(__linux__)
+    system("read -n 1 -s -p \"Pressione qualquer tecla para continuar...\"");
+#elif defined (__APPLE__)
+    system("read -n 1 -s -p \"Pressione qualquer tecla para continuar...\"");
+#endif
+}
+void limpaTela(){
+#if defined _WIN32
+    system("cls");
+#elif defined (__LINUX__) || defined(__gnu_linux__) || defined(__linux__)
+    system("clear");
+#elif defined (__APPLE__)
+    system("clear");
+#endif
+}
+
+void menuPrincipal(Petfera* petfera) {
+	char opcao;
+	limpaTela();
+	do {
+		cout<< endl << "Menu principal de opcoes: ";
+		cout<< endl << "========";
+		cout<< endl << "C - Cadastrar animal.";
+		cout<< endl << "R - Remover animal.";
+		cout<< endl << "L - Listar animal.";
+		cout<< endl << "---------";
+		cout<< endl << endl << "X - Encerrar.";
+
+		cout<< endl << endl << "Selecione a opcao: ";
+		cin >> opcao;
+
+		limpaTela();
+
+		switch(opcao)
+		{
+			case 'C' :
+			case 'c' :{ petfera->cadastrarAnimal();}
+			break;
+			case 'R' :
+			case 'r' :{ petfera->removerAnimal();}
+			break;
+			case 'L' :
+			case 'l' :{ petfera->listarAnimal();}
+			break;
+            case 'X' :
+			case 'x' :{ return;}
+			break;
+			default : cout << endl << "Opção inválida!";
+		}
+		cout << endl;
+
+		pausar();
+		limpaTela();
+
+	} while (opcao != 'X' && opcao !='x');
+}
+
 int main(){
-    int cin_int; //Utilizado para toda entrada de numeral inteiro variável
-    string cin_string; //Utilizado para toda entrada de string variável
-    char cin_char; //Utilizado para toda entrada de char variável
-    float cin_float; //Utilizado para toda entrada de float variável
+    Petfera* petfera = new Petfera();
 
-    cout << " ## CADASTRAMENTO ## " << endl << endl;
-    Animal* animal1 = new Animal();
-    cout << "Digite o ID para o animal: ";
-    cin >> cin_int;
-    animal1->set_id(cin_int);
-    cout << "Digite o nome popular do animal: ";
-    cin >> cin_string;
-    animal1->set_nome(cin_string);
-    cout << "Digite o nome cientifico do animal: ";
-    cin >> cin_string;
-    animal1->set_nome_cientifico(cin_string);
-    cout << "Digite o nome de batismo do animal: ";
-    cin >> cin_string;
-    animal1->set_nome_batismo(cin_string);
-    cout << "Digite a classe do animal: ";
-    cin >> cin_string;
-    animal1->set_classe(cin_string);
-    cout << "Digite o sexo do animal: ";
-    cin >> cin_char;
-    animal1->set_sexo(cin_char);
-    cout << "Digite o tamanho, em metros, do animal: ";
-    cin >> cin_float;
-    animal1->set_tamanho(cin_float);
-    cout << "Digite a dieta do animal: ";
-    cin >> cin_string;
-    animal1->set_dieta(cin_string);
-
-    cout << " ## ANIMAL CADASTRADO ##" << endl;
-    cout << "ID: " << animal1->get_id() << endl;
-    cout << "NOME: " << animal1->get_nome() << endl;
-    cout << "NOME CIENTIFICO: " << animal1->get_nome_cientifico() << endl;
-    cout << "NOME DE BATISMO: " << animal1->get_nome_batismo() << endl;
-    cout << "CLASSE: " << animal1->get_classe() << endl;
-    cout << "SEXO: " << animal1->get_sexo() << endl;
-    cout << "TAMANHO(m): " << animal1->get_tamanho() << endl;
-    cout << "DIETA: " << animal1->get_dieta() << endl;
-
-    //problema na tabelação pois varia o tamanho dos espaços preenchidos pelas variáveis
-    /*cout << "ID\tNOME\t\tNOME CIENTIFICO\t\tNOME BATISMO\t\tCLASSE\t\tSEXO\tTAMANHO(m)\tDIETA" << endl;
-    cout << animal1->get_id() << "\t" << animal1->get_nome() << "\t\t" << animal1->get_nome_cientifico()
-            << "\t\t" << animal1->get_nome_batismo() << "\t\t" << animal1->get_classe() << "\t"
-            << animal1->get_sexo() << "\t" << animal1->get_tamanho() << "\t" << animal1->get_dieta();*/
+    menuPrincipal(petfera);
 return 0;
 }
