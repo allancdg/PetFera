@@ -15,8 +15,7 @@ public:
 	Reptil();
 	//Construtor parametrizado
 	//LEMBRAR DE REALIZAR AS MODIFICAÇÕES DE ACORDO COM AS SUB-CLASSES
-	Reptil(int id, string nome, string nome_cientifico, string nome_batismo, string classe, char sexo,
-           float tamanho, string dieta, int total_mudas, string data_ultima_muda);
+	Reptil(int id, string nome, string classe, char sexo, float tamanho, int total_mudas, string data_ultima_muda);
     //Destrutor padrão
     ~Reptil();
 

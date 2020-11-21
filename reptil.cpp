@@ -1,4 +1,4 @@
-#include ".\include\reptil.hpp"
+#include "reptil.hpp"
 #include <iostream>
 
 using namespace std;
@@ -8,10 +8,8 @@ Reptil::Reptil(){}
 
 //Construtor parametrizado
 //LEMBRAR DE REALIZAR AS MODIFICAÇÕES DE ACORDO COM AS SUB-CLASSES
-Reptil::Reptil(int id, string nome, string nome_cientifico, string nome_batismo, string classe, char sexo,
-           float tamanho, string dieta, int total_mudas, string data_ultima_muda):
-               id(id), nome(nome), nome_cientifico(nome_cientifico), nome_batismo(nome_batismo), classe(classe),
-                sexo(sexo), tamanho(tamanho), dieta(dieta), total_mudas(total_mudas), data_ultima_muda(data_ultima_muda){}
+Reptil::Reptil(int id, string nome, string classe, char sexo, float tamanho, int total_mudas, string data_ultima_muda):
+               Animal(id, nome, classe, sexo, tamanho), total_mudas(total_mudas), data_ultima_muda(data_ultima_muda){}
 
 //Destrutor padrão
 Reptil::~Reptil(){}

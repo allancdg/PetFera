@@ -1,9 +1,12 @@
 #pragma once        //Função semelhante ao Define, c++11
 
 #include <iostream>
-#include <vector>
 #define CAPACIDADE_MAX 10
 #include "animal.hpp"
+#include "mamifero.hpp"
+#include "anfibio.hpp"
+#include "ave.hpp"
+#include "reptil.hpp"
 
 using namespace std;
 
@@ -13,8 +16,10 @@ public:
     ~Petfera();
 
     void cadastrarAnimal();
+    void cadastrarProfissional();
     void removerAnimal();
     void listarAnimal();
+    void listarProfissional();
 
 
 private:

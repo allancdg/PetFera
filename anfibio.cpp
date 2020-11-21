@@ -1,4 +1,4 @@
-#include ".\include\anfibio.hpp"
+#include "anfibio.hpp"
 #include <iostream>
 
 using namespace std;
@@ -7,10 +7,8 @@ using namespace std;
 Anfibio::Anfibio(){}
 
 //Construtor parametrizado
-Anfibio::Anfibio(int id, string nome, string nome_cientifico, string nome_batismo, string classe, char sexo,
-           float tamanho, string dieta, int total_mudas, string data_ultima_muda):
-            id(id), nome(nome), nome_cientifico(nome_cientifico), nome_batismo(nome_batismo), classe(classe),
-            sexo(sexo), tamanho(tamanho), dieta(dieta), total_mudas(total_mudas), data_ultima_muda(data_ultima_muda){}
+Anfibio::Anfibio(int id, string nome, string classe, char sexo, float tamanho, int total_mudas, string data_ultima_muda):
+            Animal(id, nome, classe, sexo, tamanho), total_mudas(total_mudas), data_ultima_muda(data_ultima_muda){}
 
 //Destrutor padrão
 Anfibio::~Anfibio(){}

@@ -5,10 +5,8 @@ using namespace std;
 
 
 Animal::Animal(){}
-
 Animal::Animal(int id, string nome, string classe, char sexo, float tamanho):
                id(id), nome(nome), classe(classe), sexo(sexo), tamanho(tamanho){}
-
 Animal::~Animal(){}
 
 //Getters
