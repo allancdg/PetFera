@@ -18,7 +18,7 @@ public:
     void cadastrarAnimal();
     void cadastrarProfissional();
     void removerAnimal();
-    void listarAnimal();
+    void listarTodosAnimais();
     void listarProfissional();
 
 

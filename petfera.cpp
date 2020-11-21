@@ -142,7 +142,16 @@ void
 Petfera::removerAnimal(){}
 
 void
-Petfera::listarAnimal(){}
+Petfera::listarTodosAnimais(){
+    if(this->capacidade <= 0){ cout << "Nao tem nenhum animal cadastrado!" << endl; }
+    else{
+        cout << "ID\tNOME\t\tSEXO\tCLASSE" << endl;
+        for(int i=0; i < this->capacidade; i++){ //talvez ++i
+            cout << animais[i]->get_id() << "\t" << animais[i]->get_nome() << "\t\t" << animais[i]->get_sexo()
+                    << "\t" << animais[i]->get_classe() << endl;
+        }
+    }
+}
 
 void
 Petfera::listarProfissional(){}

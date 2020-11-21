@@ -23,6 +23,94 @@ void limpaTela(){
 #endif
 }
 
+void menuTerciarioListagemAnimal(Petfera* petfera) {
+    char opcaoListagemAnimal;
+	limpaTela();
+	do {
+		cout<< endl << "MENU DE LISTAGEM ANIMAL: ";
+		cout<< endl << "========";
+		cout<< endl << "T - TODOS.";
+		cout<< endl << "A - ANFIBIO.";
+		cout<< endl << "V - AVE.";
+		cout<< endl << "M - MAMIFERO.";
+		cout<< endl << "R - REPTIL.";
+		cout<< endl << "---------";
+		cout<< endl << endl << "X - Voltar ao menu anterior.";
+
+		cout<< endl << endl << "Selecione a opcao: ";
+		cin >> opcaoListagemAnimal;
+
+		limpaTela();
+
+		switch(opcaoListagemAnimal)
+		{
+			case 'T' :
+			case 't' :{ petfera->listarTodosAnimais(); }
+			break;
+			case 'A' :
+			case 'a' :{ cout << "EM CONSTRUCAO!";}
+			break;
+			case 'V' :
+			case 'v' :{ cout << "EM CONSTRUCAO!";}
+			break;
+			case 'M' :
+			case 'm' :{ cout << "EM CONSTRUCAO!";}
+			break;
+			case 'R' :
+			case 'r' :{ cout << "EM CONSTRUCAO!";}
+			break;
+            case 'X' :
+			case 'x' :{ return;}
+			break;
+			default : cout << endl << "Opção inválida!";
+		}
+		cout << endl;
+
+
+		pausar();
+		limpaTela();
+
+	} while (opcaoListagemAnimal != 'X' && opcaoListagemAnimal !='x');
+}
+
+void menuSecundarioListagem(Petfera* petfera) {
+    char opcaoListagem;
+	limpaTela();
+	do {
+		cout<< endl << "MENU DE LISTAGEM: ";
+		cout<< endl << "========";
+		cout<< endl << "A - ANIMAL.";
+		cout<< endl << "P - PROFISSIONAL.";
+		cout<< endl << "---------";
+		cout<< endl << endl << "X - Voltar ao menu anterior.";
+
+		cout<< endl << endl << "Selecione a opcao: ";
+		cin >> opcaoListagem;
+
+		limpaTela();
+
+		switch(opcaoListagem)
+		{
+			case 'A' :
+			case 'a' :{ menuTerciarioListagemAnimal(petfera); }
+			break;
+			case 'P' :
+			case 'p' :{ cout << "EM CONSTRUCAO!";}
+			break;
+            case 'X' :
+			case 'x' :{ return;}
+			break;
+			default : cout << endl << "Opção inválida!";
+		}
+		cout << endl;
+
+
+		pausar();
+		limpaTela();
+
+	} while (opcaoListagem != 'X' && opcaoListagem !='x');
+}
+
 void menuSecundarioCadastramento(Petfera* petfera) {
     char opcaoCadastramento;
 	limpaTela();
@@ -87,7 +175,7 @@ void menuPrincipal(Petfera* petfera) {
 			case 'r' :{ cout << "EM CONSTRUCAO!"; }//menuSecundarioRemocao(petfera);}
 			break;
 			case 'L' :
-			case 'l' :{ cout << "EM CONSTRUCAO!"; }// menuSecundarioListagem(petfera);}
+			case 'l' :{ menuSecundarioListagem(petfera); }
 			break;
             case 'X' :
 			case 'x' :{ return;}
