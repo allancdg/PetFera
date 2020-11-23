@@ -27,5 +27,5 @@ public:
     nivelSeguranca get_nivel_seguranca() const;
 
     //Setters
-	void set_nivel_seguranca( nivelSeguranca nivel);
+	void set_nivel_seguranca(char nivel);
 };

@@ -20,4 +20,18 @@ Tratador::get_nivel_seguranca() const { return this->nivel; }
 
 //Setters
 void 
-Tratador::set_nivel_seguranca( nivelSeguranca nivel) { this->nivel = nivel; }
+Tratador::set_nivel_seguranca(char nivel) { 
+    
+    if ( 'R' == nivel || 'r' == nivel) {
+        this->nivel = nivelVermelho;
+    }
+
+    else if ( 'G' == nivel || 'g' == nivel) {
+        this->nivel = nivelVerde;
+    }
+
+    else if ( 'B' == nivel || 'b' == nivel) {
+        this->nivel = nivelAzul;
+    } 
+
+}
