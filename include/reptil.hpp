@@ -7,15 +7,16 @@ using namespace std;
 
 class Reptil: public Animal {
 protected:
-    int total_mudas; //No caso de ser Serpentes ou Lagartos (condição medida pelo nome)
-    string data_ultima_muda; //No caso de ser Serpentes ou Lagartos (condição medida pelo nome)
+    int total_mudas;
+    string data_ultima_muda;
 
 public:
     //Construtor padrão
 	Reptil();
 	//Construtor parametrizado
 	//LEMBRAR DE REALIZAR AS MODIFICAÇÕES DE ACORDO COM AS SUB-CLASSES
-	Reptil(int id, string nome, string classe, char sexo, float tamanho, int total_mudas, string data_ultima_muda);
+	Reptil(int id, string nome_batismo, string nome, string nome_cientifico, string classe, string dieta,
+                char sexo, float tamanho, int total_mudas, string data_ultima_muda);
     //Destrutor padrão
     ~Reptil();
 

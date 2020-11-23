@@ -13,8 +13,8 @@ public:
     //Construtor padrão
     Mamifero();
     //Construtor parametrizado
-    Mamifero( int id, string nome, string classe, char sexo,
-           float tamanho, string cor_pelo);
+    Mamifero(int id, string nome_batismo, string nome, string nome_cientifico, string classe, string dieta,
+               char sexo, float tamanho, string cor_pelo);
     //Destrutor padrão
     ~Mamifero();
 

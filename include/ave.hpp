@@ -15,7 +15,8 @@ public:
     //Construtor padrão
     Ave();
     //Construtor parametrizado
-    Ave(int id, string nome, string classe, char sexo, float tamanho, int tamanho_bico, int tamanho_pernas, string cor_penas);
+    Ave(int id, string nome_batismo, string nome, string nome_cientifico, string classe, string dieta,
+               char sexo, float tamanho, int tamanho_bico, int tamanho_pernas, string cor_penas);
     //Destrutor padrão
     ~Ave();
 
