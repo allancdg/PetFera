@@ -155,7 +155,7 @@ void menuPrincipal(Petfera* petfera) {
 	do {
 		cout<< endl << "Menu principal de opcoes: ";
 		cout<< endl << "========";
-		cout<< endl << "C - Cadastradastramento.";
+		cout<< endl << "C - Cadastramento.";
 		cout<< endl << "R - Remocao.";
 		cout<< endl << "L - Listagem.";
 		cout<< endl << "---------";
