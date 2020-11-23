@@ -62,7 +62,7 @@ void menuTerciarioListagemAnimal(Petfera* petfera) {
             case 'X' :
 			case 'x' :{ return;}
 			break;
-			default : cout << endl << "Opção inválida!";
+			default : cout << endl << "Opï¿½ï¿½o invï¿½lida!";
 		}
 		cout << endl;
 
@@ -100,7 +100,7 @@ void menuSecundarioListagem(Petfera* petfera) {
             case 'X' :
 			case 'x' :{ return;}
 			break;
-			default : cout << endl << "Opção inválida!";
+			default : cout << endl << "Opï¿½ï¿½o invï¿½lida!";
 		}
 		cout << endl;
 
@@ -133,12 +133,12 @@ void menuSecundarioCadastramento(Petfera* petfera) {
 			case 'a' :{ petfera->cadastrarAnimal();}
 			break;
 			case 'P' :
-			case 'p' :{ cout << "EM CONSTRUCAO!";}
+			case 'p' :{ petfera->cadastrarProfissional();}
 			break;
             case 'X' :
 			case 'x' :{ return;}
 			break;
-			default : cout << endl << "Opção inválida!";
+			default : cout << endl << "Opï¿½ï¿½o invï¿½lida!";
 		}
 		cout << endl;
 
@@ -180,7 +180,7 @@ void menuPrincipal(Petfera* petfera) {
             case 'X' :
 			case 'x' :{ return;}
 			break;
-			default : cout << endl << "Opção inválida!";
+			default : cout << endl << "Opï¿½ï¿½o invï¿½lida!";
 		}
 		cout << endl;
 

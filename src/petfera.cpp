@@ -1,6 +1,10 @@
 #include "petfera.hpp"
 #include <iostream>
 
+// Includes necess√°rios para fazer a limpeza do buffer de entrada
+#include <ios>
+#include <limits>
+
 using namespace std;
 
 Petfera::Petfera(){}
@@ -8,11 +12,11 @@ Petfera::~Petfera(){}
 
 void
 Petfera::cadastrarAnimal(){
-    bool true_false = false;//Utilizado para toda manipulaÁ„o booleana [cadastrar]
-    int cin_int;            //Utilizado para toda entrada de int vari·vel [cadastrar]
-    string cin_string;      //Utilizado para toda entrada de string vari·vel [cadastrar]
-    char cin_char;          //Utilizado para toda entrada de char vari·vel [cadastrar]
-    float cin_float;        //Utilizado para toda entrada de float vari·vel [cadastrar]
+    bool true_false = false;//Utilizado para toda manipulaÔøΩÔøΩo booleana [cadastrar]
+    int cin_int;            //Utilizado para toda entrada de int variÔøΩvel [cadastrar]
+    string cin_string;      //Utilizado para toda entrada de string variÔøΩvel [cadastrar]
+    char cin_char;          //Utilizado para toda entrada de char variÔøΩvel [cadastrar]
+    float cin_float;        //Utilizado para toda entrada de float variÔøΩvel [cadastrar]
 
     if(this->capacidade < CAPACIDADE_MAX){
         cout << "Cadastramento animal: " << endl << "=========" << endl;
@@ -136,7 +140,112 @@ Petfera::cadastrarAnimal(){
 }
 
 void
-Petfera::cadastrarProfissional(){}
+Petfera::cadastrarProfissional(){
+    bool true_false = false;    //Utilizado para toda manipulaÔøΩÔøΩo booleana [cadastrar]
+    int cin_int;                //Utilizado para toda entrada de int variÔøΩvel [cadastrar]
+    string cin_string;          //Utilizado para toda entrada de string variÔøΩvel [cadastrar]
+    char cin_char;              //Utilizado para toda entrada de char variÔøΩvel [cadastrar]
+
+    cout << "Cadastramento profissional: " << endl << "=========" << endl;
+        // ================================================================ //
+
+        cout << "Veterin√°rio(1)\tTratador(2)" << endl << "=========" << endl;
+        cout << "Digite o numero correspondente a classe: ";
+        while(true_false == false){
+            cin >> cin_int;
+
+            if( cin_int == 1 ){ 
+                Veterinario* novoVeterinario = new Veterinario();
+
+                novoVeterinario->set_id(this->count_id++); //ID cadastrado automaticamente (0, 1, 2, ++)
+                true_false = true;
+
+                // ================================================================ //
+
+                cout << "Digite o nome veterin√°rio: ";
+                cin >> cin_string;
+                novoVeterinario->set_nome(cin_string);
+
+                // ================================================================ //
+
+                // Utilizado para limpar o buffer de entrada
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+                cout << "Digite o CPF do veterin√°rio: ";
+                cin >> cin_string;
+                novoVeterinario->set_cpf(cin_string);
+
+                // ================================================================ //
+
+                // Utilizado para limpar o buffer de entrada
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+                cout << "Digite o telefone do veterin√°rio: ";
+                cin >> cin_string;
+                novoVeterinario->set_telefone(cin_string);
+
+                // ================================================================ //
+
+                cout << "Digite o sexo do veterin√°rio (M / F): ";
+                cin >> cin_char;
+                novoVeterinario->set_sexo(cin_char);
+
+                // ================================================================ //
+
+                cout << "Digite o CRMV do veterin√°rio: ";
+                cin >> cin_int;
+                novoVeterinario->set_crmv(cin_int);
+
+                // ================================================================ //
+
+                profissionais[this->capacidade_profissionais++] = novoVeterinario;
+            }
+            else if( cin_int == 2 ){ 
+                Tratador* novoTratador = new Tratador();
+                
+                novoTratador->set_id(this->count_id++); //ID cadastrado automaticamente (0, 1, 2, ++)
+                true_false = true;
+
+                // ================================================================ //
+
+                cout << "Digite o nome do tratador: ";
+                cin >> cin_string;
+                novoTratador->set_nome(cin_string);
+
+                // ================================================================ //
+
+                // Utilizado para limpar o buffer de entrada
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+                cout << "Digite o CPF do tratador: ";
+                cin >> cin_string;
+                novoTratador->set_cpf(cin_string);
+
+                // ================================================================ //
+
+                // Utilizado para limpar o buffer de entrada
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+                cout << "Digite o telefone do tratador: ";
+                cin >> cin_string;
+                novoTratador->set_telefone(cin_string);
+
+                // ================================================================ //
+
+                cout << "Digite o sexo do tratador (M / F): ";
+                cin >> cin_char;
+                novoTratador->set_sexo(cin_char);
+
+                // ================================================================ //
+
+                cout << "Digite o n√≠vel de seguran√ßa do tratador: (R / G / B)";
+                cin >> cin_char;
+                novoTratador->set_nivel_seguranca(cin_char);
+
+                profissionais[this->capacidade_profissionais++] = novoTratador;
+            }
+        }
+}
 
 void
 Petfera::removerAnimal(){}
