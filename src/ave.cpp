@@ -7,9 +7,10 @@ using namespace std;
 Ave::Ave(){}
 
 //Construtor parametrizado
-Ave::Ave(int id, string nome, string classe, char sexo, float tamanho, int tamanho_bico, int tamanho_pernas, string cor_penas):
-            Animal(id, nome, classe, sexo, tamanho), tamanho_bico(tamanho_bico),
-            tamanho_pernas(tamanho_pernas), cor_penas(cor_penas){}
+Ave::Ave(int id, string nome_batismo, string nome, string nome_cientifico, string classe, string dieta,
+               char sexo, float tamanho, int tamanho_bico, int tamanho_pernas, string cor_penas):
+            Animal(id, nome_batismo, nome, nome_cientifico, classe, dieta, sexo, tamanho),
+                tamanho_bico(tamanho_bico), tamanho_pernas(tamanho_pernas), cor_penas(cor_penas){}
 
 //Destrutor padrão
 Ave::~Ave(){}

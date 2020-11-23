@@ -7,8 +7,9 @@ using namespace std;
 Mamifero::Mamifero(){}
 
 //Construtor parametrizado
-Mamifero::Mamifero( int id, string nome, string classe, char sexo, float tamanho, string cor_pelo):
-               Animal(id, nome, classe, sexo, tamanho), cor_pelo(cor_pelo){}
+Mamifero::Mamifero(int id, string nome_batismo, string nome, string nome_cientifico, string classe, string dieta,
+               char sexo, float tamanho, string cor_pelo):
+               Animal(id, nome_batismo, nome, nome_cientifico, classe, dieta, sexo, tamanho), cor_pelo(cor_pelo){}
 
 //Destrutor padrão
 Mamifero::~Mamifero(){}

@@ -7,9 +7,10 @@ using namespace std;
 Reptil::Reptil(){}
 
 //Construtor parametrizado
-//LEMBRAR DE REALIZAR AS MODIFICAÇÕES DE ACORDO COM AS SUB-CLASSES
-Reptil::Reptil(int id, string nome, string classe, char sexo, float tamanho, int total_mudas, string data_ultima_muda):
-               Animal(id, nome, classe, sexo, tamanho), total_mudas(total_mudas), data_ultima_muda(data_ultima_muda){}
+Reptil::Reptil(int id, string nome_batismo, string nome, string nome_cientifico, string classe, string dieta,
+                char sexo, float tamanho, int total_mudas, string data_ultima_muda):
+            Animal(id, nome_batismo, nome, nome_cientifico, classe, dieta, sexo, tamanho),
+                total_mudas(total_mudas), data_ultima_muda(data_ultima_muda){}
 
 //Destrutor padrão
 Reptil::~Reptil(){}

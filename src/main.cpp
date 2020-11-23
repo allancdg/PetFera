@@ -66,8 +66,7 @@ void menuTerciarioListagemAnimal(Petfera* petfera) {
 		}
 		cout << endl;
 
-
-		pausar();
+        pausar();
 		limpaTela();
 
 	} while (opcaoListagemAnimal != 'X' && opcaoListagemAnimal !='x');
@@ -104,8 +103,6 @@ void menuSecundarioListagem(Petfera* petfera) {
 		}
 		cout << endl;
 
-
-		pausar();
 		limpaTela();
 
 	} while (opcaoListagem != 'X' && opcaoListagem !='x');
@@ -142,8 +139,6 @@ void menuSecundarioCadastramento(Petfera* petfera) {
 		}
 		cout << endl;
 
-
-		pausar();
 		limpaTela();
 
 	} while (opcaoCadastramento != 'X' && opcaoCadastramento !='x');
