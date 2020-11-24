@@ -20,4 +20,7 @@ public:
 
     //Setters
     void set_cor_pelo(string cor_pelo);
+
+    //Getters
+    string get_cor_pelo();
 };

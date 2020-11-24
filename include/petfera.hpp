@@ -1,4 +1,4 @@
-#pragma once        //Fun��o semelhante ao Define, c++11
+#pragma once        //Funcao semelhante ao Define, c++11
 
 #include <iostream>
 #define CAPACIDADE_MAX 10
@@ -8,6 +8,8 @@
 #include "anfibio.hpp"
 #include "ave.hpp"
 #include "reptil.hpp"
+#include "exotico.hpp"
+#include "mamiferoexotico.hpp"
 #include "pessoa.hpp"
 #include "veterinario.hpp"
 #include "tratador.hpp"
