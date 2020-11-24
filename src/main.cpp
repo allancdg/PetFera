@@ -62,7 +62,7 @@ void menuTerciarioListagemAnimal(Petfera* petfera) {
             case 'X' :
 			case 'x' :{ return;}
 			break;
-			default : cout << endl << "Op��o inv�lida!";
+			default : cout << endl << "Opcao invalida!";
 		}
 		cout << endl;
 
@@ -99,7 +99,7 @@ void menuSecundarioListagem(Petfera* petfera) {
             case 'X' :
 			case 'x' :{ return;}
 			break;
-			default : cout << endl << "Op��o inv�lida!";
+			default : cout << endl << "Opcao invalida!";
 		}
 		cout << endl;
 
@@ -135,7 +135,7 @@ void menuSecundarioCadastramento(Petfera* petfera) {
             case 'X' :
 			case 'x' :{ return;}
 			break;
-			default : cout << endl << "Op��o inv�lida!";
+			default : cout << endl << "Opcao invalida!";
 		}
 		cout << endl;
 

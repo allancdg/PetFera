@@ -40,13 +40,13 @@ Petfera::cadastrarAnimal(){
 
                 // ================================================================ //
 
-                cout << "Digite o nome popular do animal (TUBARAO_BRANCO): ";
+                cout << "Digite um nome popular do animal (TUBARAO_BRANCO): ";
                 cin >> cin_string;
                 novoAnimal->set_nome(cin_string);
 
                 // ================================================================ //
 
-                cout << "Digite o nome cientifico do animal (CARCHARODON_CARCHARIAS): ";
+                cout << "Digite um nome cientifico do animal (CARCHARODON_CARCHARIAS): ";
                 cin >> cin_string;
                 novoAnimal->set_nome_cientifico(cin_string);
 

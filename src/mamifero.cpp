@@ -17,3 +17,7 @@ Mamifero::~Mamifero(){}
 //Setters
 void
 Mamifero::set_cor_pelo(string cor_pelo){ this->cor_pelo = cor_pelo; }
+
+//Getters
+string
+Mamifero::get_cor_pelo(){ return this->cor_pelo; }
