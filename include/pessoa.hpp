@@ -12,12 +12,13 @@ protected:
     string telefone;        // Telefone para contato;
     char sexo;              // Masculino, Feminino;
     int idade;              // Tamanho do animal, em metros, ao ser cadastrado no PetFera;
+    string cargo;           // Veterinário e Tratador;
 
 public:
     //Construtor padrão;
     Pessoa();
     //Construtor parametrizado;
-    Pessoa(int id, string nome, string cpf, string telefone, char sexo, int idade);
+    Pessoa(int id, string nome, string cpf, string telefone, char sexo, int idade, string cargo);
     //Destrutor padrão;
     ~Pessoa();
 
@@ -28,6 +29,7 @@ public:
     string get_telefone() const;
     char get_sexo() const;
     int get_idade() const;
+    string get_cargo() const;
 
     //Setters
     void set_id( int id );
@@ -36,4 +38,5 @@ public:
     void set_telefone(string telefone);
 	void set_sexo( char sexo );
 	void set_idade( int idade);
+    void set_cargo(string cargo);
 };

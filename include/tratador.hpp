@@ -19,7 +19,7 @@ public:
     //Construtor padrão;
     Tratador();
     //Construtor parametrizado;
-    Tratador(int id, string nome, string cpf, string telefone, char sexo, int idade, nivelSeguranca nivel);
+    Tratador(int id, string nome, string cpf, string telefone, char sexo, int idade, string cargo, nivelSeguranca nivel);
     //Destrutor padrão;
     ~Tratador();
 

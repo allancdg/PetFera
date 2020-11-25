@@ -8,8 +8,9 @@ using namespace std;
 Tratador::Tratador(){}
     
 //Construtor parametrizado;
-Tratador::Tratador(int id, string nome, string cpf, string telefone, char sexo, int idade, nivelSeguranca nivel):
-                    Pessoa(id, nome, cpf, telefone, sexo, idade), nivel(nivel){}
+Tratador::Tratador(int id, string nome, string cpf, string telefone, 
+                        char sexo, int idade, string cargo, nivelSeguranca nivel):
+                    Pessoa(id, nome, cpf, telefone, sexo, idade, cargo), nivel(nivel){}
     
 //Destrutor padrão;
 Tratador::~Tratador(){}

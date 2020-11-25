@@ -13,7 +13,7 @@ public:
     //Construtor padrão;
     Veterinario();
     //Construtor parametrizado;
-    Veterinario(int id, string nome, string cpf, string telefone, char sexo, int idade, int crmv);
+    Veterinario(int id, string nome, string cpf, string telefone, char sexo, int idade, string cargo, int crmv);
     //Destrutor padrão;
     ~Veterinario();
 

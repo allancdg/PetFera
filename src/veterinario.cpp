@@ -4,8 +4,8 @@
 Veterinario::Veterinario(){}
 
 //Construtor parametrizado;
-Veterinario::Veterinario(int id, string nome, string cpf, string telefone, char sexo, int idade, int crmv):
-                        Pessoa(id, nome, cpf, telefone, sexo, idade), crmv(crmv){}
+Veterinario::Veterinario(int id, string nome, string cpf, string telefone, char sexo, int idade, string cargo, int crmv):
+                        Pessoa(id, nome, cpf, telefone, sexo, idade, cargo), crmv(crmv){}
     
 //Destrutor padrão;
 Veterinario::~Veterinario(){}

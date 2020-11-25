@@ -6,8 +6,8 @@
 Pessoa::Pessoa(){}
 
 //Construtor parametrizado;
-Pessoa::Pessoa(int id, string nome, string cpf, string telefone, char sexo, int idade):
-        id(id), nome(nome), cpf(cpf), telefone(telefone), sexo(sexo), idade(idade){}
+Pessoa::Pessoa(int id, string nome, string cpf, string telefone, char sexo, int idade, string cargo):
+        id(id), nome(nome), cpf(cpf), telefone(telefone), sexo(sexo), idade(idade), cargo(cargo){}
 
 //Destrutor padrão;
 Pessoa::~Pessoa(){}
@@ -31,6 +31,9 @@ Pessoa::get_sexo() const{ return this->sexo; }
 int 
 Pessoa::get_idade() const{ return this->idade; }
 
+string
+Pessoa::get_cargo() const { return this->cargo; }
+
 //Setters
 void 
 Pessoa::set_id( int id ) { this->id = id; }
@@ -49,3 +52,6 @@ Pessoa::set_sexo( char sexo ){ this->sexo = sexo; }
 
 void 
 Pessoa::set_idade( int idade ) { this->idade = idade; }
+
+void
+Pessoa::set_cargo(string cargo) { this->cargo = cargo; } 
