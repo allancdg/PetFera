@@ -5,9 +5,13 @@
 using namespace std;
 
 void pausar() {
-	cout << "Pressione qualquer tecla pra continuar...";
-	cin.get();
-	cin.ignore();
+#if defined _WIN32
+    system("pause");
+#elif defined (__LINUX__) || defined(__gnu_linux__) || defined(__linux__)
+    system("read -n 1 -s -p \"Pressione qualquer tecla para continuar...\"");
+#elif defined (__APPLE__)
+    system("read -n 1 -s -p \"Pressione qualquer tecla para continuar...\"");
+#endif
 }
 void limpaTela(){
 #if defined _WIN32

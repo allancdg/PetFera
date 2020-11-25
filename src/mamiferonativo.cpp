@@ -1,4 +1,4 @@
-#include "mamiferoexotico.hpp"
+#include "mamiferonativo.hpp"
 
 MamiferoNativo::MamiferoNativo(){}
 
