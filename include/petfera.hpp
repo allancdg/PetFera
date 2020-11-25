@@ -34,8 +34,6 @@ public:
     void removerAnimal();
     void listarTodosAnimais();
     void listarTodosProfissionais();
-    void listarTratadores();
-    void listarVeterinarios();
 
 
 private:
