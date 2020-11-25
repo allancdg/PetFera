@@ -272,6 +272,7 @@ Petfera::cadastrarProfissional(){
 
             if( cin_int == 1 ){
                 Veterinario* novoVeterinario = new Veterinario();
+                novoVeterinario->set_cargo("Veterinario");
 
                 novoVeterinario->set_id(this->count_id_profissional++); //ID cadastrado automaticamente (0, 1, 2, ++)
                 true_false = true;
@@ -318,8 +319,8 @@ Petfera::cadastrarProfissional(){
             }
             else if( cin_int == 2 ){
                 Tratador* novoTratador = new Tratador();
-
                 novoTratador->set_id(this->count_id_profissional++); //ID cadastrado automaticamente (0, 1, 2, ++)
+                novoTratador->set_cargo("Tratador");
                 true_false = true;
 
                 // ================================================================ //
@@ -379,4 +380,61 @@ Petfera::listarTodosAnimais(){
 }
 
 void
-Petfera::listarTodosProfissionais(){}
+Petfera::listarTodosProfissionais(){
+    if(this->capacidade_profissionais <= 0){ 
+        cout << "Ainda não existem profissionais cadastrados!" << endl; 
+    }
+    
+    else{
+        cout << "ID\tNOME\t\tSEXO" << endl;
+        for(int i=0; i < this->capacidade_profissionais; i++){ //talvez ++i
+            cout << profissionais[i]->get_id() << "\t" << profissionais[i]->get_nome() << "\t\t" << 
+                profissionais[i]->get_sexo() << "\t" << endl;
+        }
+    }
+}
+
+void 
+Petfera::listarTratadores(){
+    if(this->capacidade_profissionais <= 0){ 
+        cout << "Ainda não existem profissionais cadastrados!" << endl; 
+    }
+    
+    else{
+        string str_tratador = "Tratador";
+
+        cout << "ID\tNOME\t\tSEXO" << endl;
+        for(int i=0; i < this->capacidade_profissionais; i++){ //talvez ++i
+
+            if (str_tratador.compare(profissionais[i]->get_cargo()) == 0) {
+
+                cout << profissionais[i]->get_id() << "\t" << profissionais[i]->get_nome() << "\t\t" << 
+                profissionais[i]->get_sexo() << "\t" << endl;
+
+            }
+        }
+    }
+}
+
+void Petfera::listarVeterinarios() {
+    
+    if(this->capacidade_profissionais <= 0){ 
+        cout << "Ainda não existem profissionais cadastrados!" << endl; 
+    }
+    
+    else{
+        string str_tratador = "Veterinario";
+
+        cout << "ID\tNOME\t\tSEXO" << endl;
+        for(int i=0; i < this->capacidade_profissionais; i++){ //talvez ++i
+
+            if (str_tratador.compare(profissionais[i]->get_cargo()) == 0) {
+
+                cout << profissionais[i]->get_id() << "\t" << profissionais[i]->get_nome() << "\t\t" << 
+                profissionais[i]->get_sexo() << "\t" << endl;
+
+            }
+        }
+    }
+}
+
