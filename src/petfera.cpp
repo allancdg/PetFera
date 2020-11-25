@@ -14,6 +14,8 @@ void
 Petfera::cadastrarAnimal(){
     bool true_false = false;//Utilizado para toda manipulação booleana [cadastrar]
     int cin_int;            //Utilizado para toda entrada de int variavel [cadastrar]
+    int cin_int_classe;
+    int cin_int_tipo;
     string cin_string;      //Utilizado para toda entrada de string variavel [cadastrar]
     char cin_char;          //Utilizado para toda entrada de char variavel [cadastrar]
     float cin_float;        //Utilizado para toda entrada de float variavel [cadastrar]
@@ -25,232 +27,495 @@ Petfera::cadastrarAnimal(){
         cout << "Anfibio(1)\tAve(2)" << endl << "Mamifero(3)\tReptil(4)" << endl << "=========" << endl;
         cout << "Digite o numero correspondente a classe: ";
         while(true_false == false){
-            cin >> cin_int;
+            cin >> cin_int_classe;
 
-            if( cin_int == 1 ){ Anfibio* novoAnimal = new Anfibio();
-                novoAnimal->set_id(this->count_id_animal++); //ID cadastrado automaticamente (0, 1, 2, ++)
-                novoAnimal->set_classe("Anfibio");
-                true_false = true;
+            if( cin_int_classe == 1 ){
+                cout << "Nativo(1)\tExotico(2)" << endl << "=========" << endl;
+                cout << "Digite o numero correspondente ao tipo: ";
+                while(true_false == false){
+                    cin >> cin_int_tipo;
 
-                // ================================================================ //
+                    if( cin_int_tipo == 1) { AnfibioNativo* novoAnimal = new AnfibioNativo();
+                        novoAnimal->set_id(this->count_id_animal++); //ID cadastrado automaticamente (0, 1, 2, ++)
+                        novoAnimal->set_classe("Anfibio");
+                        true_false = true;
 
-                cout << "Digite um nome (de batismo) para o animal (JOAO_BATISTA): ";
-                cin >> cin_string;
-                novoAnimal->set_nome_batismo(cin_string);
+                        // ================================================================ //
 
-                // ================================================================ //
+                        cout << "Digite um nome (de batismo) para o animal (JOAO_BATISTA): ";
+                        cin >> cin_string;
+                        novoAnimal->set_nome_batismo(cin_string);
 
-                cout << "Digite um nome popular do animal (TUBARAO_BRANCO): ";
-                cin >> cin_string;
-                novoAnimal->set_nome(cin_string);
+                        // ================================================================ //
 
-                // ================================================================ //
+                        cout << "Digite um nome popular do animal (TUBARAO_BRANCO): ";
+                        cin >> cin_string;
+                        novoAnimal->set_nome(cin_string);
 
-                cout << "Digite um nome cientifico do animal (CARCHARODON_CARCHARIAS): ";
-                cin >> cin_string;
-                novoAnimal->set_nome_cientifico(cin_string);
+                        // ================================================================ //
 
-                // ================================================================ //
+                        cout << "Digite um nome cientifico do animal (CARCHARODON_CARCHARIAS): ";
+                        cin >> cin_string;
+                        novoAnimal->set_nome_cientifico(cin_string);
 
-                cout << "Digite a dieta predominante do animal('Carne', 'planta', 'misto'...): ";
-                cin >> cin_string;
-                novoAnimal->set_dieta(cin_string);
+                        // ================================================================ //
 
-                // ================================================================ //
+                        cout << "Digite a dieta predominante do animal('Carne', 'planta', 'misto'...): ";
+                        cin >> cin_string;
+                        novoAnimal->set_dieta(cin_string);
 
-                cout << "Digite o sexo do animal (M / F): ";
-                cin >> cin_char;
-                novoAnimal->set_sexo(cin_char);
+                        // ================================================================ //
 
-                // ================================================================ //
+                        cout << "Digite o sexo do animal (M / F): ";
+                        cin >> cin_char;
+                        novoAnimal->set_sexo(cin_char);
 
-                cout << "Digite o tamanho, em metros, do animal: ";
-                cin >> cin_float;
-                novoAnimal->set_tamanho(cin_float);
+                        // ================================================================ //
 
-                // ================================================================ //
+                        cout << "Digite o tamanho, em metros, do animal: ";
+                        cin >> cin_float;
+                        novoAnimal->set_tamanho(cin_float);
 
-                cout << "Digite a quantidade de mudas de pele estimada do animal (CASO NAO TENHA - '0'): ";
-                cin >> cin_int;
-                novoAnimal->set_totalMudas(cin_int);
+                        // ================================================================ //
 
-                // ================================================================ //
+                        cout << "Digite a quantidade de mudas de pele estimada do animal (CASO NAO TENHA - '0'): ";
+                        cin >> cin_int;
+                        novoAnimal->set_totalMudas(cin_int);
 
-                cout << "Digite a data da ultima muda (xx/yy/zz)(CASO NAO TENHA - '0'): ";
-                cin >> cin_string;
-                novoAnimal->set_dataUltimaMuda(cin_string);
+                        // ================================================================ //
 
-                // ================================================================ //
+                        cout << "Digite a data da ultima muda (xx/yy/zz)(CASO NAO TENHA - '0'): ";
+                        cin >> cin_string;
+                        novoAnimal->set_dataUltimaMuda(cin_string);
 
-                animais[this->capacidade++] = novoAnimal;
+                        // ================================================================ //
+
+                        animais[this->capacidade++] = novoAnimal;
+                    }
+
+                    else if( cin_int_tipo == 2) { AnfibioExotico* novoAnimal = new AnfibioExotico();
+                        novoAnimal->set_id(this->count_id_animal++); //ID cadastrado automaticamente (0, 1, 2, ++)
+                        novoAnimal->set_classe("Anfibio");
+                        true_false = true;
+
+                        // ================================================================ //
+
+                        cout << "Digite um nome (de batismo) para o animal (JOAO_BATISTA): ";
+                        cin >> cin_string;
+                        novoAnimal->set_nome_batismo(cin_string);
+
+                        // ================================================================ //
+
+                        cout << "Digite um nome popular do animal (TUBARAO_BRANCO): ";
+                        cin >> cin_string;
+                        novoAnimal->set_nome(cin_string);
+
+                        // ================================================================ //
+
+                        cout << "Digite um nome cientifico do animal (CARCHARODON_CARCHARIAS): ";
+                        cin >> cin_string;
+                        novoAnimal->set_nome_cientifico(cin_string);
+
+                        // ================================================================ //
+
+                        cout << "Digite a dieta predominante do animal('Carne', 'planta', 'misto'...): ";
+                        cin >> cin_string;
+                        novoAnimal->set_dieta(cin_string);
+
+                        // ================================================================ //
+
+                        cout << "Digite o sexo do animal (M / F): ";
+                        cin >> cin_char;
+                        novoAnimal->set_sexo(cin_char);
+
+                        // ================================================================ //
+
+                        cout << "Digite o tamanho, em metros, do animal: ";
+                        cin >> cin_float;
+                        novoAnimal->set_tamanho(cin_float);
+
+                        // ================================================================ //
+
+                        cout << "Digite a quantidade de mudas de pele estimada do animal (CASO NAO TENHA - '0'): ";
+                        cin >> cin_int;
+                        novoAnimal->set_totalMudas(cin_int);
+
+                        // ================================================================ //
+
+                        cout << "Digite a data da ultima muda (xx/yy/zz)(CASO NAO TENHA - '0'): ";
+                        cin >> cin_string;
+                        novoAnimal->set_dataUltimaMuda(cin_string);
+
+                        // ================================================================ //
+
+                        animais[this->capacidade++] = novoAnimal;
+                    }
+                }
             }
-            else if( cin_int == 2 ){ Ave* novoAnimal = new Ave();
-                    novoAnimal->set_id(this->count_id_animal++); //ID cadastrado automaticamente (0, 1, 2, ++)
-                    novoAnimal->set_classe("Ave");
-                    true_false = true;
 
-                    // ================================================================ //
+            else if( cin_int_classe == 2 ){
+                    cout << "Nativo(1)\tExotico(2)" << endl << "=========" << endl;
+                    cout << "Digite o numero correspondente ao tipo: ";
+                    while(true_false == false){
+                        cin >> cin_int_tipo;
 
-                    cout << "Digite um nome (de batismo) para o animal (JOAO_BATISTA): ";
-                    cin >> cin_string;
-                    novoAnimal->set_nome_batismo(cin_string);
+                        if(cin_int_tipo == 1){AveNativo* novoAnimal = new AveNativo();
+                            novoAnimal->set_id(this->count_id_animal++); //ID cadastrado automaticamente (0, 1, 2, ++)
+                            novoAnimal->set_classe("Ave");
+                            true_false = true;
 
-                    // ================================================================ //
+                            // ================================================================ //
 
-                    cout << "Digite o nome popular do animal (BEM-TI-VI): ";
-                    cin >> cin_string;
-                    novoAnimal->set_nome(cin_string);
+                            cout << "Digite um nome (de batismo) para o animal (JOAO_BATISTA): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome_batismo(cin_string);
 
-                    // ================================================================ //
+                            // ================================================================ //
 
-                    cout << "Digite o nome cientifico do animal (PITANGUS_SULPHURATUS): ";
-                    cin >> cin_string;
-                    novoAnimal->set_nome_cientifico(cin_string);
+                            cout << "Digite o nome popular do animal (BEM-TI-VI): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome(cin_string);
 
-                    // ================================================================ //
+                            // ================================================================ //
 
-                    cout << "Digite a cor da pena do animal: ";
-                    cin >> cin_string;
-                    novoAnimal->set_cor_penas(cin_string);
+                            cout << "Digite o nome cientifico do animal (PITANGUS_SULPHURATUS): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome_cientifico(cin_string);
 
-                    // ================================================================ //
+                            // ================================================================ //
 
-                    cout << "Digite o tamanho do bico (em cm): ";
-                    cin >> cin_int;
-                    novoAnimal->set_tamanho_bico(cin_int);
+                            cout << "Digite a cor da pena do animal: ";
+                            cin >> cin_string;
+                            novoAnimal->set_cor_penas(cin_string);
 
-                    // ================================================================ //
+                            // ================================================================ //
 
-                    cout << "Digite o tamanho das pernas (em cm): ";
-                    cin >> cin_int;
-                    novoAnimal->set_tamanho_pernas(cin_int);
+                            cout << "Digite o tamanho do bico (em cm): ";
+                            cin >> cin_int;
+                            novoAnimal->set_tamanho_bico(cin_int);
 
-                    // ================================================================ //
+                            // ================================================================ //
 
-                    cout << "Digite a dieta predominante do animal ('Carne', 'planta', 'misto'...): ";
-                    cin >> cin_string;
-                    novoAnimal->set_dieta(cin_string);
+                            cout << "Digite o tamanho das pernas (em cm): ";
+                            cin >> cin_int;
+                            novoAnimal->set_tamanho_pernas(cin_int);
 
-                    // ================================================================ //
+                            // ================================================================ //
 
-                    cout << "Digite o sexo do animal (M / F): ";
-                    cin >> cin_char;
-                    novoAnimal->set_sexo(cin_char);
+                            cout << "Digite a dieta predominante do animal ('Carne', 'planta', 'misto'...): ";
+                            cin >> cin_string;
+                            novoAnimal->set_dieta(cin_string);
 
-                    // ================================================================ //
+                            // ================================================================ //
 
-                    cout << "Digite o tamanho, em metros, do animal: ";
-                    cin >> cin_float;
-                    novoAnimal->set_tamanho(cin_float);
+                            cout << "Digite o sexo do animal (M / F): ";
+                            cin >> cin_char;
+                            novoAnimal->set_sexo(cin_char);
 
-                    // ================================================================ //
+                            // ================================================================ //
+
+                            cout << "Digite o tamanho, em metros, do animal: ";
+                            cin >> cin_float;
+                            novoAnimal->set_tamanho(cin_float);
+
+                            // ================================================================ //
 
 
-                    animais[this->capacidade++] = novoAnimal;
+                            animais[this->capacidade++] = novoAnimal;
+                        }
+
+                        else if(cin_int_tipo == 2){AveExotico* novoAnimal = new AveExotico();
+                                novoAnimal->set_id(this->count_id_animal++); //ID cadastrado automaticamente (0, 1, 2, ++)
+                                novoAnimal->set_classe("Ave");
+                                true_false = true;
+
+                                // ================================================================ //
+
+                                cout << "Digite um nome (de batismo) para o animal (JOAO_BATISTA): ";
+                                cin >> cin_string;
+                                novoAnimal->set_nome_batismo(cin_string);
+
+                                // ================================================================ //
+
+                                cout << "Digite o nome popular do animal (BEM-TI-VI): ";
+                                cin >> cin_string;
+                                novoAnimal->set_nome(cin_string);
+
+                                // ================================================================ //
+
+                                cout << "Digite o nome cientifico do animal (PITANGUS_SULPHURATUS): ";
+                                cin >> cin_string;
+                                novoAnimal->set_nome_cientifico(cin_string);
+
+                                // ================================================================ //
+
+                                cout << "Digite a cor da pena do animal: ";
+                                cin >> cin_string;
+                                novoAnimal->set_cor_penas(cin_string);
+
+                                // ================================================================ //
+
+                                cout << "Digite o tamanho do bico (em cm): ";
+                                cin >> cin_int;
+                                novoAnimal->set_tamanho_bico(cin_int);
+
+                                // ================================================================ //
+
+                                cout << "Digite o tamanho das pernas (em cm): ";
+                                cin >> cin_int;
+                                novoAnimal->set_tamanho_pernas(cin_int);
+
+                                // ================================================================ //
+
+                                cout << "Digite a dieta predominante do animal ('Carne', 'planta', 'misto'...): ";
+                                cin >> cin_string;
+                                novoAnimal->set_dieta(cin_string);
+
+                                // ================================================================ //
+
+                                cout << "Digite o sexo do animal (M / F): ";
+                                cin >> cin_char;
+                                novoAnimal->set_sexo(cin_char);
+
+                                // ================================================================ //
+
+                                cout << "Digite o tamanho, em metros, do animal: ";
+                                cin >> cin_float;
+                                novoAnimal->set_tamanho(cin_float);
+
+                                // ================================================================ //
+
+
+                                animais[this->capacidade++] = novoAnimal;
+                            }
+                    }
             }
-            else if( cin_int == 3 ){ Mamifero* novoAnimal = new Mamifero();
-                    novoAnimal->set_id(this->count_id_animal++); //ID cadastrado automaticamente (0, 1, 2, ++)
-                    novoAnimal->set_classe("Mamifero");
-                    true_false = true;
 
-                    // ================================================================ //
+            else if( cin_int_classe == 3 ){
+                    cout << "Nativo(1)\tExotico(2)" << endl << "=========" << endl;
+                    cout << "Digite o numero correspondente ao tipo: ";
+                    while(true_false == false){
+                        cin >> cin_int_tipo;
 
-                    cout << "Digite um nome (de batismo) para o animal (JOAO_BATISTA): ";
-                    cin >> cin_string;
-                    novoAnimal->set_nome_batismo(cin_string);
+                        if(cin_int_tipo == 1){MamiferoNativo* novoAnimal = new MamiferoNativo();
+                            novoAnimal->set_id(this->count_id_animal++); //ID cadastrado automaticamente (0, 1, 2, ++)
+                            novoAnimal->set_classe("Mamifero");
+                            true_false = true;
 
-                    // ================================================================ //
+                            // ================================================================ //
 
-                    cout << "Digite o nome popular do animal (CACHORRO): ";
-                    cin >> cin_string;
-                    novoAnimal->set_nome(cin_string);
+                            cout << "Digite um nome (de batismo) para o animal (JOAO_BATISTA): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome_batismo(cin_string);
 
-                    // ================================================================ //
+                            // ================================================================ //
 
-                    cout << "Digite o nome cientifico do animal (CANIS_LUPUS_FAMILIARIS): ";
-                    cin >> cin_string;
-                    novoAnimal->set_nome_cientifico(cin_string);
+                            cout << "Digite o nome popular do animal (CACHORRO): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome(cin_string);
 
-                    // ================================================================ //
+                            // ================================================================ //
 
-                    cout << "Digite a dieta predominante do animal ('Carne', 'planta', 'misto'...): ";
-                    cin >> cin_string;
-                    novoAnimal->set_dieta(cin_string);
+                            cout << "Digite o nome cientifico do animal (CANIS_LUPUS_FAMILIARIS): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome_cientifico(cin_string);
 
-                    // ================================================================ //
+                            // ================================================================ //
 
-                    cout << "Digite a cor do pelo do animal: ";
-                    cin >> cin_string;
-                    novoAnimal->set_cor_pelo(cin_string);
+                            cout << "Digite a dieta predominante do animal ('Carne', 'planta', 'misto'...): ";
+                            cin >> cin_string;
+                            novoAnimal->set_dieta(cin_string);
 
-                    // ================================================================ //
+                            // ================================================================ //
 
-                    cout << "Digite o sexo do animal (M / F): ";
-                    cin >> cin_char;
-                    novoAnimal->set_sexo(cin_char);
+                            cout << "Digite a cor do pelo do animal: ";
+                            cin >> cin_string;
+                            novoAnimal->set_cor_pelo(cin_string);
 
-                    // ================================================================ //
+                            // ================================================================ //
 
-                    cout << "Digite o tamanho, em metros, do animal: ";
-                    cin >> cin_float;
-                    novoAnimal->set_tamanho(cin_float);
+                            cout << "Digite o sexo do animal (M / F): ";
+                            cin >> cin_char;
+                            novoAnimal->set_sexo(cin_char);
 
-                    // ================================================================ //
+                            // ================================================================ //
 
-                    animais[this->capacidade++] = novoAnimal;
+                            cout << "Digite o tamanho, em metros, do animal: ";
+                            cin >> cin_float;
+                            novoAnimal->set_tamanho(cin_float);
+
+                            // ================================================================ //
+
+                            animais[this->capacidade++] = novoAnimal;
+
+                        }
+
+                        else if(cin_int_tipo == 2){MamiferoExotico* novoAnimal = new MamiferoExotico();
+                            novoAnimal->set_id(this->count_id_animal++); //ID cadastrado automaticamente (0, 1, 2, ++)
+                            novoAnimal->set_classe("Mamifero");
+                            true_false = true;
+
+                            // ================================================================ //
+
+                            cout << "Digite um nome (de batismo) para o animal (JOAO_BATISTA): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome_batismo(cin_string);
+
+                            // ================================================================ //
+
+                            cout << "Digite o nome popular do animal (CACHORRO): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome(cin_string);
+
+                            // ================================================================ //
+
+                            cout << "Digite o nome cientifico do animal (CANIS_LUPUS_FAMILIARIS): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome_cientifico(cin_string);
+
+                            // ================================================================ //
+
+                            cout << "Digite a dieta predominante do animal ('Carne', 'planta', 'misto'...): ";
+                            cin >> cin_string;
+                            novoAnimal->set_dieta(cin_string);
+
+                            // ================================================================ //
+
+                            cout << "Digite a cor do pelo do animal: ";
+                            cin >> cin_string;
+                            novoAnimal->set_cor_pelo(cin_string);
+
+                            // ================================================================ //
+
+                            cout << "Digite o sexo do animal (M / F): ";
+                            cin >> cin_char;
+                            novoAnimal->set_sexo(cin_char);
+
+                            // ================================================================ //
+
+                            cout << "Digite o tamanho, em metros, do animal: ";
+                            cin >> cin_float;
+                            novoAnimal->set_tamanho(cin_float);
+
+                            // ================================================================ //
+
+                            animais[this->capacidade++] = novoAnimal;
+                        }
+                    }
+                }
+
+            else if( cin_int_classe == 4 ){
+                    cout << "Nativo(1)\tExotico(2)" << endl << "=========" << endl;
+                    cout << "Digite o numero correspondente ao tipo: ";
+                    while(true_false == false){
+                        cin >> cin_int_tipo;
+
+                        if(cin_int_tipo == 1){ ReptilNativo* novoAnimal = new ReptilNativo();
+                            novoAnimal->set_id(this->count_id_animal++); //ID cadastrado automaticamente (0, 1, 2, ++)
+                            novoAnimal->set_classe("Reptil");
+                            true_false = true;
+
+                            // ================================================================ //
+
+                            cout << "Digite um nome (de batismo) para o animal (JOAO_BATISTA): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome_batismo(cin_string);
+
+                            // ================================================================ //
+
+                            cout << "Digite o nome popular do animal (JACARE-DE-PAPO-AMARELO): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome(cin_string);
+
+                            // ================================================================ //
+
+                            cout << "Digite o nome cientifico do animal (CAIMAN_LATIROSTRIS): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome_cientifico(cin_string);
+
+                            // ================================================================ //
+
+                            cout << "Digite a dieta predominante do animal ('Carne', 'planta', 'misto'...): ";
+                            cin >> cin_string;
+                            novoAnimal->set_dieta(cin_string);
+
+                            // ================================================================ //
+
+                            cout << "Digite o tipo de pele do animal ('Escamas','Placas_dermicas','Carapacas'...): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome_cientifico(cin_string);
+
+                            // ================================================================ //
+
+                            cout << "Digite o sexo do animal (M / F): ";
+                            cin >> cin_char;
+                            novoAnimal->set_sexo(cin_char);
+
+                            // ================================================================ //
+
+                            cout << "Digite o tamanho, em metros, do animal: ";
+                            cin >> cin_float;
+                            novoAnimal->set_tamanho(cin_float);
+
+                            // ================================================================ //
+
+                            animais[this->capacidade++] = novoAnimal;
+                    }
+
+                    else if(cin_int_tipo == 2){ ReptilExotico* novoAnimal = new ReptilExotico();
+                            novoAnimal->set_id(this->count_id_animal++); //ID cadastrado automaticamente (0, 1, 2, ++)
+                            novoAnimal->set_classe("Reptil");
+                            true_false = true;
+
+                            // ================================================================ //
+
+                            cout << "Digite um nome (de batismo) para o animal (JOAO_BATISTA): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome_batismo(cin_string);
+
+                            // ================================================================ //
+
+                            cout << "Digite o nome popular do animal (JACARE-DE-PAPO-AMARELO): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome(cin_string);
+
+                            // ================================================================ //
+
+                            cout << "Digite o nome cientifico do animal (CAIMAN_LATIROSTRIS): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome_cientifico(cin_string);
+
+                            // ================================================================ //
+
+                            cout << "Digite a dieta predominante do animal ('Carne', 'planta', 'misto'...): ";
+                            cin >> cin_string;
+                            novoAnimal->set_dieta(cin_string);
+
+                            // ================================================================ //
+
+                            cout << "Digite o tipo de pele do animal ('Escamas','Placas_dermicas','Carapacas'...): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome_cientifico(cin_string);
+
+                            // ================================================================ //
+
+                            cout << "Digite o sexo do animal (M / F): ";
+                            cin >> cin_char;
+                            novoAnimal->set_sexo(cin_char);
+
+                            // ================================================================ //
+
+                            cout << "Digite o tamanho, em metros, do animal: ";
+                            cin >> cin_float;
+                            novoAnimal->set_tamanho(cin_float);
+
+                            // ================================================================ //
+
+                            animais[this->capacidade++] = novoAnimal;
+                        }
+                    }
+                }
             }
-            else if( cin_int == 4 ){ Reptil* novoAnimal = new Reptil();
-                    novoAnimal->set_id(this->count_id_animal++); //ID cadastrado automaticamente (0, 1, 2, ++)
-                    novoAnimal->set_classe("Reptil");
-                    true_false = true;
-
-                    // ================================================================ //
-
-                    cout << "Digite um nome (de batismo) para o animal (JOAO_BATISTA): ";
-                    cin >> cin_string;
-                    novoAnimal->set_nome_batismo(cin_string);
-
-                    // ================================================================ //
-
-                    cout << "Digite o nome popular do animal (JACARE-DE-PAPO-AMARELO): ";
-                    cin >> cin_string;
-                    novoAnimal->set_nome(cin_string);
-
-                    // ================================================================ //
-
-                    cout << "Digite o nome cientifico do animal (CAIMAN_LATIROSTRIS): ";
-                    cin >> cin_string;
-                    novoAnimal->set_nome_cientifico(cin_string);
-
-                    // ================================================================ //
-
-                    cout << "Digite a dieta predominante do animal ('Carne', 'planta', 'misto'...): ";
-                    cin >> cin_string;
-                    novoAnimal->set_dieta(cin_string);
-
-                    // ================================================================ //
-
-                    cout << "Digite o tipo de pele do animal ('Escamas','Placas_dermicas','Carapacas'...): ";
-                    cin >> cin_string;
-                    novoAnimal->set_nome_cientifico(cin_string);
-
-                    // ================================================================ //
-
-                    cout << "Digite o sexo do animal (M / F): ";
-                    cin >> cin_char;
-                    novoAnimal->set_sexo(cin_char);
-
-                    // ================================================================ //
-
-                    cout << "Digite o tamanho, em metros, do animal: ";
-                    cin >> cin_float;
-                    novoAnimal->set_tamanho(cin_float);
-
-                    // ================================================================ //
-
-                    animais[this->capacidade++] = novoAnimal;
-            }
-        }
     }
     else{ cout << "Você não pode cadastrar mais animais. Capacidade esgotada! "; }
 }
@@ -381,25 +646,25 @@ Petfera::listarTodosAnimais(){
 
 void
 Petfera::listarTodosProfissionais(){
-    if(this->capacidade_profissionais <= 0){ 
-        cout << "Ainda não existem profissionais cadastrados!" << endl; 
+    if(this->capacidade_profissionais <= 0){
+        cout << "Ainda não existem profissionais cadastrados!" << endl;
     }
-    
+
     else{
         cout << "ID\tNOME\t\tSEXO" << endl;
         for(int i=0; i < this->capacidade_profissionais; i++){ //talvez ++i
-            cout << profissionais[i]->get_id() << "\t" << profissionais[i]->get_nome() << "\t\t" << 
+            cout << profissionais[i]->get_id() << "\t" << profissionais[i]->get_nome() << "\t\t" <<
                 profissionais[i]->get_sexo() << "\t" << endl;
         }
     }
 }
 
-void 
+void
 Petfera::listarTratadores(){
-    if(this->capacidade_profissionais <= 0){ 
-        cout << "Ainda não existem profissionais cadastrados!" << endl; 
+    if(this->capacidade_profissionais <= 0){
+        cout << "Ainda não existem profissionais cadastrados!" << endl;
     }
-    
+
     else{
         string str_tratador = "Tratador";
 
@@ -408,7 +673,7 @@ Petfera::listarTratadores(){
 
             if (str_tratador.compare(profissionais[i]->get_cargo()) == 0) {
 
-                cout << profissionais[i]->get_id() << "\t" << profissionais[i]->get_nome() << "\t\t" << 
+                cout << profissionais[i]->get_id() << "\t" << profissionais[i]->get_nome() << "\t\t" <<
                 profissionais[i]->get_sexo() << "\t" << endl;
 
             }
@@ -417,11 +682,11 @@ Petfera::listarTratadores(){
 }
 
 void Petfera::listarVeterinarios() {
-    
-    if(this->capacidade_profissionais <= 0){ 
-        cout << "Ainda não existem profissionais cadastrados!" << endl; 
+
+    if(this->capacidade_profissionais <= 0){
+        cout << "Ainda não existem profissionais cadastrados!" << endl;
     }
-    
+
     else{
         string str_tratador = "Veterinario";
 
@@ -430,7 +695,7 @@ void Petfera::listarVeterinarios() {
 
             if (str_tratador.compare(profissionais[i]->get_cargo()) == 0) {
 
-                cout << profissionais[i]->get_id() << "\t" << profissionais[i]->get_nome() << "\t\t" << 
+                cout << profissionais[i]->get_id() << "\t" << profissionais[i]->get_nome() << "\t\t" <<
                 profissionais[i]->get_sexo() << "\t" << endl;
 
             }
