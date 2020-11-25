@@ -33,7 +33,13 @@ public:
     void cadastrarProfissional();
     void removerAnimal();
     void listarTodosAnimais();
+    void listarAnfibios();
+    void listarAves();
+    void listarMamiferos();
+    void listarRepteis();
     void listarTodosProfissionais();
+    void listarTratadores();
+    void listarVeterinarios();
 
 
 private:
