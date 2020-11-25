@@ -4,14 +4,10 @@
 
 using namespace std;
 
-void pausar() {
-#if defined _WIN32
-    system("pause");
-#elif defined (__LINUX__) || defined(__gnu_linux__) || defined(__linux__)
-    system("read -n 1 -s -p \"Pressione qualquer tecla para continuar...\"");
-#elif defined (__APPLE__)
-    system("read -n 1 -s -p \"Pressione qualquer tecla para continuar...\"");
-#endif
+void pausar(){
+    cout << "Pressione qualquer tecla para continuar ...";
+    cin.get();
+    cin.ignore();
 }
 void limpaTela(){
 #if defined _WIN32
@@ -72,47 +68,6 @@ void menuTerciarioListagemAnimal(Petfera* petfera) {
 	} while (opcaoListagemAnimal != 'X' && opcaoListagemAnimal !='x');
 }
 
-void menuTerciarioListagemProfissional(Petfera* petfera) {
-    char opc;
-	limpaTela();
-	do {
-		cout<< endl << "MENU DE LISTAGEM PROFISSIONAL: ";
-		cout<< endl << "========";
-		cout<< endl << "T - TODOS.";
-		cout<< endl << "V - VETERINARIO.";
-		cout<< endl << "D - TRATADOR.";
-		cout<< endl << "---------";
-		cout<< endl << endl << "X - Voltar ao menu anterior.";
-
-		cout<< endl << endl << "Selecione a opcao: ";
-		cin >> opc;
-
-		limpaTela();
-
-		switch(opc)
-		{
-			case 'T' :
-			case 't' :{ petfera->listarTodosProfissionais(); }
-			break;
-			case 'V' :
-			case 'v' :{ petfera->listarVeterinarios();}
-			break;
-			case 'D' :
-			case 'd' :{ petfera->listarTratadores(); }
-			break;
-            case 'X' :
-			case 'x' :{ return;}
-			break;
-			default : cout << endl << "Opcao invalida!";
-		}
-		cout << endl;
-
-        pausar();
-		limpaTela();
-
-	} while (opc != 'X' && opc !='x');
-}
-
 void menuSecundarioListagem(Petfera* petfera) {
     char opcaoListagem;
 	limpaTela();
@@ -135,7 +90,7 @@ void menuSecundarioListagem(Petfera* petfera) {
 			case 'a' :{ menuTerciarioListagemAnimal(petfera); }
 			break;
 			case 'P' :
-			case 'p' :{ menuTerciarioListagemProfissional(petfera); }
+			case 'p' :{ cout << "EM CONSTRUCAO!";}
 			break;
             case 'X' :
 			case 'x' :{ return;}
