@@ -664,42 +664,50 @@ Petfera::listarTratadores(){
     if(this->capacidade_profissionais <= 0){
         cout << "Ainda não existem profissionais cadastrados!" << endl;
     }
-
+   
     else{
         string str_tratador = "Tratador";
 
-        cout << "ID\tNOME\t\tSEXO" << endl;
+        cout << "ID\tNOME\t\tSEXO\tNIVEL SEGURANCA" << endl;
         for(int i=0; i < this->capacidade_profissionais; i++){ //talvez ++i
 
             if (str_tratador.compare(profissionais[i]->get_cargo()) == 0) {
+               
+                // Downcasting para visualização de dados que são somente da classe Tratador
+                Tratador* trat = static_cast<Tratador*> (profissionais[i]);
 
-                cout << profissionais[i]->get_id() << "\t" << profissionais[i]->get_nome() << "\t\t" <<
-                profissionais[i]->get_sexo() << "\t" << endl;
+                cout << trat->get_id() << "\t" << trat->get_nome() << "\t\t" <<
+                trat->get_sexo() << "\t" << trat->get_nivel_seguranca() << endl;
 
             }
+           
         }
     }
 }
 
 void Petfera::listarVeterinarios() {
-
+   
     if(this->capacidade_profissionais <= 0){
         cout << "Ainda não existem profissionais cadastrados!" << endl;
     }
-
+   
     else{
         string str_tratador = "Veterinario";
 
-        cout << "ID\tNOME\t\tSEXO" << endl;
+        cout << "ID\tNOME\t\tSEXO\tCRMV" << endl;
         for(int i=0; i < this->capacidade_profissionais; i++){ //talvez ++i
 
             if (str_tratador.compare(profissionais[i]->get_cargo()) == 0) {
+               
+                // Downcasting para visualização de dados que são somente da classe Veterinário
+                Veterinario* vet = static_cast<Veterinario*> (profissionais[i]);
 
-                cout << profissionais[i]->get_id() << "\t" << profissionais[i]->get_nome() << "\t\t" <<
-                profissionais[i]->get_sexo() << "\t" << endl;
+                cout << vet->get_id() << "\t" << vet->get_nome() << "\t\t" <<
+                vet->get_sexo() << "\t" << vet->get_crmv() << endl;
 
             }
         }
     }
 }
+
 
