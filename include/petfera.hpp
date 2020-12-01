@@ -41,7 +41,6 @@ public:
     void listarTratadores();
     void listarVeterinarios();
 
-
 private:
     Animal* animais[CAPACIDADE_MAX];
     Pessoa* profissionais[CAPACIDADE_MAX_PROFISSIONAIS];
