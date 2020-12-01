@@ -6,7 +6,7 @@ PROG = $(BIN)/programa
 CC = g++
 CPPFLAGS = -Wall -std=c++11 -I./include
 
-OBJS = $(BIN)/main.o $(BIN)/petfera.o $(BIN)/pessoa.o $(BIN)/tratador.o $(BIN)/veterinario.o $(BIN)/animal.o $(BIN)/reptil.o $(BIN)/mamifero.o $(BIN)/ave.o $(BIN)/anfibio.o
+OBJS = $(BIN)/main.o $(BIN)/petfera.o $(BIN)/pessoa.o $(BIN)/tratador.o $(BIN)/veterinario.o $(BIN)/animal.o $(BIN)/reptil.o $(BIN)/mamifero.o $(BIN)/ave.o $(BIN)/anfibio.o $(BIN)/reptilnativo.o $(BIN)/reptilexotico.o $(BIN)/mamiferonativo.o $(BIN)/mamiferoexotico.o $(BIN)/avenativo.o $(BIN)/aveexotico.o $(BIN)/anfibionativo.o $(BIN)/anfibioexotico.o
 
 all : $(OBJS)
 	$(CC) $(OBJS) -o $(PROG)
