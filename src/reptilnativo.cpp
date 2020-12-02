@@ -8,3 +8,11 @@ ReptilNativo::ReptilNativo(int id, string nome_batismo, string nome, string nome
                    Nativo(estado_origem){}
 
 ReptilNativo::~ReptilNativo(){}
+
+ostream& operator<< (ostream &o, ReptilNativo &rn){
+    o << setfill('.') << setw(5) << rn.get_id()
+      << setfill('.') << setw(20) << rn.get_nome()
+      << setfill('.') << setw(5) << rn.get_sexo()
+      << setfill('.') << setw(10) << rn.get_classe();
+    return o;
+}

@@ -9,3 +9,11 @@ AnfibioExotico::AnfibioExotico(int id, string nome_batismo, string nome, string 
                    Exotico(extincao, autorizacao_ibama, pais_origem){}
 
 AnfibioExotico::~AnfibioExotico(){}
+
+ostream& operator<< (ostream &o, AnfibioExotico &ae){
+    o << setfill('.') << setw(5) << ae.get_id()
+      << setfill('.') << setw(20) << ae.get_nome()
+      << setfill('.') << setw(5) << ae.get_sexo()
+      << setfill('.') << setw(10) << ae.get_classe();
+    return o;
+}

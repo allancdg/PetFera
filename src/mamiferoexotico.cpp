@@ -8,3 +8,11 @@ MamiferoExotico::MamiferoExotico(int id, string nome_batismo, string nome, strin
                     Exotico(extincao, autorizacao_ibama, pais_origem){}
 
 MamiferoExotico::~MamiferoExotico(){}
+
+ostream& operator<< (ostream &o, MamiferoExotico &me){
+    o << setfill('.') << setw(5) << me.get_id()
+      << setfill('.') << setw(20) << me.get_nome()
+      << setfill('.') << setw(5) << me.get_sexo()
+      << setfill('.') << setw(10) << me.get_classe();
+    return o;
+}

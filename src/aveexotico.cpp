@@ -11,3 +11,10 @@ AveExotico::AveExotico(int id, string nome_batismo, string nome, string nome_cie
 
 AveExotico::~AveExotico(){}
 
+ostream& operator<< (ostream &o, AveExotico &ave){
+    o << setfill('.') << setw(5) << ave.get_id()
+      << setfill('.') << setw(20) << ave.get_nome()
+      << setfill('.') << setw(5) << ave.get_sexo()
+      << setfill('.') << setw(10) << ave.get_classe();
+    return o;
+}

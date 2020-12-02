@@ -8,3 +8,11 @@ AnfibioNativo::AnfibioNativo(int id, string nome_batismo, string nome, string no
                    Nativo(estado_origem){}
 
 AnfibioNativo::~AnfibioNativo(){}
+
+ostream& operator<< (ostream &o, AnfibioNativo &an){
+    o << setfill('.') << setw(5) << an.get_id()
+      << setfill('.') << setw(20) << an.get_nome()
+      << setfill('.') << setw(5) << an.get_sexo()
+      << setfill('.') << setw(10) << an.get_classe();
+    return o;
+}
