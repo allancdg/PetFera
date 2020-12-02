@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <iomanip>
 #include "reptil.hpp"
 #include "nativo.hpp"
 
@@ -14,4 +15,6 @@ public:
                string estado_origem);
 
     ~ReptilNativo();
+
+    friend ostream& operator<< (ostream &o, ReptilNativo &rn);
 };

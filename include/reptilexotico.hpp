@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <iomanip>
 #include "reptil.hpp"
 #include "exotico.hpp"
 
@@ -14,4 +15,6 @@ public:
                char extincao, char autorizacao_ibama, string pais_origem);
 
     ~ReptilExotico();
+
+    friend ostream& operator<< (ostream &o, ReptilExotico &re);
 };
