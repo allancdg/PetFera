@@ -36,6 +36,12 @@ Animal::get_sexo() const{ return this->sexo; }
 float
 Animal::get_tamanho() const{ return this->tamanho; }
 
+Veterinario* 
+Animal::get_veterinario() const{ return this->veterinario; }
+    
+Tratador* 
+Animal::get_tratador() const { return this->tratador; } 
+
 //Setters
 void
 Animal::set_id( int id ){ this->id = id; }
@@ -60,3 +66,9 @@ Animal::set_sexo( char sexo ){ this->sexo = sexo; }
 
 void
 Animal::set_tamanho( float tamanho){ this->tamanho = tamanho; }
+
+void 
+Animal::set_veterinario(Veterinario* veterinario) { this->veterinario = veterinario; }
+
+void 
+Animal::set_tratador(Tratador* tratador) { this->tratador = tratador; }

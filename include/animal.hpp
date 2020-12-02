@@ -1,10 +1,13 @@
-#pragma once        //Função semelhante ao Define, c++11
+#pragma once        //Funï¿½ï¿½o semelhante ao Define, c++11
+
+#include "veterinario.hpp"
+#include "tratador.hpp"
 
 #include <iostream>
 
 using namespace std;
 
-class Animal{               //Criação da classe Animal (Geral à todas as familias de animais);
+class Animal{               //Criaï¿½ï¿½o da classe Animal (Geral ï¿½ todas as familias de animais);
 public:
     Animal();
     Animal(int id, string nome_batismo, string nome, string nome_cientifico, string classe, string dieta,
@@ -20,6 +23,8 @@ public:
     string get_dieta() const;
     char get_sexo() const;
     float get_tamanho() const;
+    Veterinario* get_veterinario() const;
+    Tratador* get_tratador() const; 
 
     //Setters
     void set_id( int id );
@@ -30,17 +35,21 @@ public:
     void set_dieta(string dieta);
 	void set_sexo( char sexo );
 	void set_tamanho( float tamanho);
+    void set_veterinario(Veterinario* veterinario);
+    void set_tratador(Tratador* tratador);
 
 
 protected:
-    int id;                 // Código identificador do animal no PetFera;
-    string nome_batismo;    // Nome dado ao animal no momento do cadastro; "Rex"
-    string nome;            // Nome como o animal é conhecido popularmente; "Jararaca";
-    string nome_cientifico; // Nome como o animal é conhecido cientificamente;
-    string classe;          // Classe do animal; "Amphibia, Reptilia, Aves ou Mammalithis"
-    string dieta;           // Dieta predominante do animal
-    char sexo;              // Macho, fêmea;
-    float tamanho;          // Tamanho do animal, em metros, ao ser cadastrado no PetFera
+    int id;                     // Cï¿½digo identificador do animal no PetFera;
+    string nome_batismo;        // Nome dado ao animal no momento do cadastro; "Rex"
+    string nome;                // Nome como o animal ï¿½ conhecido popularmente; "Jararaca";
+    string nome_cientifico;     // Nome como o animal ï¿½ conhecido cientificamente;
+    string classe;              // Classe do animal; "Amphibia, Reptilia, Aves ou Mammalithis"
+    string dieta;               // Dieta predominante do animal
+    char sexo;                  // Macho, fï¿½mea;
+    float tamanho;              // Tamanho do animal, em metros, ao ser cadastrado no PetFera
+    Veterinario* veterinario;   // Veterinario designado para cuidar do animal
+    Tratador* tratador;         // Tratador designado para cuidados diÃ¡rios
 
     //FALTANDO ADICIONAR VETERINARIO E TRATADOR
 };
