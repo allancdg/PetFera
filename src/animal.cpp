@@ -11,6 +11,16 @@ Animal::Animal(int id, string nome_batismo, string nome, string nome_cientifico,
                dieta(dieta), sexo(sexo), tamanho(tamanho){}
 Animal::~Animal(){}
 
+ostream& operator<< (ostream &o, Animal &ani){
+    o << setfill(' ') << left<< setw(8) << ani.get_id()
+      << setfill(' ') << left << setw(24) << ani.get_nome()
+      << setfill(' ') << left << setw(8) << ani.get_sexo()
+      << setfill('1') << left << setw(10) << ani.get_classe();
+      /*<< setfill('2') << left << setw(10) << ani.get_veterinario()
+      << setfill('3') << left << setw(10) << ani.get_tratador();*/
+    return o;
+}
+
 //Getters
 int
 Animal::get_id() const{ return this->id; }
@@ -36,11 +46,11 @@ Animal::get_sexo() const{ return this->sexo; }
 float
 Animal::get_tamanho() const{ return this->tamanho; }
 
-Veterinario* 
+Veterinario*
 Animal::get_veterinario() const{ return this->veterinario; }
-    
-Tratador* 
-Animal::get_tratador() const { return this->tratador; } 
+
+Tratador*
+Animal::get_tratador() const { return this->tratador; }
 
 //Setters
 void
@@ -67,8 +77,8 @@ Animal::set_sexo( char sexo ){ this->sexo = sexo; }
 void
 Animal::set_tamanho( float tamanho){ this->tamanho = tamanho; }
 
-void 
+void
 Animal::set_veterinario(Veterinario* veterinario) { this->veterinario = veterinario; }
 
-void 
+void
 Animal::set_tratador(Tratador* tratador) { this->tratador = tratador; }
