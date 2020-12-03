@@ -4,6 +4,7 @@
 #include "tratador.hpp"
 
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -13,6 +14,8 @@ public:
     Animal(int id, string nome_batismo, string nome, string nome_cientifico, string classe, string dieta,
                char sexo, float tamanho);
     ~Animal();
+
+    friend ostream& operator<< (ostream &o, Animal &ani);
 
     //Getters
     int get_id() const;
@@ -24,7 +27,7 @@ public:
     char get_sexo() const;
     float get_tamanho() const;
     Veterinario* get_veterinario() const;
-    Tratador* get_tratador() const; 
+    Tratador* get_tratador() const;
 
     //Setters
     void set_id( int id );
