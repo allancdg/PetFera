@@ -111,7 +111,7 @@ Petfera::cadastrarAnimal(){
                         cout << "Digite o id correspondente ao veterinário: ";
                         cin >> cin_int;
                         Veterinario* vet = buscaVeterinarioPorId(cin_int);
-                        
+
                         if(vet){
                             novoAnimal->set_veterinario(vet);
                         }
@@ -124,7 +124,7 @@ Petfera::cadastrarAnimal(){
                         cout << "Digite o id correspondente ao tratador: ";
                         cin >> cin_int;
                         Tratador* tratador = buscaTratadorPorId(cin_int);
-                        
+
                         if(tratador){
                             novoAnimal->set_tratador(tratador);
                         }
@@ -223,7 +223,7 @@ Petfera::cadastrarAnimal(){
                         cout << "Digite o id correspondente ao veterinário: ";
                         cin >> cin_int;
                         Veterinario* vet = buscaVeterinarioPorId(cin_int);
-                        
+
                         if(vet){
                             novoAnimal->set_veterinario(vet);
                         }
@@ -236,7 +236,7 @@ Petfera::cadastrarAnimal(){
                         cout << "Digite o id correspondente ao tratador: ";
                         cin >> cin_int;
                         Tratador* tratador = buscaTratadorPorId(cin_int);
-                        
+
                         if(tratador){
                             novoAnimal->set_tratador(tratador);
                         }
@@ -329,7 +329,7 @@ Petfera::cadastrarAnimal(){
 
                             // ================================================================ //
 
-                            
+
 
                             animais[this->capacidade++] = novoAnimal;
                         }
@@ -431,7 +431,7 @@ Petfera::cadastrarAnimal(){
                                 cout << "Digite o id correspondente ao veterinário: ";
                                 cin >> cin_int;
                                 Veterinario* vet = buscaVeterinarioPorId(cin_int);
-                                
+
                                 if(vet){
                                     novoAnimal->set_veterinario(vet);
                                 }
@@ -444,7 +444,7 @@ Petfera::cadastrarAnimal(){
                                 cout << "Digite o id correspondente ao tratador: ";
                                 cin >> cin_int;
                                 Tratador* tratador = buscaTratadorPorId(cin_int);
-                                
+
                                 if(tratador){
                                     novoAnimal->set_tratador(tratador);
                                 }
@@ -529,7 +529,7 @@ Petfera::cadastrarAnimal(){
                             cout << "Digite o id correspondente ao veterinário: ";
                             cin >> cin_int;
                             Veterinario* vet = buscaVeterinarioPorId(cin_int);
-                            
+
                             if(vet){
                                 novoAnimal->set_veterinario(vet);
                             }
@@ -542,7 +542,7 @@ Petfera::cadastrarAnimal(){
                             cout << "Digite o id correspondente ao tratador: ";
                             cin >> cin_int;
                             Tratador* tratador = buscaTratadorPorId(cin_int);
-                            
+
                             if(tratador){
                                 novoAnimal->set_tratador(tratador);
                             }
@@ -634,7 +634,7 @@ Petfera::cadastrarAnimal(){
                             cout << "Digite o id correspondente ao veterinário: ";
                             cin >> cin_int;
                             Veterinario* vet = buscaVeterinarioPorId(cin_int);
-                            
+
                             if(vet){
                                 novoAnimal->set_veterinario(vet);
                             }
@@ -647,7 +647,7 @@ Petfera::cadastrarAnimal(){
                             cout << "Digite o id correspondente ao tratador: ";
                             cin >> cin_int;
                             Tratador* tratador = buscaTratadorPorId(cin_int);
-                            
+
                             if(tratador){
                                 novoAnimal->set_tratador(tratador);
                             }
@@ -732,7 +732,7 @@ Petfera::cadastrarAnimal(){
                             cout << "Digite o id correspondente ao veterinário: ";
                             cin >> cin_int;
                             Veterinario* vet = buscaVeterinarioPorId(cin_int);
-                            
+
                             if(vet){
                                 novoAnimal->set_veterinario(vet);
                             }
@@ -745,7 +745,7 @@ Petfera::cadastrarAnimal(){
                             cout << "Digite o id correspondente ao tratador: ";
                             cin >> cin_int;
                             Tratador* tratador = buscaTratadorPorId(cin_int);
-                            
+
                             if(tratador){
                                 novoAnimal->set_tratador(tratador);
                             }
@@ -836,7 +836,7 @@ Petfera::cadastrarAnimal(){
                             cout << "Digite o id correspondente ao veterinário: ";
                             cin >> cin_int;
                             Veterinario* vet = buscaVeterinarioPorId(cin_int);
-                            
+
                             if(vet){
                                 novoAnimal->set_veterinario(vet);
                             }
@@ -849,7 +849,7 @@ Petfera::cadastrarAnimal(){
                             cout << "Digite o id correspondente ao tratador: ";
                             cin >> cin_int;
                             Tratador* tratador = buscaTratadorPorId(cin_int);
-                            
+
                             if(tratador){
                                 novoAnimal->set_tratador(tratador);
                             }
@@ -979,10 +979,9 @@ void
 Petfera::listarTodosAnimais(){
     if(this->capacidade <= 0){ cout << "Nao tem nenhum animal cadastrado!" << endl; }
     else{
-        cout << "ID\tNOME\t\tSEXO\tCLASSE" << endl;
+        cout << "ID\tNOME\t\t\tSEXO\tCLASSE\t\tVETERINARIO\t\tTRATADOR" << endl;
         for(int i=0; i < this->capacidade; i++){
-            cout << animais[i]->get_id() << "\t" << animais[i]->get_nome() << "\t\t" << animais[i]->get_sexo()
-                    << "\t" << animais[i]->get_classe() << endl;
+            cout << *animais[i] << endl; //cout utilizando sobrecarga de operadores
         }
     }
 }
@@ -991,13 +990,10 @@ void
 Petfera::listarAnfibios(){
     if(this->capacidade <= 0){ cout << "Nao tem nenhum animal cadastrado!" << endl; }
     else{
-        cout << "ID\tNOME\t\tSEXO\tCLASSE\t\tVETERINARIO\t\tTRATADOR" << endl;
+        cout << "ID\tNOME\t\t\tSEXO\tCLASSE\t\tVETERINARIO\t\tTRATADOR" << endl;
         for(int i=0; i < this->capacidade; i++){
             if(animais[i]->get_classe() == "Anfibio"){
-                cout << animais[i]->get_id() << "\t" << animais[i]->get_nome() << "\t\t" << animais[i]->get_sexo()
-                    << "\t" << animais[i]->get_classe() 
-                    << "\t\t" << animais[i]->get_veterinario()->get_nome() 
-                    << "\t\t" << animais[i]->get_tratador()->get_nome() << endl;
+                cout << *animais[i] << endl; //cout utilizando sobrecarga de operadores
             }
         }
     }
@@ -1007,43 +1003,36 @@ void
 Petfera::listarAves(){
     if(this->capacidade <= 0){ cout << "Nao tem nenhum animal cadastrado!" << endl; }
     else{
-        cout << "ID\tNOME\t\tSEXO\tCLASSE\t\tVETERINARIO\t\tTRATADOR" << endl;
+        cout << "ID\tNOME\t\t\tSEXO\tCLASSE\t\tVETERINARIO\t\tTRATADOR" << endl;
         for(int i=0; i < this->capacidade; i++){
             if(animais[i]->get_classe() == "Ave"){
-                cout << animais[i]->get_id() << "\t" << animais[i]->get_nome() << "\t\t" << animais[i]->get_sexo()
-                    << "\t" << animais[i]->get_classe() << endl
-                    << "\t\t" << animais[i]->get_veterinario()->get_nome() 
-                    << "\t\t" << animais[i]->get_tratador()->get_nome() << endl;
+                cout << *animais[i] << endl; //cout utilizando sobrecarga de operadores
             }
         }
     }
 }
+
 void
 Petfera::listarMamiferos(){
     if(this->capacidade <= 0){ cout << "Nao tem nenhum animal cadastrado!" << endl; }
     else{
-        cout << "ID\tNOME\t\tSEXO\tCLASSE\t\tVETERINARIO\t\tTRATADOR" << endl;
+        cout << "ID\tNOME\t\t\tSEXO\tCLASSE\t\tVETERINARIO\t\tTRATADOR" << endl;
         for(int i=0; i < this->capacidade; i++){
             if(animais[i]->get_classe() == "Mamifero"){
-                cout << animais[i]->get_id() << "\t" << animais[i]->get_nome() << "\t\t" << animais[i]->get_sexo()
-                    << "\t" << animais[i]->get_classe() << endl
-                    << "\t\t" << animais[i]->get_veterinario()->get_nome() 
-                    << "\t\t" << animais[i]->get_tratador()->get_nome() << endl;
+                cout << *animais[i] << endl; //cout utilizando sobrecarga de operadores
             }
         }
     }
 }
+
 void
 Petfera::listarRepteis(){
     if(this->capacidade <= 0){ cout << "Nao tem nenhum animal cadastrado!" << endl; }
     else{
-        cout << "ID\tNOME\t\tSEXO\tCLASSE" << endl;
+        cout << "ID\tNOME\t\t\tSEXO\tCLASSE\t\tVETERINARIO\t\tTRATADOR" << endl;
         for(int i=0; i < this->capacidade; i++){
             if(animais[i]->get_classe() == "Reptil"){
-                cout << animais[i]->get_id() << "\t" << animais[i]->get_nome() << "\t\t" << animais[i]->get_sexo()
-                    << "\t" << animais[i]->get_classe() << endl                    
-                    << "\t\t" << animais[i]->get_veterinario()->get_nome() 
-                    << "\t\t" << animais[i]->get_tratador()->get_nome() << endl;
+                cout << *animais[i] << endl; //cout utilizando sobrecarga de operadores
             }
         }
     }
@@ -1116,7 +1105,7 @@ void Petfera::listarVeterinarios() {
     }
 }
 
-Veterinario* 
+Veterinario*
 Petfera::buscaVeterinarioPorId(int id){
     Veterinario* vet = nullptr;
 
@@ -1135,11 +1124,11 @@ Petfera::buscaVeterinarioPorId(int id){
             }
         }
     }
-    
+
     return vet;
 }
 
-Tratador* 
+Tratador*
 Petfera::buscaTratadorPorId(int id){
     Tratador* tratador = nullptr;
 
@@ -1158,7 +1147,7 @@ Petfera::buscaTratadorPorId(int id){
             }
         }
     }
-    
+
     return tratador;
 }
 
