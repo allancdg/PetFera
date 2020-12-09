@@ -14,5 +14,5 @@ public:
                char sexo, float tamanho, string cor_pelo, char extincao, char autorizacao_ibama, string pais_origem);
     ~MamiferoExotico();
 
-    friend ostream& operator<< (ostream &o, MamiferoExotico &me);
+    void cadastrarMamiferoExotico();
 };

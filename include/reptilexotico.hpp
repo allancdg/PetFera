@@ -16,5 +16,5 @@ public:
 
     ~ReptilExotico();
 
-    friend ostream& operator<< (ostream &o, ReptilExotico &re);
+    void cadastrarReptilExotico();
 };

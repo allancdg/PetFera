@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <istream>
 
 using namespace std;
 
@@ -15,7 +16,8 @@ public:
                char sexo, float tamanho);
     ~Animal();
 
-    friend ostream& operator<< (ostream &o, Animal &ani);
+    friend ostream& operator<< (ostream &o, Animal &animal);
+    friend istream& operator>> (istream &i, Animal &animal);
 
     //Getters
     int get_id() const;
@@ -53,6 +55,4 @@ protected:
     float tamanho;              // Tamanho do animal, em metros, ao ser cadastrado no PetFera
     Veterinario* veterinario;   // Veterinario designado para cuidar do animal
     Tratador* tratador;         // Tratador designado para cuidados diários
-
-    //FALTANDO ADICIONAR VETERINARIO E TRATADOR
 };

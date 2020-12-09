@@ -20,6 +20,11 @@ public:
     //Destrutor padrão
     ~Ave();
 
+    //Getters
+    int get_tamanho_bico() const;
+    int get_tamanho_pernas() const;
+    string get_cor_penas() const;
+
     //Setters
     void set_tamanho_bico(int tamanho_bico);
     void set_tamanho_pernas(int tamanho_pernas);

@@ -15,6 +15,5 @@ public:
                char extincao, char autorizacao_ibama, string pais_origem);
 
     ~AnfibioExotico();
-
-    friend ostream& operator<< (ostream &o, AnfibioExotico &ae);
+    void cadastrarAnfibioExotico();
 };

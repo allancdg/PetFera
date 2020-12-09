@@ -14,5 +14,5 @@ public:
                char sexo, float tamanho, string cor_pelo, string estado_origem);
     ~MamiferoNativo();
 
-    friend ostream& operator<< (ostream &o, MamiferoNativo &mn);
+    void cadastrarMamiferoNativo();
 };

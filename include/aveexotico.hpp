@@ -16,5 +16,5 @@ public:
 
     ~AveExotico();
 
-    friend ostream& operator<< (ostream &o, AveExotico &ave);
+    void cadastrarAveExotico();
 };

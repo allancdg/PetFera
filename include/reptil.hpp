@@ -20,7 +20,11 @@ public:
     //Destrutor padrão
     ~Reptil();
 
+    //Getters
+    int get_total_mudas() const;
+    string get_data_ultima_muda() const;
+
     //Setters
-    void set_totalMudas(int total_mudas);
-    void set_dataUltimaMuda(string data_ultima_muda);
+    void set_total_mudas(int total_mudas);
+    void set_data_ultima_muda(string data_ultima_muda);
 };

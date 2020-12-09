@@ -1,6 +1,7 @@
 #pragma once        //Funcao semelhante ao Define, c++11
 
 #include <iostream>
+#include <fstream>
 #define CAPACIDADE_MAX 10
 #define CAPACIDADE_MAX_PROFISSIONAIS 5
 #include "animal.hpp"
@@ -40,6 +41,8 @@ public:
     void listarTodosProfissionais();
     void listarTratadores();
     void listarVeterinarios();
+    void lerAnimais();
+    void escreverAnimais();
 
     Veterinario* buscaVeterinarioPorId(int id);
     Tratador* buscaTratadorPorId(int id);
