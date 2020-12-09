@@ -19,6 +19,8 @@ public:
     //Destrutor padrão
     ~Anfibio();
 
+    void cadastrarAnfibio();
+
     //Getters
     int get_total_mudas() const;
     string get_data_ultima_muda() const;

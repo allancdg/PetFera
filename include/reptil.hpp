@@ -20,6 +20,8 @@ public:
     //Destrutor padrão
     ~Reptil();
 
+    void cadastrarReptil();
+
     //Getters
     int get_total_mudas() const;
     string get_data_ultima_muda() const;

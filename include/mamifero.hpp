@@ -18,6 +18,8 @@ public:
     //Destrutor padrão
     ~Mamifero();
 
+    void cadastrarMamifero();
+
     //Setters
     void set_cor_pelo(string cor_pelo);
 

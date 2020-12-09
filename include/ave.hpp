@@ -20,6 +20,8 @@ public:
     //Destrutor padrão
     ~Ave();
 
+    void cadastrarAve();
+
     //Getters
     int get_tamanho_bico() const;
     int get_tamanho_pernas() const;
