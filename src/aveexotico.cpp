@@ -13,72 +13,14 @@ AveExotico::~AveExotico(){}
 
 void
 AveExotico::cadastrarAveExotico(){
-    cout << "=========" << endl
-         << "Digite um nome (de batismo) para o animal (JOAO_BATISTA): ";
-    cin >> nome_batismo;
+
+    cadastrarAnimal();
 
     // ================================================================ //
 
-    cout << "=========" << endl
-         << "Digite o nome popular do animal (BEM-TI-VI): ";
-    cin >> nome;
+    cadastrarAve();
 
     // ================================================================ //
 
-    cout << "=========" << endl
-         << "Digite o nome cientifico do animal (PITANGUS_SULPHURATUS): ";
-    cin >> nome_cientifico;
-    // ================================================================ //
-
-    cout << "=========" << endl
-         << "Digite a cor da pena do animal: ";
-    cin >> cor_penas;
-
-    // ================================================================ //
-
-    cout << "=========" << endl
-         << "Digite o tamanho do bico (em cm): ";
-    cin >> tamanho_bico;
-
-    // ================================================================ //
-
-    cout << "=========" << endl
-         << "Digite o tamanho das pernas (em cm): ";
-    cin >> tamanho_pernas;
-
-    // ================================================================ //
-
-    cout << "=========" << endl
-         << "Digite a dieta predominante do animal ('Carne', 'planta', 'misto'...): ";
-    cin >> dieta;
-
-    // ================================================================ //
-
-    cout << "=========" << endl
-         << "Digite o sexo do animal (M / F): ";
-    cin >> sexo;
-
-    // ================================================================ //
-
-    cout << "=========" << endl
-         << "Digite o tamanho, em metros, do animal ('1.58'): ";
-    cin >> tamanho;
-
-    // ================================================================ //
-
-    cout << "=========" << endl
-         << "O animal encontra-se em extincao? (S / N) : ";
-    cin >> extincao;
-
-    // ================================================================ //
-
-    cout << "=========" << endl
-         << "O animal precisa de autorizacao do IBAMA para deslocamento? (S / N) : ";
-    cin >> autorizacao_ibama;
-
-    // ================================================================ //
-
-    cout << "=========" << endl
-         << "Digite o pais de origem do animal('BRASIL', 'ESTADOS_UNIDOS'...): ";
-    cin >> pais_origem;
+    cadastrarExotico();
 }

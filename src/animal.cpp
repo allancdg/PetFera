@@ -11,6 +11,44 @@ Animal::Animal(int id, string nome_batismo, string nome, string nome_cientifico,
                dieta(dieta), sexo(sexo), tamanho(tamanho){}
 Animal::~Animal(){}
 
+void
+Animal::cadastrarAnimal(){
+
+    cout << "=========" << endl
+         << "Digite um nome (de batismo) para o animal (JOAO_BATISTA): ";
+    cin >> nome_batismo;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+         << "Digite um nome popular do animal (TUBARAO_BRANCO): ";
+    cin >> nome;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+         << "Digite um nome cientifico do animal (CARCHARODON_CARCHARIAS): ";
+    cin >> nome_cientifico;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+         << "Digite a dieta predominante do animal('Carne', 'planta', 'misto'...): ";
+    cin >> dieta;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+         << "Digite o sexo do animal (M / F): ";
+    cin >> sexo;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+         << "Digite o tamanho, em metros, do animal ('1.58'): ";
+    cin >> tamanho;
+}
+
 ostream& operator<< (ostream &o, Animal &animal){
     o << setfill(' ') << left<< setw(8) << animal.get_id()
       << setfill(' ') << left << setw(24) << animal.get_nome()

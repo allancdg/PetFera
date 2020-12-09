@@ -11,6 +11,25 @@ Exotico::Exotico(char extincao, char autorizacao_ibama, string pais_origem):
 //Destrutor padrao
 Exotico::~Exotico(){}
 
+void
+Exotico::cadastrarExotico(){
+    cout << "=========" << endl
+         << "O animal encontra-se em extincao? (S / N) : ";
+    cin >> extincao;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+         << "O animal precisa de autorizacao do IBAMA para deslocamento? (S / N) : ";
+    cin >> autorizacao_ibama;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+         << "Digite o pais de origem do animal('BRASIL', 'ESTADOS_UNIDOS'...): ";
+    cin >> pais_origem;
+}
+
 //Setters
 void
 Exotico::set_extincao(char extincao){ this->extincao = extincao; }

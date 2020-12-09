@@ -15,6 +15,19 @@ Reptil::Reptil(int id, string nome_batismo, string nome, string nome_cientifico,
 //Destrutor padrão
 Reptil::~Reptil(){}
 
+void
+Reptil::cadastrarReptil(){
+    cout << "=========" << endl
+         << "Digite a quantidade de mudas de pele estimada do animal (CASO NAO TENHA - '0'): ";
+    cin >> total_mudas;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+         << "Digite a data da ultima muda (xx/yy/zz)(CASO NAO TENHA - '0'): ";
+    cin >> data_ultima_muda;
+}
+
 //Getters
 int
 Reptil::get_total_mudas() const{ return this->total_mudas; }
