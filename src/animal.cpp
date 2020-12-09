@@ -11,14 +11,21 @@ Animal::Animal(int id, string nome_batismo, string nome, string nome_cientifico,
                dieta(dieta), sexo(sexo), tamanho(tamanho){}
 Animal::~Animal(){}
 
-ostream& operator<< (ostream &o, Animal &ani){
-    o << setfill(' ') << left<< setw(8) << ani.get_id()
-      << setfill(' ') << left << setw(24) << ani.get_nome()
-      << setfill(' ') << left << setw(8) << ani.get_sexo()
-      << setfill('1') << left << setw(10) << ani.get_classe();
-      /*<< setfill('2') << left << setw(10) << ani.get_veterinario()
-      << setfill('3') << left << setw(10) << ani.get_tratador();*/
+ostream& operator<< (ostream &o, Animal &animal){
+    o << setfill(' ') << left<< setw(8) << animal.get_id()
+      << setfill(' ') << left << setw(24) << animal.get_nome()
+      << setfill(' ') << left << setw(8) << animal.get_sexo()
+      << setfill(' ') << left << setw(10) << animal.get_classe();
+      /*<< setfill(' ') << left << setw(16) << animal.get_veterinario()->get_nome()
+      << setfill(' ') << left << setw(16) << animal.get_tratador()->get_nome();
+      DANDO ERRO NA IMPRESSÃO - SAINDO DO PROGRAMA*/
     return o;
+}
+
+istream& operator>> (istream &i, Animal &animal){
+    i >> animal.id >> animal.nome_batismo >> animal.nome >> animal.nome_cientifico >>
+         animal.sexo >> animal.classe >> animal.tamanho >>animal.dieta;
+    return i;
 }
 
 //Getters

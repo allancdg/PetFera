@@ -109,6 +109,42 @@ void menuTerciarioListagemProfissional(Petfera* petfera) {
 	} while (opc != 'X' && opc !='x');
 }
 
+void menuSecundarioRemocao(Petfera* petfera) {
+    char opcaoRemocao;
+	limpaTela();
+	do {
+		cout<< endl << "MENU DE REMOCAO: ";
+		cout<< endl << "========";
+		cout<< endl << "A - ANIMAL.";
+		cout<< endl << "P - PROFISSIONAL.";
+		cout<< endl << "---------";
+		cout<< endl << endl << "X - Voltar ao menu principal.";
+
+		cout<< endl << endl << "Selecione a opcao: ";
+		cin >> opcaoRemocao;
+
+		limpaTela();
+
+		switch(opcaoRemocao)
+		{
+			case 'A' :
+			case 'a' :{ petfera->removerAnimal(); pausar();}
+			break;
+			case 'P' :
+			case 'p' :{ cout << "EM CONSTRUCAO! " << endl ;}
+			break;
+            case 'X' :
+			case 'x' :{ return;}
+			break;
+			default : cout << endl << "Opcao invalida!";
+		}
+		cout << endl;
+
+		limpaTela();
+
+	} while (opcaoRemocao != 'X' && opcaoRemocao !='x');
+}
+
 void menuSecundarioListagem(Petfera* petfera) {
     char opcaoListagem;
 	limpaTela();
@@ -204,7 +240,7 @@ void menuPrincipal(Petfera* petfera) {
 			case 'c' :{ menuSecundarioCadastramento(petfera);}
 			break;
 			case 'R' :
-			case 'r' :{ cout << "EM CONSTRUCAO!"; }//menuSecundarioRemocao(petfera);}
+			case 'r' :{ menuSecundarioRemocao(petfera); }
 			break;
 			case 'L' :
 			case 'l' :{ menuSecundarioListagem(petfera); }
@@ -226,5 +262,9 @@ int main(){
     Petfera* petfera = new Petfera();
 
     menuPrincipal(petfera);
+
+    petfera->escreverAnimais(); //Antes de fechar o programa irá pegar o vetor com todos os animais cadastrados
+                                // e escrever no arquivo 'dados.dat'
+
 return 0;
 }

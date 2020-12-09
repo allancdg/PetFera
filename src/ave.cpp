@@ -15,6 +15,16 @@ Ave::Ave(int id, string nome_batismo, string nome, string nome_cientifico, strin
 //Destrutor padrão
 Ave::~Ave(){}
 
+//Getters
+int
+Ave::get_tamanho_bico() const{ return this->tamanho_bico; }
+
+int
+Ave::get_tamanho_pernas() const{ return this->tamanho_pernas;}
+
+string
+Ave::get_cor_penas() const{ return this->cor_penas; }
+
 //Setters
 void
 Ave::set_tamanho_bico(int tamanho_bico){ this->tamanho_bico = tamanho_bico; }

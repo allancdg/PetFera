@@ -15,9 +15,16 @@ Anfibio::Anfibio(int id, string nome_batismo, string nome, string nome_cientific
 //Destrutor padrão
 Anfibio::~Anfibio(){}
 
+//Getters
+int
+Anfibio::get_total_mudas() const{ return this->total_mudas; }
+
+string
+Anfibio::get_data_ultima_muda() const{ return this->data_ultima_muda; }
+
 //Setters
 void
-Anfibio::set_totalMudas(int total_mudas){ this->total_mudas = total_mudas; }
+Anfibio::set_total_mudas(int total_mudas){ this->total_mudas = total_mudas; }
 
 void
-Anfibio::set_dataUltimaMuda(string data_ultima_muda){ this->data_ultima_muda = data_ultima_muda; }
+Anfibio::set_data_ultima_muda(string data_ultima_muda){ this->data_ultima_muda = data_ultima_muda; }

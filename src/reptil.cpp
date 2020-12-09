@@ -15,9 +15,16 @@ Reptil::Reptil(int id, string nome_batismo, string nome, string nome_cientifico,
 //Destrutor padrão
 Reptil::~Reptil(){}
 
+//Getters
+int
+Reptil::get_total_mudas() const{ return this->total_mudas; }
+
+string
+Reptil::get_data_ultima_muda() const{ return this->data_ultima_muda; }
+
 //Setters
 void
-Reptil::set_totalMudas(int total_mudas){ this->total_mudas = total_mudas; }
+Reptil::set_total_mudas(int total_mudas){ this->total_mudas = total_mudas; }
 
 void
-Reptil::set_dataUltimaMuda(string data_ultima_muda){ this->data_ultima_muda = data_ultima_muda; }
+Reptil::set_data_ultima_muda(string data_ultima_muda){ this->data_ultima_muda = data_ultima_muda; }

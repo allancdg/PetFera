@@ -9,10 +9,57 @@ ReptilNativo::ReptilNativo(int id, string nome_batismo, string nome, string nome
 
 ReptilNativo::~ReptilNativo(){}
 
-ostream& operator<< (ostream &o, ReptilNativo &rn){
-    o << setfill('.') << setw(5) << rn.get_id()
-      << setfill('.') << setw(20) << rn.get_nome()
-      << setfill('.') << setw(5) << rn.get_sexo()
-      << setfill('.') << setw(10) << rn.get_classe();
-    return o;
+void
+ReptilNativo::cadastrarReptilNativo(){
+    cout << "=========" << endl
+         << "Digite um nome (de batismo) para o animal (JOAO_BATISTA): ";
+    cin >> nome_batismo;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+         << "Digite um nome popular do animal (TUBARAO_BRANCO): ";
+    cin >> nome;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+         << "Digite um nome cientifico do animal (CARCHARODON_CARCHARIAS): ";
+    cin >> nome_cientifico;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+         << "Digite a dieta predominante do animal('Carne', 'planta', 'misto'...): ";
+    cin >> dieta;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+         << "Digite o sexo do animal (M / F): ";
+    cin >> sexo;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+         << "Digite o tamanho, em metros, do animal ('1.58'): ";
+    cin >> tamanho;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+         << "Digite a quantidade de mudas de pele estimada do animal (CASO NAO TENHA - '0'): ";
+    cin >> total_mudas;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+         << "Digite a data da ultima muda (xx/yy/zz)(CASO NAO TENHA - '0'): ";
+    cin >> data_ultima_muda;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+         << "Digite o estador de origem do animal('RN', 'PB'...): ";
+    cin >> estado_origem;
 }

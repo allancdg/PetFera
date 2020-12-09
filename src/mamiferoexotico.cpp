@@ -9,10 +9,61 @@ MamiferoExotico::MamiferoExotico(int id, string nome_batismo, string nome, strin
 
 MamiferoExotico::~MamiferoExotico(){}
 
-ostream& operator<< (ostream &o, MamiferoExotico &me){
-    o << setfill('.') << setw(5) << me.get_id()
-      << setfill('.') << setw(20) << me.get_nome()
-      << setfill('.') << setw(5) << me.get_sexo()
-      << setfill('.') << setw(10) << me.get_classe();
-    return o;
+void
+MamiferoExotico::cadastrarMamiferoExotico(){
+    cout << "=========" << endl
+         << "Digite um nome (de batismo) para o animal (JOAO_BATISTA): ";
+    cin >> nome_batismo;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+         << "Digite o nome popular do animal (CACHORRO): ";
+    cin >> nome;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+         << "Digite o nome cientifico do animal (CANIS_LUPUS_FAMILIARIS): ";
+    cin >> nome_cientifico;
+    // ================================================================ //
+
+    cout << "=========" << endl
+         << "Digite a dieta predominante do animal ('Carne', 'planta', 'misto'...): ";
+    cin >> dieta;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+         << "Digite a cor do pelo do animal: ";
+    cin >> cor_pelo;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+         << "Digite o sexo do animal (M / F): ";
+    cin >> sexo;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+         << "Digite o tamanho, em metros, do animal ('1.58'): ";
+    cin >> tamanho;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+         << "O animal encontra-se em extincao? (S / N) : ";
+    cin >> extincao;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+         << "O animal precisa de autorizacao do IBAMA para deslocamento? (S / N) : ";
+    cin >> autorizacao_ibama;
+    // ================================================================ //
+
+    cout << "=========" << endl
+         << "Digite o pais de origem do animal('BRASIL', 'ESTADOS_UNIDOS'...): ";
+    cin >> pais_origem;
 }

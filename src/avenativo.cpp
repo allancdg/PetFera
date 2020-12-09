@@ -10,10 +10,63 @@ AveNativo::AveNativo(int id, string nome_batismo, string nome, string nome_cient
 
 AveNativo::~AveNativo(){}
 
-ostream& operator<< (ostream &o, AveNativo &avn){
-    o << setfill('.') << setw(5) << avn.get_id()
-      << setfill('.') << setw(20) << avn.get_nome()
-      << setfill('.') << setw(5) << avn.get_sexo()
-      << setfill('.') << setw(10) << avn.get_classe();
-    return o;
+void
+AveNativo::cadastrarAveNativo(){
+    cout << "=========" << endl
+    << "Digite um nome (de batismo) para o animal (JOAO_BATISTA): ";
+    cin >> nome_batismo;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+    << "Digite o nome popular do animal (BEM-TI-VI): ";
+    cin >> nome;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+    << "Digite o nome cientifico do animal (PITANGUS_SULPHURATUS): ";
+    cin >> nome_cientifico;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+    << "Digite a cor da pena do animal: ";
+    cin >> cor_penas;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+    << "Digite o tamanho do bico (em cm): ";
+    cin >> tamanho_bico;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+    << "Digite o tamanho das pernas (em cm): ";
+    cin >> tamanho_pernas;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+    << "Digite a dieta predominante do animal ('Carne', 'planta', 'misto'...): ";
+    cin >> dieta;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+    << "Digite o sexo do animal (M / F): ";
+    cin >> sexo;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+    << "Digite o tamanho, em metros, do animal ('1.58'): ";
+    cin >> tamanho;
+
+    // ================================================================ //
+
+    cout << "=========" << endl
+    << "Digite o estador de origem do animal('RN', 'PB'...): ";
+    cin >> estado_origem;
 }
