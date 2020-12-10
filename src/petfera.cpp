@@ -1,5 +1,6 @@
 #include "petfera.hpp"
 #include <iostream>
+#include <sstream>
 
 // Includes necessários para fazer a limpeza do buffer de entrada
 #include <ios>
@@ -564,7 +565,6 @@ Petfera::listarTratadores(){
     }
 }
 
-
 void Petfera::listarVeterinarios() {
 
     if(this->capacidade_profissionais <= 0){
@@ -590,14 +590,32 @@ void Petfera::listarVeterinarios() {
     }
 }
 
-void Petfera::lerAnimais(){}
+void Petfera::lerAnimais(){
+    ifstream arqDados("dados.dat");
+    string linha;
+    string palavra;
+
+    while(arqDados >> linha){
+        stringstream s(linha);
+        vector<string> tokens;
+        while(getline(s, palavra, ';')){
+            tokens.push_back(palavra);
+        }
+        if(tokens.size() == 8){
+            Animal* lido = new Animal(stoi(tokens.at(0)), tokens.at(1), tokens.at(2), tokens.at(3),
+                        tokens.at(4), tokens.at(5), tokens.at(6)[0], stof(tokens.at(7)));
+            animais[this->capacidade++] = lido;
+            count_id_animal++;
+        }
+    }
+}
 
 void Petfera::escreverAnimais(){
     ofstream arqDados("dados.dat");
     for(int i=0; i<this->capacidade; i++){
-        arqDados << animais[i]->get_id() <<"; "<< animais[i]->get_nome_batismo() << "; "<< animais[i]->get_nome() <<"; "<<
-        animais[i]->get_nome_cientifico() << "; "<< animais[i]->get_sexo() <<"; "<< animais[i]->get_classe() <<"; " <<
-        animais[i]->get_tamanho() <<"; "<< animais[i]->get_dieta() << endl;
+        arqDados << animais[i]->get_id() <<";"<< animais[i]->get_nome_batismo() << ";"<< animais[i]->get_nome() <<";"<<
+        animais[i]->get_nome_cientifico() << ";"<< animais[i]->get_classe() <<";"<< animais[i]->get_dieta() <<";"<<
+        animais[i]->get_sexo() <<";" << animais[i]->get_tamanho() << endl;
     }
 }
 

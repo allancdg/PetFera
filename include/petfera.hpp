@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include <fstream>
+#include <string>
+#include <vector>
 #define CAPACIDADE_MAX 10
 #define CAPACIDADE_MAX_PROFISSIONAIS 5
 #include "animal.hpp"

@@ -261,6 +261,8 @@ void menuPrincipal(Petfera* petfera) {
 int main(){
     Petfera* petfera = new Petfera();
 
+    petfera->lerAnimais();
+
     menuPrincipal(petfera);
 
     petfera->escreverAnimais(); //Antes de fechar o programa irá pegar o vetor com todos os animais cadastrados
