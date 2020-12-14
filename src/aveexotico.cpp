@@ -10,17 +10,3 @@ AveExotico::AveExotico(int id, string nome_batismo, string nome, string nome_cie
                    Exotico(extincao, autorizacao_ibama, pais_origem){}
 
 AveExotico::~AveExotico(){}
-
-void
-AveExotico::cadastrarAveExotico(){
-
-    cadastrarAnimal();
-
-    // ================================================================ //
-
-    cadastrarAve();
-
-    // ================================================================ //
-
-    cadastrarExotico();
-}

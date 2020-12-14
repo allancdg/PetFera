@@ -16,8 +16,6 @@ public:
                char sexo, float tamanho);
     ~Animal();
 
-    void cadastrarAnimal();
-
     friend ostream& operator<< (ostream &o, Animal &animal);
     friend istream& operator>> (istream &i, Animal &animal);
 

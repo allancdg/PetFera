@@ -15,25 +15,6 @@ Ave::Ave(int id, string nome_batismo, string nome, string nome_cientifico, strin
 //Destrutor padrão
 Ave::~Ave(){}
 
-void
-Ave::cadastrarAve(){
-    cout << "=========" << endl
-         << "Digite a cor da pena do animal: ";
-    cin >> cor_penas;
-
-    // ================================================================ //
-
-    cout << "=========" << endl
-         << "Digite o tamanho do bico (em cm): ";
-    cin >> tamanho_bico;
-
-    // ================================================================ //
-
-    cout << "=========" << endl
-         << "Digite o tamanho das pernas (em cm): ";
-    cin >> tamanho_pernas;
-}
-
 //Getters
 int
 Ave::get_tamanho_bico() const{ return this->tamanho_bico; }

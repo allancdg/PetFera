@@ -8,17 +8,3 @@ AnfibioNativo::AnfibioNativo(int id, string nome_batismo, string nome, string no
                    Nativo(estado_origem){}
 
 AnfibioNativo::~AnfibioNativo(){}
-
-void
-AnfibioNativo::cadastrarAnfibioNativo(){
-
-    cadastrarAnimal();
-
-    // ================================================================ //
-
-    cadastrarAnfibio();
-
-    // ================================================================ //
-
-    cadastrarNativo();
-}

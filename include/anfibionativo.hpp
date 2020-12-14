@@ -15,5 +15,4 @@ public:
                string estado_origem);
 
     ~AnfibioNativo();
-    void cadastrarAnfibioNativo();
 };

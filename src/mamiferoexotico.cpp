@@ -8,17 +8,3 @@ MamiferoExotico::MamiferoExotico(int id, string nome_batismo, string nome, strin
                     Exotico(extincao, autorizacao_ibama, pais_origem){}
 
 MamiferoExotico::~MamiferoExotico(){}
-
-void
-MamiferoExotico::cadastrarMamiferoExotico(){
-
-    cadastrarAnimal();
-
-    // ================================================================ //
-
-    cadastrarMamifero();
-
-    // ================================================================ //
-
-    cadastrarExotico();
-}

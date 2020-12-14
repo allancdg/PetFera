@@ -14,5 +14,4 @@ public:
                char sexo, float tamanho, int tamanho_bico, int tamanho_pernas, string cor_penas, string estado_origem);
 
     ~AveNativo();
-    void cadastrarAveNativo();
 };

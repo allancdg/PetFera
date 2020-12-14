@@ -9,17 +9,3 @@ AnfibioExotico::AnfibioExotico(int id, string nome_batismo, string nome, string 
                    Exotico(extincao, autorizacao_ibama, pais_origem){}
 
 AnfibioExotico::~AnfibioExotico(){}
-
-void
-AnfibioExotico::cadastrarAnfibioExotico(){
-
-    cadastrarAnimal();
-
-    // ================================================================ //
-
-    cadastrarAnfibio();
-
-    // ================================================================ //
-
-    cadastrarExotico();
-}

@@ -8,17 +8,3 @@ MamiferoNativo::MamiferoNativo(int id, string nome_batismo, string nome, string 
                     Nativo(estado_origem){}
 
 MamiferoNativo::~MamiferoNativo(){}
-
-void
-MamiferoNativo::cadastrarMamiferoNativo(){
-
-    cadastrarAnimal();
-
-    // ================================================================ //
-
-    cadastrarMamifero();
-
-    // ================================================================ //
-
-    cadastrarNativo();
-}

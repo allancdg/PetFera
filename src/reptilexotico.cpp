@@ -9,17 +9,3 @@ ReptilExotico::ReptilExotico(int id, string nome_batismo, string nome, string no
                     Exotico(extincao, autorizacao_ibama, pais_origem){}
 
 ReptilExotico::~ReptilExotico(){}
-
-void
-ReptilExotico::cadastrarReptilExotico(){
-
-    cadastrarAnimal();
-
-    // ================================================================ //
-
-    cadastrarReptil();
-
-    // ================================================================ //
-
-    cadastrarExotico();
-}

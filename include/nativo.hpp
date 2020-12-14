@@ -16,8 +16,6 @@ public:
     //Destrutor padrao
     ~Nativo();
 
-    void cadastrarNativo();
-
     //Setters
     void set_estado_origem(string estado_origem);
 

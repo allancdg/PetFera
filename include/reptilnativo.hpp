@@ -15,6 +15,4 @@ public:
                string estado_origem);
 
     ~ReptilNativo();
-
-    void cadastrarReptilNativo();
 };

@@ -8,17 +8,3 @@ ReptilNativo::ReptilNativo(int id, string nome_batismo, string nome, string nome
                    Nativo(estado_origem){}
 
 ReptilNativo::~ReptilNativo(){}
-
-void
-ReptilNativo::cadastrarReptilNativo(){
-
-    cadastrarAnimal();
-
-    // ================================================================ //
-
-    cadastrarReptil();
-
-    // ================================================================ //
-
-    cadastrarNativo();
-}

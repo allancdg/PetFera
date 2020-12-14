@@ -14,14 +14,15 @@ Petfera::~Petfera(){}
 void
 Petfera::cadastrarAnimal(){
     bool true_false = false;//Utilizado para toda manipulação booleana [cadastrar]
-    int cin_int;            //Utilizado para toda entrada de int variavel [cadastrar]
-    int cin_int_classe;     //Utilizado para opção do cadastramento das classes
-    int cin_int_tipo;       //Utilizado para opção do cadastramento dos tipos
+    int cin_int = 0;            //Utilizado para toda entrada de int variavel [cadastrar]
+    int cin_int_classe = 0;     //Utilizado para opção do cadastramento das classes
+    int cin_int_tipo = 0;       //Utilizado para opção do cadastramento dos tipos
     string cin_string;      //Utilizado para toda entrada de string variavel [cadastrar]
+    float cin_float = 0;        //Utilizado para toda entrada de float variavel [cadastrar]
+    char cin_char;          //Utilizado para toda entrada de char variavel [cadastrar]
 
     if(this->capacidade < CAPACIDADE_MAX){
         cout << "Cadastramento animal: " << endl << "=========" << endl;
-        // ================================================================ //
 
         cout << "Anfibio(1)\tAve(2)" << endl << "Mamifero(3)\tReptil(4)" << endl << "=========" << endl;
         cout << "Digite o numero correspondente a classe: ";
@@ -40,9 +41,50 @@ Petfera::cadastrarAnimal(){
                         true_false = true;
 
                         // ================================================================ //
-
-                        novoAnimal->cadastrarAnfibioNativo();
-
+                        cout << "=========" << endl
+                             << "Digite um nome (de batismo) para o animal (ALLAN_CHRISTIAN): ";
+                        cin >> cin_string;
+                        novoAnimal->set_nome_batismo(cin_string);
+                        // ================================================================ //
+                        cout << "=========" << endl
+                             << "Digite um nome popular do animal (TUBARAO_BRANCO): ";
+                        cin >> cin_string;
+                        novoAnimal->set_nome(cin_string);
+                        // ================================================================ //
+                        cout << "=========" << endl
+                             << "Digite um nome cientifico do animal (CARCHARODON_CARCHARIAS): ";
+                        cin >> cin_string;
+                        novoAnimal->set_nome_cientifico(cin_string);
+                        // ================================================================ //
+                        cout << "=========" << endl
+                             << "Digite a dieta predominante do animal('Carne', 'planta', 'misto'...): ";
+                        cin >> cin_string;
+                        novoAnimal->set_dieta(cin_string);
+                        // ================================================================ //
+                        cout << "=========" << endl
+                             << "Digite o sexo do animal (M / F): ";
+                        cin >> cin_char;
+                        novoAnimal->set_sexo(cin_char);
+                        // ================================================================ //
+                        cout << "=========" << endl
+                             << "Digite o tamanho, em metros, do animal ('3.28'): ";
+                        cin >> cin_float;
+                        novoAnimal->set_tamanho(cin_float);
+                        // ================================================================ //
+                        cout << "=========" << endl
+                             << "Digite a quantidade de mudas de pele estimada do animal (CASO NAO TENHA - '0'): ";
+                        cin >> cin_int;
+                        novoAnimal->set_total_mudas(cin_int);
+                        // ================================================================ //
+                        cout << "=========" << endl
+                             << "Digite a data da ultima muda (xx/yy/zz)(CASO NAO TENHA - '0'): ";
+                        cin >> cin_string;
+                        novoAnimal->set_data_ultima_muda(cin_string);
+                        // ================================================================ //
+                        cout << "=========" << endl
+                             << "Digite o estado de origem do animal('RN', 'PB'...): ";
+                        cin >> cin_string;
+                        novoAnimal->set_estado_origem(cin_string);
                         // ================================================================ //
 
                         cout << "=========" << endl;
@@ -79,9 +121,60 @@ Petfera::cadastrarAnimal(){
                         true_false = true;
 
                         // ================================================================ //
-
-                        novoAnimal->cadastrarAnfibioExotico();
-
+                        cout << "=========" << endl
+                             << "Digite um nome (de batismo) para o animal (ALLAN_CHRISTIAN): ";
+                        cin >> cin_string;
+                        novoAnimal->set_nome_batismo(cin_string);
+                        // ================================================================ //
+                        cout << "=========" << endl
+                             << "Digite um nome popular do animal (TUBARAO_BRANCO): ";
+                        cin >> cin_string;
+                        novoAnimal->set_nome(cin_string);
+                        // ================================================================ //
+                        cout << "=========" << endl
+                             << "Digite um nome cientifico do animal (CARCHARODON_CARCHARIAS): ";
+                        cin >> cin_string;
+                        novoAnimal->set_nome_cientifico(cin_string);
+                        // ================================================================ //
+                        cout << "=========" << endl
+                             << "Digite a dieta predominante do animal('Carne', 'planta', 'misto'...): ";
+                        cin >> cin_string;
+                        novoAnimal->set_dieta(cin_string);
+                        // ================================================================ //
+                        cout << "=========" << endl
+                             << "Digite o sexo do animal (M / F): ";
+                        cin >> cin_char;
+                        novoAnimal->set_sexo(cin_char);
+                        // ================================================================ //
+                        cout << "=========" << endl
+                             << "Digite o tamanho, em metros, do animal ('3.28'): ";
+                        cin >> cin_float;
+                        novoAnimal->set_tamanho(cin_float);
+                        // ================================================================ //
+                        cout << "=========" << endl
+                             << "Digite a quantidade de mudas de pele estimada do animal (CASO NAO TENHA - '0'): ";
+                        cin >> cin_int;
+                        novoAnimal->set_total_mudas(cin_int);
+                        // ================================================================ //
+                        cout << "=========" << endl
+                             << "Digite a data da ultima muda (xx/yy/zz)(CASO NAO TENHA - '0'): ";
+                        cin >> cin_string;
+                        novoAnimal->set_data_ultima_muda(cin_string);
+                        // ================================================================ //
+                        cout << "=========" << endl
+                             << "O animal encontra-se em extincao? (S / N) : ";
+                        cin >> cin_char;
+                        novoAnimal->set_extincao(cin_char);
+                        // ================================================================ //
+                        cout << "=========" << endl
+                             << "O animal precisa de autorizacao do IBAMA para deslocamento? (S / N) : ";
+                        cin >> cin_char;
+                        novoAnimal->set_autorizacao_ibama(cin_char);
+                        // ================================================================ //
+                        cout << "=========" << endl
+                             << "Digite o pais de origem do animal('BRASIL', 'ESTADOS_UNIDOS'...): ";
+                        cin >> cin_string;
+                        novoAnimal->set_pais_origem(cin_string);
                         // ================================================================ //
 
                         cout << "=========" << endl;
@@ -124,22 +217,147 @@ Petfera::cadastrarAnimal(){
                             true_false = true;
 
                             // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite um nome (de batismo) para o animal (ALLAN_CHRISTIAN): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome_batismo(cin_string);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite um nome popular do animal (BEIJA-FLORES): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome(cin_string);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite um nome cientifico do animal (TROCHILIDAE): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome_cientifico(cin_string);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite a dieta predominante do animal('Carne', 'planta', 'misto'...): ";
+                            cin >> cin_string;
+                            novoAnimal->set_dieta(cin_string);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite o sexo do animal (M / F): ";
+                            cin >> cin_char;
+                            novoAnimal->set_sexo(cin_char);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite o tamanho, em metros, do animal ('0.10'): ";
+                            cin >> cin_float;
+                            novoAnimal->set_tamanho(cin_float);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite a cor da pena do animal: ";
+                            cin >> cin_string;
+                            novoAnimal->set_cor_penas(cin_string);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite o tamanho do bico (em cm): ";
+                            cin >> cin_int;
+                            novoAnimal->set_tamanho_bico(cin_int);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite o tamanho das pernas (em cm): ";
+                            cin >> cin_int;
+                            novoAnimal->set_tamanho_pernas(cin_int);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite o estador de origem do animal('RN', 'PB'...): ";
+                            cin >> cin_string;
+                            novoAnimal->set_estado_origem(cin_string);
+                            // ================================================================ //
 
-                            novoAnimal->cadastrarAveNativo();
+                            cout << "=========" << endl;
+                            cout << "Veterinários disponíveis: " << endl;
+                            listarVeterinarios();
+                            cout << "Digite o id correspondente ao veterinário: ";
+                            cin >> cin_int;
+                            Veterinario* vet = buscaVeterinarioPorId(cin_int);
+
+                            if(vet){
+                                novoAnimal->set_veterinario(vet);
+                            }
 
                             // ================================================================ //
+
+                            cout << "=========" << endl;
+                            cout << "Tratadores disponíveis: " << endl;
+                            listarTratadores();
+                            cout << "Digite o id correspondente ao tratador: ";
+                            cin >> cin_int;
+                            Tratador* tratador = buscaTratadorPorId(cin_int);
+
+                            if(tratador){
+                                novoAnimal->set_tratador(tratador);
+                            }
                             animais[this->capacidade++] = novoAnimal;
                         }
-
                         else if(cin_int_tipo == 2){AveExotico* novoAnimal = new AveExotico();
                                 novoAnimal->set_id(this->count_id_animal++); //ID cadastrado automaticamente (0, 1, 2, ++)
                                 novoAnimal->set_classe("Ave");
                                 true_false = true;
 
                                 // ================================================================ //
-
-                                novoAnimal->cadastrarAveExotico();
-
+                                cout << "=========" << endl
+                                     << "Digite um nome (de batismo) para o animal (ALLAN_CHRISTIAN): ";
+                                cin >> cin_string;
+                                novoAnimal->set_nome_batismo(cin_string);
+                                // ================================================================ //
+                                cout << "=========" << endl
+                                     << "Digite um nome popular do animal (BEIJA-FLORES): ";
+                                cin >> cin_string;
+                                novoAnimal->set_nome(cin_string);
+                                // ================================================================ //
+                                cout << "=========" << endl
+                                     << "Digite um nome cientifico do animal (TROCHILIDAE): ";
+                                cin >> cin_string;
+                                novoAnimal->set_nome_cientifico(cin_string);
+                                // ================================================================ //
+                                cout << "=========" << endl
+                                     << "Digite a dieta predominante do animal('Carne', 'planta', 'misto'...): ";
+                                cin >> cin_string;
+                                novoAnimal->set_dieta(cin_string);
+                                // ================================================================ //
+                                cout << "=========" << endl
+                                     << "Digite o sexo do animal (M / F): ";
+                                cin >> cin_char;
+                                novoAnimal->set_sexo(cin_char);
+                                // ================================================================ //
+                                cout << "=========" << endl
+                                     << "Digite o tamanho, em metros, do animal ('0.10'): ";
+                                cin >> cin_float;
+                                novoAnimal->set_tamanho(cin_float);
+                                // ================================================================ //
+                                cout << "=========" << endl
+                                     << "Digite a cor da pena do animal: ";
+                                cin >> cin_string;
+                                novoAnimal->set_cor_penas(cin_string);
+                                // ================================================================ //
+                                cout << "=========" << endl
+                                     << "Digite o tamanho do bico (em cm): ";
+                                cin >> cin_int;
+                                novoAnimal->set_tamanho_bico(cin_int);
+                                // ================================================================ //
+                                cout << "=========" << endl
+                                     << "Digite o tamanho das pernas (em cm): ";
+                                cin >> cin_int;
+                                novoAnimal->set_tamanho_pernas(cin_int);
+                                // ================================================================ //
+                                cout << "=========" << endl
+                                     << "O animal encontra-se em extincao? (S / N) : ";
+                                cin >> cin_char;
+                                novoAnimal->set_extincao(cin_char);
+                                // ================================================================ //
+                                cout << "=========" << endl
+                                     << "O animal precisa de autorizacao do IBAMA para deslocamento? (S / N) : ";
+                                cin >> cin_char;
+                                novoAnimal->set_autorizacao_ibama(cin_char);
+                                // ================================================================ //
+                                cout << "=========" << endl
+                                     << "Digite o pais de origem do animal('BRASIL', 'ESTADOS_UNIDOS'...): ";
+                                cin >> cin_string;
+                                novoAnimal->set_pais_origem(cin_string);
                                 // ================================================================ //
 
                                 cout << "=========" << endl;
@@ -182,9 +400,45 @@ Petfera::cadastrarAnimal(){
                             true_false = true;
 
                             // ================================================================ //
-
-                            novoAnimal->cadastrarMamiferoNativo();
-
+                            cout << "=========" << endl
+                                 << "Digite um nome (de batismo) para o animal (ALLAN_CHRISTIAN): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome_batismo(cin_string);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite um nome popular do animal (TAMANDUA_BANDEIRA): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome(cin_string);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite um nome cientifico do animal (MYRMECOPHAGA_TRIDACTYLA): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome_cientifico(cin_string);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite a dieta predominante do animal('Carne', 'planta', 'misto'...): ";
+                            cin >> cin_string;
+                            novoAnimal->set_dieta(cin_string);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite o sexo do animal (M / F): ";
+                            cin >> cin_char;
+                            novoAnimal->set_sexo(cin_char);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite o tamanho, em metros, do animal ('1.58'): ";
+                            cin >> cin_float;
+                            novoAnimal->set_tamanho(cin_float);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite a cor do pelo do animal: ";
+                            cin >> cin_string;
+                            novoAnimal->set_cor_pelo(cin_string);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite o estador de origem do animal('RN', 'PB'...): ";
+                            cin >> cin_string;
+                            novoAnimal->set_estado_origem(cin_string);
                             // ================================================================ //
 
                             cout << "=========" << endl;
@@ -219,9 +473,55 @@ Petfera::cadastrarAnimal(){
                             true_false = true;
 
                             // ================================================================ //
-
-                            novoAnimal->cadastrarMamiferoExotico();
-
+                            cout << "=========" << endl
+                                 << "Digite um nome (de batismo) para o animal (ALLAN_CHRISTIAN): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome_batismo(cin_string);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite um nome popular do animal (TAMANDUA_BANDEIRA): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome(cin_string);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite um nome cientifico do animal (MYRMECOPHAGA_TRIDACTYLA): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome_cientifico(cin_string);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite a dieta predominante do animal('Carne', 'planta', 'misto'...): ";
+                            cin >> cin_string;
+                            novoAnimal->set_dieta(cin_string);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite o sexo do animal (M / F): ";
+                            cin >> cin_char;
+                            novoAnimal->set_sexo(cin_char);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite o tamanho, em metros, do animal ('1.58'): ";
+                            cin >> cin_float;
+                            novoAnimal->set_tamanho(cin_float);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite a cor do pelo do animal: ";
+                            cin >> cin_string;
+                            novoAnimal->set_cor_pelo(cin_string);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                             << "O animal encontra-se em extincao? (S / N) : ";
+                            cin >> cin_char;
+                            novoAnimal->set_extincao(cin_char);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "O animal precisa de autorizacao do IBAMA para deslocamento? (S / N) : ";
+                            cin >> cin_char;
+                            novoAnimal->set_autorizacao_ibama(cin_char);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite o pais de origem do animal('BRASIL', 'ESTADOS_UNIDOS'...): ";
+                            cin >> cin_string;
+                            novoAnimal->set_pais_origem(cin_string);
                             // ================================================================ //
 
                             cout << "=========" << endl;
@@ -264,9 +564,50 @@ Petfera::cadastrarAnimal(){
                             true_false = true;
 
                             // ================================================================ //
-
-                            novoAnimal->cadastrarReptilNativo();
-
+                            cout << "=========" << endl
+                                 << "Digite um nome (de batismo) para o animal (ALLAN_CHRISTIAN): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome_batismo(cin_string);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite um nome popular do animal (TUBARAO_BRANCO): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome(cin_string);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite um nome cientifico do animal (CARCHARODON_CARCHARIAS): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome_cientifico(cin_string);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite a dieta predominante do animal('Carne', 'planta', 'misto'...): ";
+                            cin >> cin_string;
+                            novoAnimal->set_dieta(cin_string);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite o sexo do animal (M / F): ";
+                            cin >> cin_char;
+                            novoAnimal->set_sexo(cin_char);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite o tamanho, em metros, do animal ('1.58'): ";
+                            cin >> cin_float;
+                            novoAnimal->set_tamanho(cin_float);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite a quantidade de mudas de pele estimada do animal (CASO NAO TENHA - '0'): ";
+                            cin >> cin_int;
+                            novoAnimal->set_total_mudas(cin_int);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite a data da ultima muda (xx/yy/zz)(CASO NAO TENHA - '0'): ";
+                            cin >> cin_string;
+                            novoAnimal->set_data_ultima_muda(cin_string);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                << "Digite o estado de origem do animal('RN', 'PB'...): ";
+                            cin >> cin_string;
+                            novoAnimal->set_estado_origem(cin_string);
                             // ================================================================ //
 
                             cout << "=========" << endl;
@@ -301,9 +642,61 @@ Petfera::cadastrarAnimal(){
                             true_false = true;
 
                             // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite um nome (de batismo) para o animal (ALLAN_CHRISTIAN): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome_batismo(cin_string);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite um nome popular do animal (TUBARAO_BRANCO): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome(cin_string);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite um nome cientifico do animal (CARCHARODON_CARCHARIAS): ";
+                            cin >> cin_string;
+                            novoAnimal->set_nome_cientifico(cin_string);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite a dieta predominante do animal('Carne', 'planta', 'misto'...): ";
+                            cin >> cin_string;
+                            novoAnimal->set_dieta(cin_string);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite o sexo do animal (M / F): ";
+                            cin >> cin_char;
+                            novoAnimal->set_sexo(cin_char);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite o tamanho, em metros, do animal ('1.58'): ";
+                            cin >> cin_float;
+                            novoAnimal->set_tamanho(cin_float);
+                            // ================================================================ //
 
-                            novoAnimal->cadastrarReptilExotico();
-
+                            cout << "=========" << endl
+                                 << "O animal encontra-se em extincao? (S / N) : ";
+                            cin >> cin_char;
+                            novoAnimal->set_extincao(cin_char);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite a quantidade de mudas de pele estimada do animal (CASO NAO TENHA - '0'): ";
+                            cin >> cin_int;
+                            novoAnimal->set_total_mudas(cin_int);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite a data da ultima muda (xx/yy/zz)(CASO NAO TENHA - '0'): ";
+                            cin >> cin_string;
+                            novoAnimal->set_data_ultima_muda(cin_string);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "O animal precisa de autorizacao do IBAMA para deslocamento? (S / N) : ";
+                            cin >> cin_char;
+                            novoAnimal->set_autorizacao_ibama(cin_char);
+                            // ================================================================ //
+                            cout << "=========" << endl
+                                 << "Digite o pais de origem do animal('BRASIL', 'ESTADOS_UNIDOS'...): ";
+                            cin >> cin_string;
+                            novoAnimal->set_pais_origem(cin_string);
                             // ================================================================ //
 
                             cout << "=========" << endl;
@@ -334,10 +727,11 @@ Petfera::cadastrarAnimal(){
                         }
                     }
                 }
-            }
+        }
     }
     else{ cout << "Você não pode cadastrar mais animais. Capacidade esgotada! "; }
 }
+
 
 void
 Petfera::cadastrarProfissional(){

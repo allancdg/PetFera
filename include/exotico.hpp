@@ -18,8 +18,6 @@ public:
     //Destrutor padrao
     ~Exotico();
 
-    void cadastrarExotico();
-
     //Setters
     void set_extincao(char extincao);
     void set_autorizacao_ibama(char autorizacao_ibama);

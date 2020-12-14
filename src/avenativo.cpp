@@ -9,17 +9,3 @@ AveNativo::AveNativo(int id, string nome_batismo, string nome, string nome_cient
                    Nativo(estado_origem){}
 
 AveNativo::~AveNativo(){}
-
-void
-AveNativo::cadastrarAveNativo(){
-
-    cadastrarAnimal();
-
-    // ================================================================ //
-
-    cadastrarAve();
-
-    // ================================================================ //
-
-    cadastrarNativo();
-}
