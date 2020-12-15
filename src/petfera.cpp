@@ -37,7 +37,7 @@ Petfera::cadastrarAnimal(){
 
                     if( cin_int_tipo == 1) { AnfibioNativo* novoAnimal = new AnfibioNativo();
                         novoAnimal->set_id(this->count_id_animal++); //ID cadastrado automaticamente (0, 1, 2, ++)
-                        novoAnimal->set_classe("Anfibio");
+                        novoAnimal->set_classe("Anfibio Nativo");
                         true_false = true;
 
                         // ================================================================ //
@@ -117,7 +117,7 @@ Petfera::cadastrarAnimal(){
 
                     else if( cin_int_tipo == 2) { AnfibioExotico* novoAnimal = new AnfibioExotico();
                         novoAnimal->set_id(this->count_id_animal++); //ID cadastrado automaticamente (0, 1, 2, ++)
-                        novoAnimal->set_classe("Anfibio");
+                        novoAnimal->set_classe("Anfibio Exotico");
                         true_false = true;
 
                         // ================================================================ //
@@ -213,7 +213,7 @@ Petfera::cadastrarAnimal(){
 
                         if(cin_int_tipo == 1){AveNativo* novoAnimal = new AveNativo();
                             novoAnimal->set_id(this->count_id_animal++); //ID cadastrado automaticamente (0, 1, 2, ++)
-                            novoAnimal->set_classe("Ave");
+                            novoAnimal->set_classe("Ave Nativo");
                             true_false = true;
 
                             // ================================================================ //
@@ -295,7 +295,7 @@ Petfera::cadastrarAnimal(){
                         }
                         else if(cin_int_tipo == 2){AveExotico* novoAnimal = new AveExotico();
                                 novoAnimal->set_id(this->count_id_animal++); //ID cadastrado automaticamente (0, 1, 2, ++)
-                                novoAnimal->set_classe("Ave");
+                                novoAnimal->set_classe("Ave Exotico");
                                 true_false = true;
 
                                 // ================================================================ //
@@ -396,7 +396,7 @@ Petfera::cadastrarAnimal(){
 
                         if(cin_int_tipo == 1){MamiferoNativo* novoAnimal = new MamiferoNativo();
                             novoAnimal->set_id(this->count_id_animal++); //ID cadastrado automaticamente (0, 1, 2, ++)
-                            novoAnimal->set_classe("Mamifero");
+                            novoAnimal->set_classe("Mamifero Nativo");
                             true_false = true;
 
                             // ================================================================ //
@@ -469,7 +469,7 @@ Petfera::cadastrarAnimal(){
 
                         else if(cin_int_tipo == 2){MamiferoExotico* novoAnimal = new MamiferoExotico();
                             novoAnimal->set_id(this->count_id_animal++); //ID cadastrado automaticamente (0, 1, 2, ++)
-                            novoAnimal->set_classe("Mamifero");
+                            novoAnimal->set_classe("Mamifero Exotico");
                             true_false = true;
 
                             // ================================================================ //
@@ -560,7 +560,7 @@ Petfera::cadastrarAnimal(){
 
                         if(cin_int_tipo == 1){ ReptilNativo* novoAnimal = new ReptilNativo();
                             novoAnimal->set_id(this->count_id_animal++); //ID cadastrado automaticamente (0, 1, 2, ++)
-                            novoAnimal->set_classe("Reptil");
+                            novoAnimal->set_classe("Reptil Nativo");
                             true_false = true;
 
                             // ================================================================ //
@@ -638,7 +638,7 @@ Petfera::cadastrarAnimal(){
 
                     else if(cin_int_tipo == 2){ ReptilExotico* novoAnimal = new ReptilExotico();
                             novoAnimal->set_id(this->count_id_animal++); //ID cadastrado automaticamente (0, 1, 2, ++)
-                            novoAnimal->set_classe("Reptil");
+                            novoAnimal->set_classe("Reptil Exotico");
                             true_false = true;
 
                             // ================================================================ //
@@ -731,7 +731,6 @@ Petfera::cadastrarAnimal(){
     }
     else{ cout << "Você não pode cadastrar mais animais. Capacidade esgotada! "; }
 }
-
 
 void
 Petfera::cadastrarProfissional(){
@@ -995,11 +994,83 @@ void Petfera::lerAnimais(){
         while(getline(s, palavra, ';')){
             tokens.push_back(palavra);
         }
-        if(tokens.size() == 8){
-            Animal* lido = new Animal(stoi(tokens.at(0)), tokens.at(1), tokens.at(2), tokens.at(3),
-                        tokens.at(4), tokens.at(5), tokens.at(6)[0], stof(tokens.at(7)));
-            animais[this->capacidade++] = lido;
-            count_id_animal++;
+
+        if(tokens.at(4) == "Anfibio Nativo"){
+            if(tokens.size() == 11){
+                AnfibioNativo* lido = new AnfibioNativo(stoi(tokens.at(0)), tokens.at(1), tokens.at(2), tokens.at(3),
+                            tokens.at(4), tokens.at(5), tokens.at(6)[0], stof(tokens.at(7)), stoi(tokens.at(8)),
+                            tokens.at(9), tokens.at(10));
+                animais[this->capacidade++] = lido;
+                count_id_animal++;
+            }
+            else { cout << "Leitura insuficiente em Anfibio Nativo! << endl"; }
+        }
+        else if(tokens.at(4) == "Anfibio Exotico"){
+            if(tokens.size() == 13){
+                AnfibioExotico* lido = new AnfibioExotico(stoi(tokens.at(0)), tokens.at(1), tokens.at(2), tokens.at(3),
+                            tokens.at(4), tokens.at(5), tokens.at(6)[0], stof(tokens.at(7)), stoi(tokens.at(8)),
+                            tokens.at(9), tokens.at(10)[0], tokens.at(11)[0], tokens.at(12));
+                animais[this->capacidade++] = lido;
+                count_id_animal++;
+            }
+            else { cout << "Leitura insuficiente em Anfibio Exotico! << endl"; }
+        }
+        else if(tokens.at(4) == "Ave Nativo"){
+            if(tokens.size() == 12){
+                AveNativo* lido = new AveNativo(stoi(tokens.at(0)), tokens.at(1), tokens.at(2), tokens.at(3),
+                            tokens.at(4), tokens.at(5), tokens.at(6)[0], stof(tokens.at(7)), stoi(tokens.at(8)),
+                            stoi(tokens.at(9)), tokens.at(10), tokens.at(11));
+                animais[this->capacidade++] = lido;
+                count_id_animal++;
+            }
+            else { cout << "Leitura insuficiente em Ave Nativo! << endl"; }
+        }
+        else if(tokens.at(4) == "Ave Exotico"){
+            if(tokens.size() == 14){
+                AveExotico* lido = new AveExotico(stoi(tokens.at(0)), tokens.at(1), tokens.at(2), tokens.at(3),
+                            tokens.at(4), tokens.at(5), tokens.at(6)[0], stof(tokens.at(7)), stoi(tokens.at(8)),
+                            stoi(tokens.at(9)), tokens.at(10), tokens.at(11)[0], tokens.at(12)[0], tokens.at(13));
+                animais[this->capacidade++] = lido;
+                count_id_animal++;
+            }
+            else { cout << "Leitura insuficiente em Ave Exotico! << endl"; }
+        }
+        else if(tokens.at(4) == "Mamifero Nativo"){
+            if(tokens.size() == 10){
+                MamiferoNativo* lido = new MamiferoNativo(stoi(tokens.at(0)), tokens.at(1), tokens.at(2), tokens.at(3),
+                            tokens.at(4), tokens.at(5), tokens.at(6)[0], stof(tokens.at(7)), tokens.at(8), tokens.at(9));
+                animais[this->capacidade++] = lido;
+                count_id_animal++;
+            }
+            else { cout << "Leitura insuficiente em Mamifero Nativo! << endl"; }
+        }
+        else if(tokens.at(4) == "Mamifero Exotico"){
+            if(tokens.size() == 12){
+                MamiferoExotico* lido = new MamiferoExotico(stoi(tokens.at(0)), tokens.at(1), tokens.at(2), tokens.at(3),
+                            tokens.at(4), tokens.at(5), tokens.at(6)[0], stof(tokens.at(7)), tokens.at(8), tokens.at(9)[0],
+                            tokens.at(10)[0], tokens.at(11));
+                animais[this->capacidade++] = lido;
+                count_id_animal++;
+            }
+            else { cout << "Leitura insuficiente em Mamifero Exotico! << endl"; }
+        }
+        else if(tokens.at(4) == "Reptil Nativo"){
+            if(tokens.size() == 8){
+                ReptilNativo* lido = new ReptilNativo(stoi(tokens.at(0)), tokens.at(1), tokens.at(2), tokens.at(3),
+                            tokens.at(4), tokens.at(5), tokens.at(6)[0], stof(tokens.at(7)), stoi(tokens.at(8)),
+                            tokens.at(9), tokens.at(10));
+                animais[this->capacidade++] = lido;
+                count_id_animal++;
+            }
+        }
+        else if(tokens.at(4) == "Reptil Exotico"){
+            if(tokens.size() == 8){
+                ReptilExotico* lido = new ReptilExotico(stoi(tokens.at(0)), tokens.at(1), tokens.at(2), tokens.at(3),
+                            tokens.at(4), tokens.at(5), tokens.at(6)[0], stof(tokens.at(7)), stoi(tokens.at(8)),
+                            tokens.at(9), tokens.at(10)[0], tokens.at(11)[0], tokens.at(12));
+                animais[this->capacidade++] = lido;
+                count_id_animal++;
+            }
         }
     }
 }
@@ -1007,9 +1078,88 @@ void Petfera::lerAnimais(){
 void Petfera::escreverAnimais(){
     ofstream arqDados("dados.dat");
     for(int i=0; i<this->capacidade; i++){
-        arqDados << animais[i]->get_id() <<";"<< animais[i]->get_nome_batismo() << ";"<< animais[i]->get_nome() <<";"<<
-        animais[i]->get_nome_cientifico() << ";"<< animais[i]->get_classe() <<";"<< animais[i]->get_dieta() <<";"<<
-        animais[i]->get_sexo() <<";" << animais[i]->get_tamanho() << endl;
+        if(animais[i]->get_classe() == "Anfibio Nativo"){
+            //Downcasting -> [AnfibioNativo é um Animal mas nem todo Animal é um AnfibioNativo]
+            AnfibioNativo* escreve_AnfibioNativo = (AnfibioNativo*)(animais[i]);
+            arqDados << escreve_AnfibioNativo->get_id() <<";"<< escreve_AnfibioNativo->get_nome_batismo() << ";"<<
+            escreve_AnfibioNativo->get_nome() <<";"<< escreve_AnfibioNativo->get_nome_cientifico() <<";"<<
+            escreve_AnfibioNativo->get_classe() <<";"<< escreve_AnfibioNativo->get_dieta() <<";"<<
+            escreve_AnfibioNativo->get_sexo() <<";"<< escreve_AnfibioNativo->get_tamanho() <<";"<<
+            escreve_AnfibioNativo->get_total_mudas() <<";"<< escreve_AnfibioNativo->get_data_ultima_muda() <<";"<<
+            escreve_AnfibioNativo->get_estado_origem() << endl;
+        }
+        else if(animais[i]->get_classe() == "Anfibio Exotico"){
+            //Downcasting -> [AnfibioExotico é um Animal mas nem todo Animal é um AnfibioExotico]
+            AnfibioExotico* escreve_AnfibioExotico = (AnfibioExotico*)(animais[i]);
+            arqDados << escreve_AnfibioExotico->get_id() <<";"<< escreve_AnfibioExotico->get_nome_batismo() <<";"<<
+            escreve_AnfibioExotico->get_nome() <<";"<< escreve_AnfibioExotico->get_nome_cientifico() <<";"<<
+            escreve_AnfibioExotico->get_classe() <<";"<< escreve_AnfibioExotico->get_dieta() <<";"<<
+            escreve_AnfibioExotico->get_sexo() <<";" << escreve_AnfibioExotico->get_tamanho() <<";"<<
+            escreve_AnfibioExotico->get_total_mudas() <<";"<< escreve_AnfibioExotico->get_data_ultima_muda() <<";"<<
+            escreve_AnfibioExotico->get_extincao() <<";"<< escreve_AnfibioExotico->get_autorizacao_ibama() <<";"<<
+            escreve_AnfibioExotico->get_pais_origem() << endl;
+        }
+        else if(animais[i]->get_classe() == "Ave Nativo"){
+            //Downcasting -> [AveNativo é um Animal mas nem todo Animal é um AveNativo]
+            AveNativo* escreve_AveNativo = (AveNativo*)(animais[i]);
+            arqDados << escreve_AveNativo->get_id() <<";"<< escreve_AveNativo->get_nome_batismo() << ";"<<
+            escreve_AveNativo->get_nome() <<";"<< escreve_AveNativo->get_nome_cientifico() << ";"<<
+            escreve_AveNativo->get_classe() <<";"<< escreve_AveNativo->get_dieta() <<";"<<
+            escreve_AveNativo->get_sexo() <<";" << escreve_AveNativo->get_tamanho() <<";"<<
+            escreve_AveNativo->get_tamanho_bico() <<";"<< escreve_AveNativo->get_tamanho_pernas() <<";"<<
+            escreve_AveNativo->get_cor_penas() <<";"<< escreve_AveNativo->get_estado_origem() << endl;
+        }
+        else if(animais[i]->get_classe() == "Ave Exotico"){
+            //Downcasting -> [AveExotico é um Animal mas nem todo Animal é um AveExotico]
+            AveExotico* escreve_AveExotico = (AveExotico*)(animais[i]);
+            arqDados << escreve_AveExotico->get_id() <<";"<< escreve_AveExotico->get_nome_batismo() << ";"<<
+            escreve_AveExotico->get_nome() <<";"<< escreve_AveExotico->get_nome_cientifico() << ";"<<
+            escreve_AveExotico->get_classe() <<";"<< escreve_AveExotico->get_dieta() <<";"<<
+            escreve_AveExotico->get_sexo() <<";" << escreve_AveExotico->get_tamanho() <<";"<<
+            escreve_AveExotico->get_tamanho_bico() <<";"<< escreve_AveExotico->get_tamanho_pernas() <<";"<<
+            escreve_AveExotico->get_cor_penas() <<";"<< escreve_AveExotico->get_extincao() <<";"<<
+            escreve_AveExotico->get_autorizacao_ibama() <<";"<< escreve_AveExotico->get_pais_origem() << endl;
+        }
+        else if(animais[i]->get_classe() == "Mamifero Nativo"){
+            //Downcasting -> [MamiferoNativo é um Animal mas nem todo Animal é um MamiferoNativo]
+            MamiferoNativo* escreve_MamiferoNativo = (MamiferoNativo*)(animais[i]);
+            arqDados << escreve_MamiferoNativo->get_id() <<";"<< escreve_MamiferoNativo->get_nome_batismo() << ";"<<
+            escreve_MamiferoNativo->get_nome() <<";"<< escreve_MamiferoNativo->get_nome_cientifico() << ";"<<
+            escreve_MamiferoNativo->get_classe() <<";"<< escreve_MamiferoNativo->get_dieta() <<";"<<
+            escreve_MamiferoNativo->get_sexo() <<";" << escreve_MamiferoNativo->get_tamanho() <<";"<<
+            escreve_MamiferoNativo->get_cor_pelo() <<";"<< escreve_MamiferoNativo->get_estado_origem()<< endl;
+        }
+        else if(animais[i]->get_classe() == "Mamifero Exotico"){
+            //Downcasting -> [MamiferoExotico é um Animal mas nem todo Animal é um MamiferoExotico]
+            MamiferoExotico* escreve_MamiferoExotico = (MamiferoExotico*)(animais[i]);
+            arqDados << escreve_MamiferoExotico->get_id() <<";"<< escreve_MamiferoExotico->get_nome_batismo() << ";"<<
+            escreve_MamiferoExotico->get_nome() <<";"<< escreve_MamiferoExotico->get_nome_cientifico() << ";"<<
+            escreve_MamiferoExotico->get_classe() <<";"<< escreve_MamiferoExotico->get_dieta() <<";"<<
+            escreve_MamiferoExotico->get_sexo() <<";" << escreve_MamiferoExotico->get_tamanho() <<";"<<
+            escreve_MamiferoExotico->get_cor_pelo() <<";"<< escreve_MamiferoExotico->get_extincao() <<";"<<
+            escreve_MamiferoExotico->get_autorizacao_ibama() <<";"<< escreve_MamiferoExotico->get_pais_origem() << endl;
+        }
+        else if(animais[i]->get_classe() == "Reptil Nativo"){
+            //Downcasting -> [ReptilNativo é um Animal mas nem todo Animal é um ReptilNativo]
+            ReptilNativo* escreve_ReptilNativo = (ReptilNativo*)(animais[i]);
+            arqDados << escreve_ReptilNativo->get_id() <<";"<< escreve_ReptilNativo->get_nome_batismo() << ";"<<
+            escreve_ReptilNativo->get_nome() <<";"<< escreve_ReptilNativo->get_nome_cientifico() <<";"<<
+            escreve_ReptilNativo->get_classe() <<";"<< escreve_ReptilNativo->get_dieta() <<";"<<
+            escreve_ReptilNativo->get_sexo() <<";"<< escreve_ReptilNativo->get_tamanho() <<";"<<
+            escreve_ReptilNativo->get_total_mudas() <<";"<< escreve_ReptilNativo->get_data_ultima_muda() <<";"<<
+            escreve_ReptilNativo->get_estado_origem() << endl;
+        }
+        else if(animais[i]->get_classe() == "Reptil Exotico"){
+            //Downcasting -> [ReptilExotico é um Animal mas nem todo Animal é um ReptilExotico]
+            ReptilExotico* escreve_ReptilExotico = (ReptilExotico*)(animais[i]);
+            arqDados << escreve_ReptilExotico->get_id() <<";"<< escreve_ReptilExotico->get_nome_batismo() <<";"<<
+            escreve_ReptilExotico->get_nome() <<";"<< escreve_ReptilExotico->get_nome_cientifico() <<";"<<
+            escreve_ReptilExotico->get_classe() <<";"<< escreve_ReptilExotico->get_dieta() <<";"<<
+            escreve_ReptilExotico->get_sexo() <<";" << escreve_ReptilExotico->get_tamanho() <<";"<<
+            escreve_ReptilExotico->get_total_mudas() <<";"<< escreve_ReptilExotico->get_data_ultima_muda() <<";"<<
+            escreve_ReptilExotico->get_extincao() <<";"<< escreve_ReptilExotico->get_autorizacao_ibama() <<";"<<
+            escreve_ReptilExotico->get_pais_origem() << endl;
+        }
     }
 }
 
