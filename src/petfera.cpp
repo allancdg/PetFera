@@ -988,13 +988,14 @@ void Petfera::lerAnimais(){
     string linha;
     string palavra;
 
-    while(arqDados >> linha){
+    while(getline(arqDados, linha)){
         stringstream s(linha);
         vector<string> tokens;
         while(getline(s, palavra, ';')){
             tokens.push_back(palavra);
         }
-
+        cout << linha;
+        cin >> linha;
         if(tokens.at(4) == "Anfibio Nativo"){
             if(tokens.size() == 11){
                 AnfibioNativo* lido = new AnfibioNativo(stoi(tokens.at(0)), tokens.at(1), tokens.at(2), tokens.at(3),
