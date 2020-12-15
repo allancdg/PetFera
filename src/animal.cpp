@@ -15,10 +15,9 @@ ostream& operator<< (ostream &o, Animal &animal){
     o << setfill(' ') << left<< setw(8) << animal.get_id()
       << setfill(' ') << left << setw(24) << animal.get_nome()
       << setfill(' ') << left << setw(8) << animal.get_sexo()
-      << setfill(' ') << left << setw(10) << animal.get_classe();
-      /*<< setfill(' ') << left << setw(16) << animal.get_veterinario()->get_nome()
+      << setfill(' ') << left << setw(20) << animal.get_classe()
+      << setfill(' ') << left << setw(25) << animal.get_veterinario()->get_nome()
       << setfill(' ') << left << setw(16) << animal.get_tratador()->get_nome();
-      DANDO ERRO NA IMPRESSÃO - SAINDO DO PROGRAMA*/
     return o;
 }
 
