@@ -1,7 +1,7 @@
 #include "petfera.hpp"
 #include <iostream>
 #include <sstream>
-
+#include <typeinfo>
 // Includes necessários para fazer a limpeza do buffer de entrada
 #include <ios>
 #include <limits>
@@ -21,7 +21,7 @@ Petfera::cadastrarAnimal(){
     float cin_float = 0;        //Utilizado para toda entrada de float variavel [cadastrar]
     char cin_char;          //Utilizado para toda entrada de char variavel [cadastrar]
 
-    if(this->capacidade < CAPACIDADE_MAX){
+    if(this->count_id_animal < CAPACIDADE_MAX){
         cout << "Cadastramento animal: " << endl << "=========" << endl;
 
         cout << "Anfibio(1)\tAve(2)" << endl << "Mamifero(3)\tReptil(4)" << endl << "=========" << endl;
@@ -112,7 +112,7 @@ Petfera::cadastrarAnimal(){
                         }
                         // ================================================================ //
 
-                        animais[this->capacidade++] = novoAnimal;
+                        animais.push_back(novoAnimal);
                     }
 
                     else if( cin_int_tipo == 2) { AnfibioExotico* novoAnimal = new AnfibioExotico();
@@ -200,7 +200,8 @@ Petfera::cadastrarAnimal(){
                         if(tratador){
                             novoAnimal->set_tratador(tratador);
                         }
-                        animais[this->capacidade++] = novoAnimal;
+
+                        animais.push_back(novoAnimal);
                     }
                 }
             }
@@ -291,7 +292,8 @@ Petfera::cadastrarAnimal(){
                             if(tratador){
                                 novoAnimal->set_tratador(tratador);
                             }
-                            animais[this->capacidade++] = novoAnimal;
+
+                            animais.push_back(novoAnimal);
                         }
                         else if(cin_int_tipo == 2){AveExotico* novoAnimal = new AveExotico();
                                 novoAnimal->set_id(this->count_id_animal++); //ID cadastrado automaticamente (0, 1, 2, ++)
@@ -383,7 +385,7 @@ Petfera::cadastrarAnimal(){
                                 if(tratador){
                                     novoAnimal->set_tratador(tratador);
                                 }
-                                animais[this->capacidade++] = novoAnimal;
+                                animais.push_back(novoAnimal);
                             }
                     }
             }
@@ -464,7 +466,7 @@ Petfera::cadastrarAnimal(){
                             if(tratador){
                                 novoAnimal->set_tratador(tratador);
                             }
-                            animais[this->capacidade++] = novoAnimal;
+                            animais.push_back(novoAnimal);
                         }
 
                         else if(cin_int_tipo == 2){MamiferoExotico* novoAnimal = new MamiferoExotico();
@@ -547,7 +549,7 @@ Petfera::cadastrarAnimal(){
                             if(tratador){
                                 novoAnimal->set_tratador(tratador);
                             }
-                            animais[this->capacidade++] = novoAnimal;
+                            animais.push_back(novoAnimal);
                         }
                     }
                 }
@@ -633,7 +635,7 @@ Petfera::cadastrarAnimal(){
                             if(tratador){
                                 novoAnimal->set_tratador(tratador);
                             }
-                            animais[this->capacidade++] = novoAnimal;
+                            animais.push_back(novoAnimal);
                     }
 
                     else if(cin_int_tipo == 2){ ReptilExotico* novoAnimal = new ReptilExotico();
@@ -723,13 +725,13 @@ Petfera::cadastrarAnimal(){
                                 novoAnimal->set_tratador(tratador);
                             }
 
-                            animais[this->capacidade++] = novoAnimal;
+                            animais.push_back(novoAnimal);
                         }
                     }
                 }
         }
     }
-    else{ cout << "Você não pode cadastrar mais animais. Capacidade esgotada! "; }
+    else{ cout << "Você não pode cadastrar mais animais. count_id_animal esgotada! "; }
 }
 
 void
@@ -792,7 +794,7 @@ Petfera::cadastrarProfissional(){
 
                 // ================================================================ //
 
-                profissionais[this->capacidade_profissionais++] = novoVeterinario;
+                profissionais.push_back(novoVeterinario);
             }
             else if( cin_int == 2 ){
                 Tratador* novoTratador = new Tratador();
@@ -836,7 +838,7 @@ Petfera::cadastrarProfissional(){
                 cin >> cin_char;
                 novoTratador->set_nivel_seguranca(cin_char);
 
-                profissionais[this->capacidade_profissionais++] = novoTratador;
+                profissionais.push_back(novoTratador);
             }
         }
 }
@@ -856,56 +858,27 @@ Petfera::removerAnimal(){
 
 void
 Petfera::listarTodosAnimais(){
-    if(this->capacidade <= 0){ cout << "Nao tem nenhum animal cadastrado!" << endl; }
+    if(this->count_id_animal <= 0){ cout << "Nao tem nenhum animal cadastrado!" << endl; }
     else{
-        cout << "ID\tNOME\t\t\tNOME BATISMO\t\t\tSEXO\tTAMANHO\tCLASSE\t\tORIGEM" << endl;
-        for(int i=0; i < this->capacidade; i++){
-            if(animais[i]->get_classe() == "Anfibio Nativo"){
-                AnfibioNativo* anfnat = (AnfibioNativo*)(animais[i]);
-                cout << *anfnat << endl;
-            }
-            else if(animais[i]->get_classe() == "Anfibio Exotico"){
-                AnfibioExotico* anfexo = (AnfibioExotico*)(animais[i]);
-                cout << *anfexo << endl;
-            }
-            else if(animais[i]->get_classe() == "Ave Nativo"){
-                AveNativo* avenat = (AveNativo*)(animais[i]);
-                cout << *avenat << endl;
-            }
-            else if(animais[i]->get_classe() == "Ave Exotico"){
-                AveExotico* aveexo = (AveExotico*)(animais[i]);
-                cout << *aveexo << endl;
-            }
-            else if(animais[i]->get_classe() == "Mamifero Nativo"){
-                MamiferoNativo* mamnat = (MamiferoNativo*)(animais[i]);
-                cout << *mamnat << endl;
-            }
-            else if(animais[i]->get_classe() == "Mamifero Exotico"){
-                MamiferoExotico* mamexo = (MamiferoExotico*)(animais[i]);
-                cout << *mamexo << endl;
-            }
-            else if(animais[i]->get_classe() == "Reptil Nativo"){
-                ReptilNativo* repnat = (ReptilNativo*)(animais[i]);
-                cout << *repnat << endl;
-            }
-            else if(animais[i]->get_classe() == "Reptil Exotico"){
-                ReptilExotico* repexo = (ReptilExotico*)(animais[i]);
-                cout << *repexo << endl;
-            }
-            else { cout << *animais[i] << endl; }
+        cout << "ID\tNOME\t\t\tSEXO\tCLASSE" << endl;
+        for(int i=0; i < this->count_id_animal; i++){
+            cout << animais[i]->get_id() << "\t" 
+            << animais[i]->get_nome() << "\t\t\t" 
+            << animais[i]->get_sexo() << "\t"
+            << animais[i]->get_classe() << endl; //cout utilizando sobrecarga de operadores
         }
     }
 }
 
 void
 Petfera::listarAnfibios(){
-    if(this->capacidade <= 0){ cout << "Nao tem nenhum animal cadastrado!" << endl; }
+    if(this->count_id_animal <= 0){ cout << "Nao tem nenhum animal cadastrado!" << endl; }
     else{
-        cout << "ID\tNOME\t\t\tNOME BATISMO\t\t\tSEXO\tTAMANHO\tCLASSE\t\tORIGEM" << endl;
-        for(int i=0; i < this->capacidade; i++){
+        cout << "ID\tNOME\t\t\tNOME BATISMO\t\t\tSEXO\tCLASSE\t\tVETERINARIO\t\tTRATADOR" << endl;
+        for(int i=0; i < this->count_id_animal; i++){
             if(animais[i]->get_classe() == "Anfibio Nativo"){
-                AnfibioNativo* anfnat = (AnfibioNativo*)(animais[i]);
-                cout << *anfnat << endl;
+                AnfibioNativo* anfnativo = (AnfibioNativo*)(animais[i]);
+                cout << *anfnativo << endl; //cout utilizando sobrecarga de operadores
             }
             else if(animais[i]->get_classe() == "Anfibio Exotico"){
                 AnfibioExotico* anfexo = (AnfibioExotico*)(animais[i]);
@@ -917,10 +890,10 @@ Petfera::listarAnfibios(){
 
 void
 Petfera::listarAves(){
-    if(this->capacidade <= 0){ cout << "Nao tem nenhum animal cadastrado!" << endl; }
+    if(this->count_id_animal <= 0){ cout << "Nao tem nenhum animal cadastrado!" << endl; }
     else{
         cout << "ID\tNOME\t\t\tNOME BATISMO\t\t\tSEXO\tTAMANHO\tCLASSE\t\tORIGEM" << endl;
-        for(int i=0; i < this->capacidade; i++){
+        for(int i=0; i < this->count_id_animal; i++){
             if(animais[i]->get_classe() == "Ave Nativo"){
                 AveNativo* avenat = (AveNativo*)(animais[i]);
                 cout << *avenat << endl;
@@ -935,10 +908,10 @@ Petfera::listarAves(){
 
 void
 Petfera::listarMamiferos(){
-    if(this->capacidade <= 0){ cout << "Nao tem nenhum animal cadastrado!" << endl; }
+    if(this->count_id_animal <= 0){ cout << "Nao tem nenhum animal cadastrado!" << endl; }
     else{
         cout << "ID\tNOME\t\t\tNOME BATISMO\t\t\tSEXO\tTAMANHO\tCLASSE\t\tORIGEM" << endl;
-        for(int i=0; i < this->capacidade; i++){
+        for(int i=0; i < this->count_id_animal; i++){
             if(animais[i]->get_classe() == "Mamifero Nativo"){
                 MamiferoNativo* mamnat = (MamiferoNativo*)(animais[i]);
                 cout << *mamnat << endl;
@@ -953,10 +926,10 @@ Petfera::listarMamiferos(){
 
 void
 Petfera::listarRepteis(){
-    if(this->capacidade <= 0){ cout << "Nao tem nenhum animal cadastrado!" << endl; }
+    if(this->count_id_animal <= 0){ cout << "Nao tem nenhum animal cadastrado!" << endl; }
     else{
         cout << "ID\tNOME\t\t\tNOME BATISMO\t\t\tSEXO\tTAMANHO\tCLASSE\t\tORIGEM" << endl;
-        for(int i=0; i < this->capacidade; i++){
+        for(int i=0; i < this->count_id_animal; i++){
             if(animais[i]->get_classe() == "Reptil Nativo"){
                 ReptilNativo* repnat = (ReptilNativo*)(animais[i]);
                 cout << *repnat << endl;
@@ -971,39 +944,38 @@ Petfera::listarRepteis(){
 
 void
 Petfera::listarTodosProfissionais(){
-    if(this->capacidade_profissionais <= 0){
+    if(this->count_id_profissional <= 0){
         cout << "Ainda não existem profissionais cadastrados!" << endl;
     }
 
     else{
         cout << "ID\tNOME\t\tSEXO" << endl;
-        for(int i=0; i < this->capacidade_profissionais; i++){ //talvez ++i
-            cout << profissionais[i]->get_id() << "\t" << profissionais[i]->get_nome() << "\t\t" <<
-                profissionais[i]->get_sexo() << "\t" << endl;
+        for(int i=0; i < this->count_id_profissional; i++){ //talvez ++i
+            cout << profissionais[i]->get_id() << "\t" 
+            << profissionais[i]->get_nome() << "\t\t\t" 
+            << profissionais[i]->get_sexo() << endl;
         }
     }
 }
 
 void
 Petfera::listarTratadores(){
-    if(this->capacidade_profissionais <= 0){
+    if(this->count_id_profissional <= 0){
         cout << "Ainda não existem profissionais cadastrados!" << endl;
     }
 
     else{
         string str_tratador = "Tratador";
 
-        cout << "ID\tNOME\t\tSEXO\tTAMANHO\tNIVEL SEGURANCA" << endl;
-        for(int i=0; i < this->capacidade_profissionais; i++){ //talvez ++i
+        cout << "ID\tNOME\t\tSEXO\tNIVEL SEGURANCA" << endl;
+        for(int i=0; i < this->count_id_profissional; i++){ //talvez ++i
 
             if (str_tratador.compare(profissionais[i]->get_cargo()) == 0) {
 
                 // Downcasting para visualização de dados que são somente da classe Tratador
                 Tratador* trat = static_cast<Tratador*> (profissionais[i]);
 
-                cout << trat->get_id() << "\t" << trat->get_nome() << "\t\t" <<
-                trat->get_sexo() << "\t" << trat->get_nivel_seguranca() << endl;
-
+                cout << *trat << endl;
             }
 
         }
@@ -1012,7 +984,7 @@ Petfera::listarTratadores(){
 
 void Petfera::listarVeterinarios() {
 
-    if(this->capacidade_profissionais <= 0){
+    if(this->count_id_profissional <= 0){
         cout << "Ainda não existem profissionais cadastrados!" << endl;
     }
 
@@ -1020,15 +992,14 @@ void Petfera::listarVeterinarios() {
         string str_tratador = "Veterinario";
 
         cout << "ID\tNOME\t\tSEXO\tCRMV" << endl;
-        for(int i=0; i < this->capacidade_profissionais; i++){ //talvez ++i
+        for(int i=0; i < this->count_id_profissional; i++){ //talvez ++i
 
             if (str_tratador.compare(profissionais[i]->get_cargo()) == 0) {
 
                 // Downcasting para visualização de dados que são somente da classe Veterinário
                 Veterinario* vet = static_cast<Veterinario*> (profissionais[i]);
 
-                cout << vet->get_id() << "\t" << vet->get_nome() << "\t\t" <<
-                vet->get_sexo() << "\t" << vet->get_crmv() << endl;
+                cout << *vet << endl;
 
             }
         }
@@ -1046,14 +1017,12 @@ void Petfera::lerAnimais(){
         while(getline(s, palavra, ';')){
             tokens.push_back(palavra);
         }
-        cout << linha;
-        cin >> linha;
         if(tokens.at(4) == "Anfibio Nativo"){
             if(tokens.size() == 11){
                 AnfibioNativo* lido = new AnfibioNativo(stoi(tokens.at(0)), tokens.at(1), tokens.at(2), tokens.at(3),
                             tokens.at(4), tokens.at(5), tokens.at(6)[0], stof(tokens.at(7)), stoi(tokens.at(8)),
                             tokens.at(9), tokens.at(10));
-                animais[this->capacidade++] = lido;
+                animais.push_back(lido);
                 count_id_animal++;
             }
             else { cout << "Leitura insuficiente em Anfibio Nativo! << endl"; }
@@ -1063,7 +1032,7 @@ void Petfera::lerAnimais(){
                 AnfibioExotico* lido = new AnfibioExotico(stoi(tokens.at(0)), tokens.at(1), tokens.at(2), tokens.at(3),
                             tokens.at(4), tokens.at(5), tokens.at(6)[0], stof(tokens.at(7)), stoi(tokens.at(8)),
                             tokens.at(9), tokens.at(10)[0], tokens.at(11)[0], tokens.at(12));
-                animais[this->capacidade++] = lido;
+                animais.push_back(lido);
                 count_id_animal++;
             }
             else { cout << "Leitura insuficiente em Anfibio Exotico! << endl"; }
@@ -1073,7 +1042,7 @@ void Petfera::lerAnimais(){
                 AveNativo* lido = new AveNativo(stoi(tokens.at(0)), tokens.at(1), tokens.at(2), tokens.at(3),
                             tokens.at(4), tokens.at(5), tokens.at(6)[0], stof(tokens.at(7)), stoi(tokens.at(8)),
                             stoi(tokens.at(9)), tokens.at(10), tokens.at(11));
-                animais[this->capacidade++] = lido;
+                animais.push_back(lido);
                 count_id_animal++;
             }
             else { cout << "Leitura insuficiente em Ave Nativo! << endl"; }
@@ -1083,7 +1052,7 @@ void Petfera::lerAnimais(){
                 AveExotico* lido = new AveExotico(stoi(tokens.at(0)), tokens.at(1), tokens.at(2), tokens.at(3),
                             tokens.at(4), tokens.at(5), tokens.at(6)[0], stof(tokens.at(7)), stoi(tokens.at(8)),
                             stoi(tokens.at(9)), tokens.at(10), tokens.at(11)[0], tokens.at(12)[0], tokens.at(13));
-                animais[this->capacidade++] = lido;
+                animais.push_back(lido);
                 count_id_animal++;
             }
             else { cout << "Leitura insuficiente em Ave Exotico! << endl"; }
@@ -1092,7 +1061,7 @@ void Petfera::lerAnimais(){
             if(tokens.size() == 10){
                 MamiferoNativo* lido = new MamiferoNativo(stoi(tokens.at(0)), tokens.at(1), tokens.at(2), tokens.at(3),
                             tokens.at(4), tokens.at(5), tokens.at(6)[0], stof(tokens.at(7)), tokens.at(8), tokens.at(9));
-                animais[this->capacidade++] = lido;
+                animais.push_back(lido);
                 count_id_animal++;
             }
             else { cout << "Leitura insuficiente em Mamifero Nativo! << endl"; }
@@ -1102,7 +1071,7 @@ void Petfera::lerAnimais(){
                 MamiferoExotico* lido = new MamiferoExotico(stoi(tokens.at(0)), tokens.at(1), tokens.at(2), tokens.at(3),
                             tokens.at(4), tokens.at(5), tokens.at(6)[0], stof(tokens.at(7)), tokens.at(8), tokens.at(9)[0],
                             tokens.at(10)[0], tokens.at(11));
-                animais[this->capacidade++] = lido;
+                animais.push_back(lido);
                 count_id_animal++;
             }
             else { cout << "Leitura insuficiente em Mamifero Exotico! << endl"; }
@@ -1112,7 +1081,7 @@ void Petfera::lerAnimais(){
                 ReptilNativo* lido = new ReptilNativo(stoi(tokens.at(0)), tokens.at(1), tokens.at(2), tokens.at(3),
                             tokens.at(4), tokens.at(5), tokens.at(6)[0], stof(tokens.at(7)), stoi(tokens.at(8)),
                             tokens.at(9), tokens.at(10));
-                animais[this->capacidade++] = lido;
+                animais.push_back(lido);
                 count_id_animal++;
             }
         }
@@ -1121,7 +1090,7 @@ void Petfera::lerAnimais(){
                 ReptilExotico* lido = new ReptilExotico(stoi(tokens.at(0)), tokens.at(1), tokens.at(2), tokens.at(3),
                             tokens.at(4), tokens.at(5), tokens.at(6)[0], stof(tokens.at(7)), stoi(tokens.at(8)),
                             tokens.at(9), tokens.at(10)[0], tokens.at(11)[0], tokens.at(12));
-                animais[this->capacidade++] = lido;
+                animais.push_back(lido);
                 count_id_animal++;
             }
         }
@@ -1130,7 +1099,7 @@ void Petfera::lerAnimais(){
 
 void Petfera::escreverAnimais(){
     ofstream arqDados("dados.dat");
-    for(int i=0; i<this->capacidade; i++){
+    for(int i=0; i<this->count_id_animal; i++){
         if(animais[i]->get_classe() == "Anfibio Nativo"){
             //Downcasting -> [AnfibioNativo é um Animal mas nem todo Animal é um AnfibioNativo]
             AnfibioNativo* escreve_AnfibioNativo = (AnfibioNativo*)(animais[i]);
@@ -1216,21 +1185,81 @@ void Petfera::escreverAnimais(){
     }
 }
 
+void Petfera::escreverProfissionais(){
+    ofstream arqDados("profissionais.dat");
+    for(int i=0; i<this->count_id_profissional; i++){
+
+        if(profissionais[i]->get_cargo() == "Tratador"){
+            //Downcasting -> [Tratador é um Profissional mas nem todo Profissional é um Tratador]
+            Tratador* escreve_tratador = (Tratador*)(profissionais[i]);
+            arqDados << escreve_tratador->get_id() <<";"<< escreve_tratador->get_nome() << ";"<<
+            escreve_tratador->get_cpf() <<";"<<
+            escreve_tratador->get_telefone() << ";"<< escreve_tratador->get_sexo() <<";"<< 
+            escreve_tratador->get_idade() <<";"<< escreve_tratador->get_cargo() <<";"<< 
+            escreve_tratador->get_nivel_seguranca() << endl;
+        }
+        else if(profissionais[i]->get_cargo() == "Veterinario"){
+            //Downcasting -> [Veterionario é um Profissional mas nem todo Profissional é um Veterinario]
+            Veterinario* escreve_vet = (Veterinario*)(profissionais[i]);
+            arqDados << escreve_vet->get_id() <<";"<< escreve_vet->get_nome() << ";"<<
+            escreve_vet->get_cpf() <<";"<<
+            escreve_vet->get_telefone() << ";"<< escreve_vet->get_sexo() <<";"<< 
+            escreve_vet->get_idade() <<";"<< escreve_vet->get_cargo() <<";"<< 
+            escreve_vet->get_crmv() << endl;
+        }
+    }
+}
+
+void Petfera::lerProfissionais(){
+    ifstream arqDados("profissionais.dat");
+    string linha;
+    string palavra;
+
+    while(getline(arqDados, linha)){
+        stringstream s(linha);
+        vector<string> tokens;
+        while(getline(s, palavra, ';')){
+            tokens.push_back(palavra);
+        }
+        if(tokens.at(6) == "Tratador"){
+            if(tokens.size() == 8){
+                Tratador* lido = new Tratador(stoi(tokens.at(0)), tokens.at(1), tokens.at(2), tokens.at(3),
+                            tokens.at(4)[0], stoi(tokens.at(5)), tokens.at(6));
+                
+                lido->set_nivel_seguranca(tokens.at(7)[0]);
+                profissionais.push_back(lido);
+                count_id_profissional++;
+            }
+            else { cout << "Leitura insuficiente em Tratador! << endl"; }
+        }
+        else if(tokens.at(6) == "Veterinario"){
+            if(tokens.size() == 8){
+                Veterinario* lido = new Veterinario(stoi(tokens.at(0)), tokens.at(1), tokens.at(2), tokens.at(3),
+                            tokens.at(4)[0], stoi(tokens.at(5)), tokens.at(6), stoi(tokens.at(7)));
+                
+                profissionais.push_back(lido);
+                count_id_profissional++;
+            }
+            else { cout << "Leitura insuficiente em Veterinario! << endl"; }
+        }
+    }
+}
+
 Veterinario*
 Petfera::buscaVeterinarioPorId(int id){
     Veterinario* vet = nullptr;
 
-    if(this->capacidade_profissionais <= 0){
+    if(this->count_id_profissional <= 0){
         cout << "Ainda não existem profissionais cadastrados!" << endl;
     }
 
     else{
-        for(int i=0; i < this->capacidade_profissionais; i++){ //talvez ++i
+        for(int i=0; i < this->count_id_profissional; i++){ //talvez ++i
             if (id == profissionais[i]->get_id()) {
                 vet = static_cast<Veterinario*> (profissionais[i]);
             }
 
-            else if (i == this->capacidade_profissionais - 1 && vet == nullptr){
+            else if (i == this->count_id_profissional - 1 && vet == nullptr){
                 cout << "Não existe um profissinal cadastrado com o id informado!" << endl;
             }
         }
@@ -1243,17 +1272,17 @@ Tratador*
 Petfera::buscaTratadorPorId(int id){
     Tratador* tratador = nullptr;
 
-    if(this->capacidade_profissionais <= 0){
+    if(this->count_id_profissional <= 0){
         cout << "Ainda não existem profissionais cadastrados!" << endl;
     }
 
     else{
-        for(int i=0; i < this->capacidade_profissionais; i++){ //talvez ++i
+        for(int i=0; i < this->count_id_profissional; i++){ //talvez ++i
             if (id == profissionais[i]->get_id()) {
                 tratador = static_cast<Tratador*> (profissionais[i]);
             }
 
-            else if (i == this->capacidade_profissionais - 1 && tratador == nullptr){
+            else if (i == this->count_id_profissional - 1 && tratador == nullptr){
                 cout << "Não existe um profissinal cadastrado com o id informado!" << endl;
             }
         }

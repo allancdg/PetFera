@@ -1,5 +1,8 @@
 #include "veterinario.hpp"
 
+#include <iostream>
+#include <istream>
+
 //Construtor padrão
 Veterinario::Veterinario(){}
 
@@ -9,6 +12,15 @@ Veterinario::Veterinario(int id, string nome, string cpf, string telefone, char 
     
 //Destrutor padrão;
 Veterinario::~Veterinario(){}
+
+ostream& operator<< (ostream &o, const Veterinario &veterinario){
+    o << setfill(' ') << left<< setw(8) << veterinario.get_id()
+      << setfill(' ') << left << setw(20) << veterinario.get_nome()
+      << setfill(' ') << left << setw(5) << veterinario.get_sexo()
+      << setfill(' ') << left << setw(10) << veterinario.get_crmv();
+
+    return o;
+}
 
 //Getters
 int 

@@ -12,6 +12,13 @@ Pessoa::Pessoa(int id, string nome, string cpf, string telefone, char sexo, int 
 //Destrutor padrão;
 Pessoa::~Pessoa(){}
 
+ostream& operator<< (ostream &o, Pessoa &pessoa){
+    o << setfill(' ') << left<< setw(8) << pessoa.get_id()
+      << setfill(' ') << left << setw(24) << pessoa.get_nome()
+      << setfill(' ') << left << setw(5) << pessoa.get_sexo();
+    return o;
+}
+
 //Getters
 int 
 Pessoa::get_id() const { return this->id; }

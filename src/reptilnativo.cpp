@@ -10,7 +10,6 @@ ReptilNativo::ReptilNativo(int id, string nome_batismo, string nome, string nome
 ReptilNativo::~ReptilNativo(){}
 
 ostream& operator<< (ostream &o, ReptilNativo &reptilnativo){
-    cout << "OPERATOR << IN ON ReptilNativo" << endl;
     o << setfill(' ') << left<< setw(8) << reptilnativo.get_id()
       << setfill(' ') << left << setw(24) << reptilnativo.get_nome()
       << setfill(' ') << left << setw(24) << reptilnativo.get_nome_batismo()

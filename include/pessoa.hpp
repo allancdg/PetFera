@@ -1,6 +1,8 @@
 #pragma once        //Função semelhante ao Define, c++11
 
 #include <iostream>
+#include <iomanip>
+#include <istream>
 
 using namespace std;
 
@@ -21,6 +23,8 @@ public:
     Pessoa(int id, string nome, string cpf, string telefone, char sexo, int idade, string cargo);
     //Destrutor padrão;
     ~Pessoa();
+
+    friend ostream& operator<< (ostream &o, const Pessoa &pessoa);
 
     //Getters
     int get_id() const;

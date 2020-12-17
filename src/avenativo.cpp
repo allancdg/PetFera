@@ -11,7 +11,6 @@ AveNativo::AveNativo(int id, string nome_batismo, string nome, string nome_cient
 AveNativo::~AveNativo(){}
 
 ostream& operator<< (ostream &o, AveNativo &avenativo){
-    cout << "OPERATOR << IN ON AveNativo" << endl;
     o << setfill(' ') << left<< setw(8) << avenativo.get_id()
       << setfill(' ') << left << setw(24) << avenativo.get_nome()
       << setfill(' ') << left << setw(24) << avenativo.get_nome_batismo()

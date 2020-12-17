@@ -10,7 +10,6 @@ MamiferoExotico::MamiferoExotico(int id, string nome_batismo, string nome, strin
 MamiferoExotico::~MamiferoExotico(){}
 
 ostream& operator<< (ostream &o, MamiferoExotico &mamiferoexotico){
-    cout << "IN OPERATOR << ON MamiferoExotico" << endl;
     o << setfill(' ') << left<< setw(8) << mamiferoexotico.get_id()
       << setfill(' ') << left << setw(24) << mamiferoexotico.get_nome()
       << setfill(' ') << left << setw(24) << mamiferoexotico.get_nome_batismo()

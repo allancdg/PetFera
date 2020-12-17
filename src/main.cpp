@@ -262,11 +262,14 @@ int main(){
     Petfera* petfera = new Petfera();
 
     petfera->lerAnimais();
+	petfera->lerProfissionais();
 
     menuPrincipal(petfera);
 
     petfera->escreverAnimais(); //Antes de fechar o programa irá pegar o vetor com todos os animais cadastrados
                                 // e escrever no arquivo 'dados.dat'
+
+	petfera->escreverProfissionais();
 
 return 0;
 }

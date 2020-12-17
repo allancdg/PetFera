@@ -20,8 +20,12 @@ public:
     Tratador();
     //Construtor parametrizado;
     Tratador(int id, string nome, string cpf, string telefone, char sexo, int idade, string cargo, nivelSeguranca nivel);
+
+    Tratador(int id, string nome, string cpf, string telefone, char sexo, int idade, string cargo);
     //Destrutor padrão;
     ~Tratador();
+
+    friend ostream& operator<< (ostream &o, const Tratador &tratador);
 
     //Getters
     nivelSeguranca get_nivel_seguranca() const;

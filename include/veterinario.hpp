@@ -17,6 +17,8 @@ public:
     //Destrutor padrão;
     ~Veterinario();
 
+    friend ostream& operator<< (ostream &o, const Veterinario &veterinario);
+
     //Getters
     int get_crmv() const;
 

@@ -16,7 +16,7 @@ public:
                char sexo, float tamanho);
     ~Animal();
 
-    friend ostream& operator<< (ostream &o, Animal &animal);
+    friend ostream& operator<< (ostream &o, const Animal &animal);
     friend istream& operator>> (istream &i, Animal &animal);
 
     //Getters

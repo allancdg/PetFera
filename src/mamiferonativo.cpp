@@ -10,7 +10,6 @@ MamiferoNativo::MamiferoNativo(int id, string nome_batismo, string nome, string 
 MamiferoNativo::~MamiferoNativo(){}
 
 ostream& operator<< (ostream &o, MamiferoNativo &mamiferonativo){
-    cout << "OPERATOR << IN ON MamiferoNativo" << endl;
     o << setfill(' ') << left<< setw(8) << mamiferonativo.get_id()
       << setfill(' ') << left << setw(24) << mamiferonativo.get_nome()
       << setfill(' ') << left << setw(24) << mamiferonativo.get_nome_batismo()

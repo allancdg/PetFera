@@ -1,5 +1,7 @@
 #include "animal.hpp"
 #include <iostream>
+#include <vector>
+#include <typeinfo>
 
 using namespace std;
 
@@ -12,7 +14,6 @@ Animal::Animal(int id, string nome_batismo, string nome, string nome_cientifico,
 Animal::~Animal(){}
 
 ostream& operator<< (ostream &o, Animal &animal){
-    cout << "IN OPERATOR << ON Animal" << endl;
     o << setfill(' ') << left<< setw(8) << animal.get_id()
       << setfill(' ') << left << setw(24) << animal.get_nome()
       << setfill(' ') << left << setw(24) << animal.get_nome_batismo()

@@ -45,13 +45,15 @@ public:
     void listarVeterinarios();
     void lerAnimais();
     void escreverAnimais();
+    void escreverProfissionais();
+    void lerProfissionais();
 
     Veterinario* buscaVeterinarioPorId(int id);
     Tratador* buscaTratadorPorId(int id);
 
 private:
-    Animal* animais[CAPACIDADE_MAX];
-    Pessoa* profissionais[CAPACIDADE_MAX_PROFISSIONAIS];
+    vector<Animal*> animais;
+    vector<Pessoa*> profissionais;
     int capacidade = 0;                     //Utilizado para realizar o controle da quantidade do animal
     int capacidade_profissionais = 0;       //Utilizado para realizar o controle da quantidade do profissional
     int count_id_animal = 0;                //Utilizado para realizar a contagem dos id animal

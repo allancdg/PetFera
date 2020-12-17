@@ -11,7 +11,6 @@ AnfibioExotico::AnfibioExotico(int id, string nome_batismo, string nome, string 
 AnfibioExotico::~AnfibioExotico(){}
 
 ostream& operator<< (ostream &o, AnfibioExotico &anfibioexotico){
-    cout << "IN OPERATOR << ON AnfibioExotico" << endl;
     o << setfill(' ') << left<< setw(8) << anfibioexotico.get_id()
       << setfill(' ') << left << setw(24) << anfibioexotico.get_nome()
       << setfill(' ') << left << setw(24) << anfibioexotico.get_nome_batismo()
