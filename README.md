@@ -8,7 +8,7 @@
 ###### https://www.loom.com/share/9ff201997218487fa3199dada7f9d566
 
 ##### *LINK PARA VÍDEO SEGUNDA UNIDADE:*
-link...
+###### https://www.loom.com/share/a1cc7993d5d04b7492f7a3e106438798
 
 --------
 
