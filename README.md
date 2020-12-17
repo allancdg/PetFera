@@ -1,26 +1,30 @@
 # PetFera
 
-Trabalho de LP1 (IMD - UFRN) (CURSO: Tecnologia da informação)
-=
+# Trabalho de LP1 (IMD - UFRN) (CURSO: Tecnologia da informação)
 
 ---------
 
-- *LINK PARA VÍDEO PRIMEIRA UNIDADE:*
-https://www.loom.com/share/9ff201997218487fa3199dada7f9d566
+##### *LINK PARA VÍDEO PRIMEIRA UNIDADE:*
+###### https://www.loom.com/share/9ff201997218487fa3199dada7f9d566
 
-- *LINK PARA VÍDEO SEGUNDA UNIDADE:*
+##### *LINK PARA VÍDEO SEGUNDA UNIDADE:*
+link...
 
-- Programadores:
-Allan Christian e João Arthur
+--------
+
+## Programadores:
+[Allan Christian](http://github.com/allancdg/)
+
+[João Arthur](http://google.com.br)
 
 ---------
 
-Como funciona o programa:
-=
+## Como funciona o programa:
+
 
 Ao compilar o programa, dar-se inicio com o menu principal:
 
---------
+---
 
 Menu principal de opcoes:
 
@@ -32,13 +36,9 @@ L - Listagem.
 
 X - Encerrar.
 
----------
-
-Nesse menu principal nós escolhemos a opção desejada digitando apenas uma letra, que lhe levará para:
-
 ---
 
-*Menu secundario de opcoes [OPCAO C]:*
+### C - Cadastramento:
 
 MENU DE CADASTRAMENTO:
 
@@ -50,10 +50,23 @@ X - Voltar ao menu principal.
 
 ---
 
-Nesse menu secundário é nos fornecido as opções para cadastramento.
+Podemos optar por cadastrar Animais, sendo eles Anfibios, Ave, Mamiferos e Repteis (OPÇÃO A), e também poderemos optar por cadastrar profissionais, sendo eles Tratadores ou Veterinarios (OPÇÃO P).
 
-Podemos optar por cadastrar Animais, sendo eles Anfibios, Ave, Mamiferos e Repteis [OPÇÃO A], e também poderemos optar por cadastrar profissionais, sendo eles Tratadores ou Veterinarios [OPÇÃO P].
+---
 
+### R - Remocao:
+
+---
+
+MENU DE REMOCAO:
+
+A - ANIMAL.
+
+P - PROFISSIONAL.
+
+X - Voltar ao menu principal.
+
+---
 
 Como realizar a compilação e execução do programa:
 
