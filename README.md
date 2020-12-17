@@ -15,7 +15,7 @@ link...
 ## Programadores:
 [Allan Christian](http://github.com/allancdg/)
 
-[João Arthur](http://google.com.br)
+[João Arthur](http://github.com/joaoarthur98/)
 
 ---------
 
