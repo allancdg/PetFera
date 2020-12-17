@@ -851,16 +851,48 @@ Petfera::removerAnimal(){
     cin >> remocao;
 
     cout << "EM CONSTRUCAO! "<< endl;
-    //FALTANDO REALIZAR CORREÇÃO DO VETOR DE ANIMAIS
+
 }
 
 void
 Petfera::listarTodosAnimais(){
     if(this->capacidade <= 0){ cout << "Nao tem nenhum animal cadastrado!" << endl; }
     else{
-        cout << "ID\tNOME\t\t\tSEXO\tCLASSE\t\tVETERINARIO\t\tTRATADOR" << endl;
+        cout << "ID\tNOME\t\t\tNOME BATISMO\t\t\tSEXO\tTAMANHO\tCLASSE\t\tORIGEM" << endl;
         for(int i=0; i < this->capacidade; i++){
-            cout << *animais[i] << endl; //cout utilizando sobrecarga de operadores
+            if(animais[i]->get_classe() == "Anfibio Nativo"){
+                AnfibioNativo* anfnat = (AnfibioNativo*)(animais[i]);
+                cout << *anfnat << endl;
+            }
+            else if(animais[i]->get_classe() == "Anfibio Exotico"){
+                AnfibioExotico* anfexo = (AnfibioExotico*)(animais[i]);
+                cout << *anfexo << endl;
+            }
+            else if(animais[i]->get_classe() == "Ave Nativo"){
+                AveNativo* avenat = (AveNativo*)(animais[i]);
+                cout << *avenat << endl;
+            }
+            else if(animais[i]->get_classe() == "Ave Exotico"){
+                AveExotico* aveexo = (AveExotico*)(animais[i]);
+                cout << *aveexo << endl;
+            }
+            else if(animais[i]->get_classe() == "Mamifero Nativo"){
+                MamiferoNativo* mamnat = (MamiferoNativo*)(animais[i]);
+                cout << *mamnat << endl;
+            }
+            else if(animais[i]->get_classe() == "Mamifero Exotico"){
+                MamiferoExotico* mamexo = (MamiferoExotico*)(animais[i]);
+                cout << *mamexo << endl;
+            }
+            else if(animais[i]->get_classe() == "Reptil Nativo"){
+                ReptilNativo* repnat = (ReptilNativo*)(animais[i]);
+                cout << *repnat << endl;
+            }
+            else if(animais[i]->get_classe() == "Reptil Exotico"){
+                ReptilExotico* repexo = (ReptilExotico*)(animais[i]);
+                cout << *repexo << endl;
+            }
+            else { cout << *animais[i] << endl; }
         }
     }
 }
@@ -869,10 +901,15 @@ void
 Petfera::listarAnfibios(){
     if(this->capacidade <= 0){ cout << "Nao tem nenhum animal cadastrado!" << endl; }
     else{
-        cout << "ID\tNOME\t\t\tNOME BATISMO\t\t\tSEXO\tCLASSE\t\tVETERINARIO\t\tTRATADOR" << endl;
+        cout << "ID\tNOME\t\t\tNOME BATISMO\t\t\tSEXO\tTAMANHO\tCLASSE\t\tORIGEM" << endl;
         for(int i=0; i < this->capacidade; i++){
-            if(animais[i]->get_classe() == "Anfibio"){
-                cout << *animais[i] << endl; //cout utilizando sobrecarga de operadores
+            if(animais[i]->get_classe() == "Anfibio Nativo"){
+                AnfibioNativo* anfnat = (AnfibioNativo*)(animais[i]);
+                cout << *anfnat << endl;
+            }
+            else if(animais[i]->get_classe() == "Anfibio Exotico"){
+                AnfibioExotico* anfexo = (AnfibioExotico*)(animais[i]);
+                cout << *anfexo << endl;
             }
         }
     }
@@ -882,10 +919,15 @@ void
 Petfera::listarAves(){
     if(this->capacidade <= 0){ cout << "Nao tem nenhum animal cadastrado!" << endl; }
     else{
-        cout << "ID\tNOME\t\t\tNOME BATISMO\t\t\tSEXO\tCLASSE\t\tVETERINARIO\t\tTRATADOR" << endl;
+        cout << "ID\tNOME\t\t\tNOME BATISMO\t\t\tSEXO\tTAMANHO\tCLASSE\t\tORIGEM" << endl;
         for(int i=0; i < this->capacidade; i++){
-            if(animais[i]->get_classe() == "Ave"){
-                cout << *animais[i] << endl; //cout utilizando sobrecarga de operadores
+            if(animais[i]->get_classe() == "Ave Nativo"){
+                AveNativo* avenat = (AveNativo*)(animais[i]);
+                cout << *avenat << endl;
+            }
+            else if(animais[i]->get_classe() == "Ave Exotico"){
+                AveExotico* aveexo = (AveExotico*)(animais[i]);
+                cout << *aveexo << endl;
             }
         }
     }
@@ -895,10 +937,15 @@ void
 Petfera::listarMamiferos(){
     if(this->capacidade <= 0){ cout << "Nao tem nenhum animal cadastrado!" << endl; }
     else{
-        cout << "ID\tNOME\t\t\tNOME BATISMO\t\t\tSEXO\tCLASSE\t\tVETERINARIO\t\tTRATADOR" << endl;
+        cout << "ID\tNOME\t\t\tNOME BATISMO\t\t\tSEXO\tTAMANHO\tCLASSE\t\tORIGEM" << endl;
         for(int i=0; i < this->capacidade; i++){
-            if(animais[i]->get_classe() == "Mamifero"){
-                cout << *animais[i] << endl; //cout utilizando sobrecarga de operadores
+            if(animais[i]->get_classe() == "Mamifero Nativo"){
+                MamiferoNativo* mamnat = (MamiferoNativo*)(animais[i]);
+                cout << *mamnat << endl;
+            }
+            else if(animais[i]->get_classe() == "Mamifero Exotico"){
+                MamiferoExotico* mamexo = (MamiferoExotico*)(animais[i]);
+                cout << *mamexo << endl;
             }
         }
     }
@@ -908,10 +955,15 @@ void
 Petfera::listarRepteis(){
     if(this->capacidade <= 0){ cout << "Nao tem nenhum animal cadastrado!" << endl; }
     else{
-        cout << "ID\tNOME\t\t\tNOME BATISMO\t\t\tSEXO\tCLASSE\t\tVETERINARIO\t\tTRATADOR" << endl;
+        cout << "ID\tNOME\t\t\tNOME BATISMO\t\t\tSEXO\tTAMANHO\tCLASSE\t\tORIGEM" << endl;
         for(int i=0; i < this->capacidade; i++){
-            if(animais[i]->get_classe() == "Reptil"){
-                cout << *animais[i] << endl; //cout utilizando sobrecarga de operadores
+            if(animais[i]->get_classe() == "Reptil Nativo"){
+                ReptilNativo* repnat = (ReptilNativo*)(animais[i]);
+                cout << *repnat << endl;
+            }
+            else if(animais[i]->get_classe() == "Reptil Exotico"){
+                ReptilExotico* repexo = (ReptilExotico*)(animais[i]);
+                cout << *repexo << endl;
             }
         }
     }
@@ -941,7 +993,7 @@ Petfera::listarTratadores(){
     else{
         string str_tratador = "Tratador";
 
-        cout << "ID\tNOME\t\tSEXO\tNIVEL SEGURANCA" << endl;
+        cout << "ID\tNOME\t\tSEXO\tTAMANHO\tNIVEL SEGURANCA" << endl;
         for(int i=0; i < this->capacidade_profissionais; i++){ //talvez ++i
 
             if (str_tratador.compare(profissionais[i]->get_cargo()) == 0) {

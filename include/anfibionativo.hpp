@@ -15,4 +15,6 @@ public:
                string estado_origem);
 
     ~AnfibioNativo();
+
+    friend ostream& operator<< (ostream &o, AnfibioNativo &anfibionativo);
 };

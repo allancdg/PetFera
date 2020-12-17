@@ -8,3 +8,15 @@ MamiferoNativo::MamiferoNativo(int id, string nome_batismo, string nome, string 
                     Nativo(estado_origem){}
 
 MamiferoNativo::~MamiferoNativo(){}
+
+ostream& operator<< (ostream &o, MamiferoNativo &mamiferonativo){
+    cout << "OPERATOR << IN ON MamiferoNativo" << endl;
+    o << setfill(' ') << left<< setw(8) << mamiferonativo.get_id()
+      << setfill(' ') << left << setw(24) << mamiferonativo.get_nome()
+      << setfill(' ') << left << setw(24) << mamiferonativo.get_nome_batismo()
+      << setfill(' ') << left << setw(8) << mamiferonativo.get_sexo()
+      << setfill(' ') << left << setw(5) << mamiferonativo.get_tamanho()
+      << setfill(' ') << left << setw(18) << mamiferonativo.get_classe()
+      << setfill(' ') << left << setw(15) << "BRASIL";
+    return o;
+}

@@ -9,3 +9,15 @@ ReptilExotico::ReptilExotico(int id, string nome_batismo, string nome, string no
                     Exotico(extincao, autorizacao_ibama, pais_origem){}
 
 ReptilExotico::~ReptilExotico(){}
+
+ostream& operator<< (ostream &o, ReptilExotico &reptilexotico){
+    cout << "IN OPERATOR << ON ReptilExotico" << endl;
+    o << setfill(' ') << left<< setw(8) << reptilexotico.get_id()
+      << setfill(' ') << left << setw(24) << reptilexotico.get_nome()
+      << setfill(' ') << left << setw(24) << reptilexotico.get_nome_batismo()
+      << setfill(' ') << left << setw(8) << reptilexotico.get_sexo()
+      << setfill(' ') << left << setw(5) << reptilexotico.get_tamanho()
+      << setfill(' ') << left << setw(18) << reptilexotico.get_classe()
+      << setfill(' ') << left << setw(18) << reptilexotico.get_pais_origem();
+    return o;
+}

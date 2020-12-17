@@ -15,4 +15,6 @@ public:
                char extincao, char autorizacao_ibama, string pais_origem);
 
     ~AveExotico();
+
+    friend ostream& operator<< (ostream &o, AveExotico &avexotico);
 };

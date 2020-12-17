@@ -9,3 +9,15 @@ AveNativo::AveNativo(int id, string nome_batismo, string nome, string nome_cient
                    Nativo(estado_origem){}
 
 AveNativo::~AveNativo(){}
+
+ostream& operator<< (ostream &o, AveNativo &avenativo){
+    cout << "OPERATOR << IN ON AveNativo" << endl;
+    o << setfill(' ') << left<< setw(8) << avenativo.get_id()
+      << setfill(' ') << left << setw(24) << avenativo.get_nome()
+      << setfill(' ') << left << setw(24) << avenativo.get_nome_batismo()
+      << setfill(' ') << left << setw(8) << avenativo.get_sexo()
+      << setfill(' ') << left << setw(5) << avenativo.get_tamanho()
+      << setfill(' ') << left << setw(18) << avenativo.get_classe()
+      << setfill(' ') << left << setw(15) << "BRASIL";
+    return o;
+}

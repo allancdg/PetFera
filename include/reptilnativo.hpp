@@ -15,4 +15,6 @@ public:
                string estado_origem);
 
     ~ReptilNativo();
+
+    friend ostream& operator<< (ostream &o, ReptilNativo &reptilnativo);
 };
